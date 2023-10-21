@@ -10,12 +10,12 @@ const Routes = () => {
       {viewsRoutes.map((item, i) => (
         <Route key={i} path={item.path} element={item.renderer()} />
       ))}
-      {blocksRoutes.map((item, i) => (
+      {/* {blocksRoutes.map((item, i) => (
         <Route key={i} path={item.path} element={item.renderer()} />
       ))}
       {demosRoutes.map((item, i) => (
         <Route key={i} path={item.path} element={item.renderer()} />
-      ))}
+      ))} */}
       <Route path="*" element={<Navigate replace to="/not-found-cover" />} />
     </ReactRoutes>
   );
