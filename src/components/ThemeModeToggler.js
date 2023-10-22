@@ -27,7 +27,7 @@ const ThemeModeToggler = () => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke="currentColor"
+          stroke="#FF7514"
         >
           <path
             strokeLinecap="round"
@@ -43,7 +43,7 @@ const ThemeModeToggler = () => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke="currentColor"
+          stroke="#FF7514"
         >
           <path
             strokeLinecap="round"
