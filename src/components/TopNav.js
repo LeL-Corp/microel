@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-
+ 
 import ThemeModeToggler from 'components/ThemeModeToggler';
-
+ 
 const TopNav = ({ colorInvert = false }) => {
   return (
     <Box display={'flex'} justifyContent={'flex-end'} alignItems={'center'}>
-      <Box marginRight={{ xs: 1, sm: 2 }}>
+      {/* <Box marginRight={{ xs: 1, sm: 2 }}>
         <Link
           underline="none"
           component="a"
@@ -33,8 +33,8 @@ const TopNav = ({ colorInvert = false }) => {
             </Typography>
           </Box>
         </Link>
-      </Box>
-      <Box marginRight={{ xs: 1, sm: 2 }}>
+      </Box> */}
+      {/* <Box marginRight={{ xs: 1, sm: 2 }}>
         <Link
           underline="none"
           component="a"
@@ -55,16 +55,17 @@ const TopNav = ({ colorInvert = false }) => {
         >
           Docs
         </Link>
-      </Box>
+      </Box> */}
       <Box>
         <ThemeModeToggler />
       </Box>
     </Box>
   );
 };
-
+ 
 TopNav.propTypes = {
   colorInvert: PropTypes.bool,
 };
-
+ 
 export default TopNav;
+ 
