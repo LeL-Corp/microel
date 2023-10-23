@@ -11,17 +11,21 @@ import {
   Benefits,
   Hero,
 } from './components';
+import ColumnContainer from 'components/ColumnContainer';
+import { WithLeftAlignedDescriptionBoxAndBoxedLogos } from 'blocks/logoGrid';
+import Sectors from './components/Sectors/Sectors';
 
 const IndexView = () => {
   const theme = useTheme();
   return (
     <Box sx={{ overflowX: 'hidden' }}>
       <Main bgcolor={'background.paper'}>
-        <Hero />
-        <Container>
-          <Services />
-        </Container>
-        <Box
+        <ColumnContainer>
+          <Hero />
+          <Container>
+            <Services />
+          </Container>
+          {/* <Box
           sx={{
             backgroundImage: `linear-gradient(to bottom, ${alpha(
               theme.palette.background.paper,
@@ -30,17 +34,11 @@ const IndexView = () => {
             backgroundRepeat: 'repeat-x',
             position: 'relative',
           }}
-        >
-          <Container maxWidth={600}>
-            <QuickStart />
-          </Container>
-          <Container>
-            <Features />
-          </Container>
-          <Container>
+        > */}
+          {/* <Container>
             <Benefits />
-          </Container>
-          <Box
+          </Container> */}
+          {/* <Box
             component={'svg'}
             preserveAspectRatio="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -56,11 +54,16 @@ const IndexView = () => {
               fill={theme.palette.background.paper}
               d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"
             ></path>
-          </Box>
-        </Box>
-        <Container>
-          <GetStarted />
-        </Container>
+          </Box> */}
+          {/* </Box> */}
+          <Container>
+            <Sectors />
+          </Container>
+
+          <Container>
+            <GetStarted />
+          </Container>
+        </ColumnContainer>
       </Main>
     </Box>
   );

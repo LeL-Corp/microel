@@ -9,24 +9,23 @@ import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import ColumnContainer from 'components/ColumnContainer';
 
 const mock = [
   {
-    title: 300,
-    subtitle:
-      '300 + component compositions, which will help you to build any page easily.',
+    title: 200,
+    subtitle: '200 + schede elettroniche realizzate.',
     suffix: '+',
   },
   {
-    title: 45,
-    subtitle:
-      '45 + landing and supported pages to Build a professional website.',
+    title: 20,
+    subtitle: '20 + settori di operatività.',
     suffix: '+',
   },
   {
-    title: 99,
-    subtitle: '99% of our customers rated 5-star our themes over 5 years.',
-    suffix: '%',
+    title: 10,
+    subtitle: '+ 10 eventi internazionali a cui abbiamo partecipato',
+    suffix: '+',
   },
 ];
 
@@ -46,22 +45,104 @@ const Features = () => {
   };
 
   return (
-    <Box>
-      <Grid container spacing={4} direction={isMd ? 'row' : 'column-reverse'}>
-        <Grid item xs={12} md={6}>
-          <Box marginBottom={4}>
-            <Typography sx={{ fontWeight: 700 }} variant={'h4'} gutterBottom>
-              The powerful and flexible theme for all kinds of businesses
-            </Typography>
-            <Typography variant={'h6'} component={'p'} color={'text.secondary'}>
-              Whether you're creating a subscription service, an on-demand
-              marketplace, an e-commerce store, or a portfolio showcase,
-              theFront helps you create the best possible product for your
-              users.
-            </Typography>
-          </Box>
-          <Grid container spacing={2}>
-            {mock.map((item, i) => (
+    <Box sx={{ marginTop: 10 }}>
+      <ColumnContainer>
+        <Grid
+          container
+          spacing={4}
+          direction={isMd ? 'row-reverse' : 'column-reverse'}
+        >
+          <Grid item xs={12} md={6}>
+            <Box marginBottom={4}>
+              <Typography sx={{ fontWeight: 700 }} variant={'h4'} gutterBottom>
+                PCB design
+              </Typography>
+              <Typography
+                variant={'h6'}
+                component={'p'}
+                color={'text.secondary'}
+              >
+                Servizi di progettazione e sbroglio di circuiti stampati.
+                Sviluppiamo rapidamente i prototipi mediante la tecnica della
+                microfresatura.
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid
+            item
+            container
+            justifyContent="center"
+            alignItems="center"
+            xs={12}
+            md={6}
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+            }}
+          >
+            <Box component={Card} boxShadow={4} height={1} width={1}>
+              <Box
+                component={CardMedia}
+                height={1}
+                width={1}
+                minHeight={300}
+                // image={team}
+              />
+            </Box>
+          </Grid>
+        </Grid>
+        <Grid container spacing={4} direction={isMd ? 'row' : 'column-reverse'}>
+          <Grid item xs={12} md={6}>
+            <Box marginBottom={4}>
+              <Typography
+                sx={{ fontWeight: 700 }}
+                variant={'h4'}
+                gutterBottom
+              ></Typography>
+              <Typography
+                variant={'h6'}
+                component={'p'}
+                color={'text.secondary'}
+              >
+                Il nostro team ha sviluppato un ampio know-how in ambito di
+                automazione industriale operando in svariati settori, per
+                aziende di ogni dimensione.
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid
+            item
+            container
+            justifyContent="center"
+            alignItems="center"
+            xs={12}
+            md={6}
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+            }}
+          >
+            <Box component={Card} boxShadow={4} height={1} width={1}>
+              <Box
+                component={CardMedia}
+                height={1}
+                width={1}
+                minHeight={300}
+                // image={team}
+              />
+            </Box>
+          </Grid>
+        </Grid>
+      </ColumnContainer>
+    </Box>
+  );
+};
+
+export default Features;
+
+{
+  /* <Grid container spacing={2}> */
+}
+{
+  /* {mock.map((item, i) => (
               <Grid key={i} item xs={12} md={4}>
                 <Typography variant="h4" color={'primary'} gutterBottom>
                   <VisibilitySensor
@@ -80,33 +161,8 @@ const Features = () => {
                   {item.subtitle}
                 </Typography>
               </Grid>
-            ))}
-          </Grid>
-        </Grid>
-        <Grid
-          item
-          container
-          justifyContent="center"
-          alignItems="center"
-          xs={12}
-          md={6}
-          sx={{
-            display: { xs: 'none', md: 'flex' },
-          }}
-        >
-          <Box component={Card} boxShadow={4} height={1} width={1}>
-            <Box
-              component={CardMedia}
-              height={1}
-              width={1}
-              minHeight={300}
-              image="https://assets.maccarianagency.com/backgrounds/img4.jpg"
-            />
-          </Box>
-        </Grid>
-      </Grid>
-    </Box>
-  );
-};
-
-export default Features;
+            ))} */
+}
+{
+  /* </Grid> */
+}

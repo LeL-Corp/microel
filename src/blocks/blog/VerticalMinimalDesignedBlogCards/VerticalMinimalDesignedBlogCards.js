@@ -45,12 +45,12 @@ const mock = [
   },
 ];
 
-const VerticalMinimalDesignedBlogCards = () => {
+const VerticalMinimalDesignedBlogCards = ({ data }) => {
   const theme = useTheme();
   return (
     <Container>
       <Grid container spacing={4}>
-        {mock.map((item, i) => (
+        {data.map((item, i) => (
           <Grid item xs={12} md={4} key={i}>
             <Box
               component={'a'}
@@ -62,7 +62,7 @@ const VerticalMinimalDesignedBlogCards = () => {
                 textDecoration: 'none',
                 transition: 'all .2s ease-in-out',
                 '&:hover': {
-                  transform: `translateY(-${theme.spacing(1 / 2)})`,
+                  transform: `translateY(-10px)`,
                 },
               }}
             >
@@ -79,7 +79,7 @@ const VerticalMinimalDesignedBlogCards = () => {
                   image={item.image}
                   title={item.title}
                   sx={{
-                    height: { xs: 300, md: 360 },
+                    height: { xs: 200, md: 260 },
                     position: 'relative',
                   }}
                 />
@@ -92,7 +92,7 @@ const VerticalMinimalDesignedBlogCards = () => {
                   </Typography>
                 </Box>
                 <Box flexGrow={1} />
-                <Box padding={2} display={'flex'} flexDirection={'column'}>
+                {/* <Box padding={2} display={'flex'} flexDirection={'column'}>
                   <Box marginBottom={2}>
                     <Divider />
                   </Box>
@@ -114,7 +114,7 @@ const VerticalMinimalDesignedBlogCards = () => {
                       {item.date}
                     </Typography>
                   </Box>
-                </Box>
+                </Box> */}
               </Box>
             </Box>
           </Grid>

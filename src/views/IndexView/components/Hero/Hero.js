@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
+import bkg from '../../../../circuit.jpg';
 
 import Container from 'components/Container';
 
@@ -93,42 +94,41 @@ const Hero = () => {
         position: 'relative',
       }}
     >
+      <img
+        src={bkg}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.2,
+        }}
+      />
       <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
         <Container>
-          <Box maxWidth={{ xs: 1, sm: '50%' }}>
+          <Box
+            maxWidth={{ xs: 1, sm: '50%', zIndex: 1000, position: 'relative' }}
+          >
             <Typography
-              variant="h2"
+              variant="h3"
               color="text.primary"
               gutterBottom
               sx={{
                 fontWeight: 700,
               }}
             >
-              Turn your ideas
-              <br />
-              into{' '}
-              <Typography
-                color={'primary'}
-                component={'span'}
-                variant={'inherit'}
-                sx={{
-                  background: `linear-gradient(180deg, transparent 82%, ${alpha(
-                    theme.palette.secondary.main,
-                    0.3,
-                  )} 0%)`,
-                }}
-              >
-                success.
-              </Typography>
+              Experts in Electrical Engineering Solutions.
             </Typography>
             <Typography
-              variant="h6"
+              variant="h5"
               component="p"
               color="text.secondary"
               sx={{ fontWeight: 400 }}
             >
-              theFront will make your product look modern and professional while
-              saving you precious time.
+              Progettazione e produzione schede ed apparecchiature elettroniche
+              per l'automazione industriale.
             </Typography>
             <Box
               display="flex"
@@ -144,7 +144,7 @@ const Hero = () => {
                 fullWidth={isMd ? false : true}
                 href={'/home'}
               >
-                View pages
+                Scopri
               </Button>
               <Box
                 marginTop={{ xs: 2, sm: 0 }}
@@ -153,14 +153,16 @@ const Hero = () => {
               >
                 <Button
                   component={'a'}
-                  href={'https://thefront.maccarianagency.com/docs/introduction'}
+                  href={
+                    'https://thefront.maccarianagency.com/docs/introduction'
+                  }
                   target={'blank'}
                   variant="outlined"
                   color="primary"
                   size="large"
                   fullWidth={isMd ? false : true}
                 >
-                  Documentation
+                  Contattaci
                 </Button>
               </Box>
             </Box>
@@ -180,7 +182,7 @@ const Hero = () => {
             position={'absolute'}
             sx={{ transform: 'translate3d(20%, -50%, 0)' }}
           >
-            {images.map((item, i) => (
+            {/* {images.map((item, i) => (
               <Box key={i} marginTop={{ sm: -(i * 16) }} marginX={1}>
                 {item.group.map((g, j) => (
                   <Box
@@ -204,7 +206,7 @@ const Hero = () => {
                   </Box>
                 ))}
               </Box>
-            ))}
+            ))} */}
           </Box>
         </Box>
       </Box>
@@ -218,6 +220,8 @@ const Hero = () => {
         sx={{
           width: '100%',
           marginBottom: theme.spacing(-1),
+          zIndex: 2000,
+          position: 'relative',
         }}
       >
         <path

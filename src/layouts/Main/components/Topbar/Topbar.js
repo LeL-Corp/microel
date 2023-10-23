@@ -5,9 +5,9 @@ import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link';
- 
+
 import { NavItem } from './components';
- 
+
 const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
   const theme = useTheme();
   const { mode } = theme.palette;
@@ -19,7 +19,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
     portfolio: portfolioPages,
     blog: blogPages,
   } = pages;
- 
+
   return (
     <Box
       display={'flex'}
@@ -42,34 +42,54 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
               : 'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
           }
           height={1}
-          width={1}
+          width={0.8}
         />
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box>
-        <Link underline="hover" color={mode === 'dark' ? 'white' : '#377DFF'} href="/" >
-              Home
-            </Link>
+          <Link
+            underline="hover"
+            color={mode === 'dark' ? 'white' : '#377DFF'}
+            href="/"
+          >
+            Home
+          </Link>
         </Box>
         <Box marginLeft={4}>
-        <Link underline="hover" color={mode === 'dark' ? 'white' : '#377DFF'} href="/about">
-              About Us
-            </Link>
+          <Link
+            underline="hover"
+            color={mode === 'dark' ? 'white' : '#377DFF'}
+            href="/about"
+          >
+            About Us
+          </Link>
         </Box>
         <Box marginLeft={4}>
-        <Link underline="hover" color={mode === 'dark' ? 'white' : '#377DFF'} href="/Soluzioni">
+          <Link
+            underline="hover"
+            color={mode === 'dark' ? 'white' : '#377DFF'}
+            href="/Soluzioni"
+          >
             Soluzioni
-            </Link>
+          </Link>
         </Box>
         <Box marginLeft={4}>
-        <Link underline="hover" color={mode === 'dark' ? 'white' : '#377DFF'} href="/customers">
+          <Link
+            underline="hover"
+            color={mode === 'dark' ? 'white' : '#377DFF'}
+            href="/customers"
+          >
             Case History
-            </Link>
+          </Link>
         </Box>
         <Box marginLeft={4}>
-        <Link underline="hover" color={mode === 'dark' ? 'white' : '#377DFF'} href="/contact-sidebar-map">
+          <Link
+            underline="hover"
+            color={mode === 'dark' ? 'white' : '#377DFF'}
+            href="/contact-sidebar-map"
+          >
             Contatti
-            </Link>
+          </Link>
         </Box>
       </Box>
       <Box sx={{ display: { xs: 'block', md: 'none' } }} alignItems={'center'}>
@@ -90,13 +110,11 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
     </Box>
   );
 };
- 
+
 Topbar.propTypes = {
   onSidebarOpen: PropTypes.func,
   pages: PropTypes.object,
   colorInvert: PropTypes.bool,
 };
- 
+
 export default Topbar;
- 
- 

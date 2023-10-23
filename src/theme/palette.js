@@ -44,7 +44,8 @@ export const dark = {
   },
   mode: 'dark',
   primary: {
-    main: '#1976d2',
+    // main: '#1976d2',
+    main: "#5DB499",
     light: '#2196f3',
     dark: '#0d47a1',
     contrastText: '#fff',
@@ -61,8 +62,11 @@ export const dark = {
   },
   divider: 'rgba(255, 255, 255, 0.12)',
   background: {
-    paper: '#222B45',
-    default: '#222B45',
+    // paper: '#222B45',
+    // default: '#222B45',
+    paper: "#002626",
+    default: "#002626",
+
     level2: '#333',
     level1: '#2D3748',
   },

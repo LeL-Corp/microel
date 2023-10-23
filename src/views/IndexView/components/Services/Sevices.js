@@ -5,73 +5,61 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
+import ArchitectureIcon from '@mui/icons-material/Architecture';
+import PolylineIcon from '@mui/icons-material/Polyline';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import { VerticalMinimalDesignedBlogCards } from 'blocks/blog';
+import industry from '../../../../industry.jpg';
+import aero from '../../../../aero.jpeg';
+import packaging from '../../../../pack.jpg';
+import micro from '../../../../micro.jpg';
+import mech from '../../../../mechanic.jpg';
+import test from '../../../../test.jpg';
+import ColumnContainer from 'components/ColumnContainer';
 
 const mock = [
   {
-    title: 'Built for developers',
+    title: 'Design',
     subtitle:
-      'theFront is built to make your life easier. Variables, build tooling, documentation, and reusable components.',
-    icon: (
-      <svg
-        height={24}
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
-        />
-      </svg>
-    ),
+      'Offriamo ad ogni cliente un servizio completo di progettazione hardware e software della scheda elettronica.',
+    icon: <ArchitectureIcon />,
   },
   {
-    title: 'Designed to be modern',
+    title: 'Progettazione',
     subtitle:
-      'Designed with the latest design trends in mind. theFront feels modern, minimal, and beautiful.',
-    icon: (
-      <svg
-        height={24}
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-        />
-      </svg>
-    ),
+      "Tutte le fasi di sviluppo sono interamente gestite all'interno dell'azienda, garantendo flessibilità ed efficienza nella realizzazione di prodotti personalizzati.",
+    icon: <PolylineIcon />,
   },
   {
-    title: 'Documentation for everything',
+    title: 'Delivery',
     subtitle:
-      'We\'ve written extensive documentation for components and tools, so you never have to reverse engineer anything.',
-    icon: (
-      <svg
-        height={24}
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    ),
+      'Supporto e attenzione costante anche dopo la consegna del prodotto.',
+    icon: <RocketLaunchIcon />,
+  },
+];
+const cards = [
+  {
+    image: micro,
+    description:
+      'Servizi di progettazione e sbroglio di circuiti stampati. Sviluppiamo rapidamente i prototipi mediante la tecnica della microfresatura.',
+    title: 'PCB Design',
+  },
+  {
+    image: mech,
+    description:
+      'La linea di montaggio SMD è composta da un telaio serigrafico automatico, pick & place da 15000 componenti/ora e forno a rifusione a 8 zone',
+    title: 'Assemblaggio e saldatura schede elettroniche',
+  },
+  {
+    image: test,
+    description:
+      'Camera climatica per prove ambientali e camera prove EMC per i testi di compatibilità elettromagnetica ',
+    title: 'Test di compatibilità',
+    author: {
+      name: 'Chary Smith',
+      avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
+    },
+    date: '22 Nov',
   },
 ];
 
@@ -79,66 +67,70 @@ const Services = () => {
   const theme = useTheme();
   return (
     <Box>
-      <Box marginBottom={4}>
-        <Box marginBottom={2}>
-          <Typography
-            variant="h4"
-            color="text.primary"
-            align={'center'}
-            gutterBottom
-            sx={{
-              fontWeight: 700,
-            }}
-          >
-            Build accessible React apps with speed
-          </Typography>
-          <Typography
-            variant="h6"
-            component="p"
-            color="text.secondary"
-            sx={{ fontWeight: 400 }}
-            align={'center'}
-          >
-            Build a beautiful, modern website with flexible, fully customizable,
-            atomic MUI components.
-          </Typography>
+      <ColumnContainer style={{ gap: '5rem' }}>
+        <Box marginBottom={4}>
+          <Box marginBottom={2}>
+            <Typography
+              variant="h4"
+              color="text.primary"
+              align={'center'}
+              gutterBottom
+              sx={{
+                fontWeight: 700,
+              }}
+            >
+              Elettronica dedicata per esigenze specifiche.
+            </Typography>
+            <Typography
+              variant="h6"
+              component="p"
+              color="text.secondary"
+              sx={{ fontWeight: 400 }}
+              align={'center'}
+            >
+              Studiamo insieme ogni fase di{' '}
+              <b>progettazione hardware e software</b> della scheda elettronica
+            </Typography>
+          </Box>
         </Box>
-      </Box>
-      <Grid container spacing={2}>
-        {mock.map((item, i) => (
-          <Grid item xs={12} md={4} key={i}>
-            <Box width={1} height={1}>
-              <Box
-                display={'flex'}
-                flexDirection={'column'}
-                alignItems={'center'}
-              >
+
+        <Grid container spacing={2}>
+          {mock.map((item, i) => (
+            <Grid item xs={12} md={4} key={i}>
+              <Box width={1} height={1}>
                 <Box
-                  component={Avatar}
-                  width={60}
-                  height={60}
-                  marginBottom={2}
-                  bgcolor={alpha(theme.palette.primary.main, 0.1)}
-                  color={theme.palette.primary.main}
+                  display={'flex'}
+                  flexDirection={'column'}
+                  alignItems={'center'}
                 >
-                  {item.icon}
+                  <Box
+                    component={Avatar}
+                    width={60}
+                    height={60}
+                    marginBottom={2}
+                    bgcolor={alpha(theme.palette.primary.main, 0.1)}
+                    color={theme.palette.primary.main}
+                  >
+                    {item.icon}
+                  </Box>
+                  <Typography
+                    variant={'h6'}
+                    gutterBottom
+                    sx={{ fontWeight: 500 }}
+                    align={'center'}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography align={'center'} color="text.secondary">
+                    {item.subtitle}
+                  </Typography>
                 </Box>
-                <Typography
-                  variant={'h6'}
-                  gutterBottom
-                  sx={{ fontWeight: 500 }}
-                  align={'center'}
-                >
-                  {item.title}
-                </Typography>
-                <Typography align={'center'} color="text.secondary">
-                  {item.subtitle}
-                </Typography>
               </Box>
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
+            </Grid>
+          ))}
+        </Grid>
+        <VerticalMinimalDesignedBlogCards data={cards} />
+      </ColumnContainer>
     </Box>
   );
 };
