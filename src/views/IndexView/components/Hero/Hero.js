@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
 import bkg from '../../../../circuit.jpg';
+import bkg2 from '../../../../bkg2.jpg';
 
 import Container from 'components/Container';
 
@@ -95,7 +96,7 @@ const Hero = () => {
       }}
     >
       <img
-        src={bkg}
+        src={bkg2}
         style={{
           position: 'absolute',
           top: 0,
@@ -103,13 +104,18 @@ const Hero = () => {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          opacity: 0.2,
+          opacity: 0.4,
         }}
       />
       <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
         <Container>
           <Box
-            maxWidth={{ xs: 1, sm: '50%', zIndex: 1000, position: 'relative' }}
+            maxWidth={{
+              xs: 1,
+              sm: '60%',
+              zIndex: 1000,
+              position: 'relative',
+            }}
           >
             <Typography
               variant="h3"
@@ -119,7 +125,7 @@ const Hero = () => {
                 fontWeight: 700,
               }}
             >
-              Experts in Electrical Engineering Solutions.
+              Esperti in soluzioni di ingegneria elettronica.
             </Typography>
             <Typography
               variant="h5"
@@ -128,7 +134,7 @@ const Hero = () => {
               sx={{ fontWeight: 400 }}
             >
               Progettazione e produzione schede ed apparecchiature elettroniche
-              per l'automazione industriale.
+              per l'automazione.
             </Typography>
             <Box
               display="flex"

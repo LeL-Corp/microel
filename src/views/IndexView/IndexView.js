@@ -22,9 +22,8 @@ const IndexView = () => {
       <Main bgcolor={'background.paper'}>
         <ColumnContainer>
           <Hero />
-          <Container>
-            <Services />
-          </Container>
+          <Services />
+
           {/* <Box
           sx={{
             backgroundImage: `linear-gradient(to bottom, ${alpha(
@@ -56,11 +55,26 @@ const IndexView = () => {
             ></path>
           </Box> */}
           {/* </Box> */}
-          <Container>
-            <Sectors />
-          </Container>
 
-          <Container>
+          <Sectors />
+
+          <Container sx={{ position: 'relative' }}>
+            <img
+              style={{
+                opacity: '0.4',
+                filter: 'brightness(0.9)',
+
+                filter: 'hue-rotate(122deg)',
+                position: 'absolute',
+                bottom: '59px',
+                left: '202px',
+
+                maxWidth: '8%',
+                height: 'auto',
+                maxHeight: '60%',
+              }}
+              src="https://res.cloudinary.com/dslne9y2j/image/upload/v1698184765/Assets/Homepage/pa6ro1vkeih0jehy5hqz.png"
+            ></img>
             <GetStarted />
           </Container>
         </ColumnContainer>

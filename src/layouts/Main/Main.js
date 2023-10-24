@@ -53,7 +53,13 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
         }}
         elevation={trigger ? 1 : 0}
       >
-        <Container paddingY={1}>
+        <Container
+          paddingY={1}
+          style={{
+            boxShadow:
+              '0px 13px 12px -13px #226B7E, 0px 18px 0px -23px #5DB499',
+          }}
+        >
           <Topbar
             onSidebarOpen={handleSidebarOpen}
             pages={pages}

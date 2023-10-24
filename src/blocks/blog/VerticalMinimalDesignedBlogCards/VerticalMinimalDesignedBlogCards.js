@@ -144,7 +144,7 @@ const VerticalMinimalDesignedBlogCards = ({ data }) => {
               </Box>
             }
           >
-            Load More
+            Lo nostre soluzioni
           </Button>
         </Grid>
       </Grid>

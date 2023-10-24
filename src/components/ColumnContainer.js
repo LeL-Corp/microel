@@ -19,7 +19,7 @@ const Container = styled('div')(
     width: `${small ? '70%' : nowidth ? 'auto' : width ? width : '100%'}`,
     height: `${fullHeight ? '100%' : 'auto'}`,
 
-    gap: '5rem',
+    gap: '1rem',
     alignItems: `${alignItems ? alignItems : 'auto'}`,
     alignSelf: `${alignSelf ? alignSelf : 'auto'}`,
     justifyContent: `${justifyContent ? justifyContent : 'auto'}`,

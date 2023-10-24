@@ -22,18 +22,17 @@ const GetStarted = () => {
           fontWeight: 700,
         }}
       >
-        Get started with theFront today
+        Hai un'idea? Contattaci per una consulenza
       </Typography>
-      <Typography
+      {/* <Typography
         variant="h6"
         component="p"
         color="text.secondary"
         sx={{ fontWeight: 400 }}
         align={'center'}
       >
-        Build a beautiful, modern website with flexible, fully customizable,
-        atomic MUI components.
-      </Typography>
+       
+      </Typography> */}
       <Box
         display="flex"
         flexDirection={{ xs: 'column', sm: 'row' }}
@@ -49,7 +48,7 @@ const GetStarted = () => {
           fullWidth={isMd ? false : true}
           href={'/home'}
         >
-          View pages
+          Contattaci
         </Button>
         <Box
           marginTop={{ xs: 2, sm: 0 }}
@@ -65,7 +64,7 @@ const GetStarted = () => {
             size="large"
             fullWidth={isMd ? false : true}
           >
-            Documentation
+            Dove siamo
           </Button>
         </Box>
       </Box>

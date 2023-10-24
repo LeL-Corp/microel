@@ -45,9 +45,11 @@ export const dark = {
   mode: 'dark',
   primary: {
     // main: '#1976d2',
-    main: "#5DB499",
+    // main: '#5DB499',
+    main: '#25b0a2',
     light: '#2196f3',
-    dark: '#0d47a1',
+    // dark: '#0d47a1',  // hover
+    dark: '#516894',
     contrastText: '#fff',
   },
   secondary: {
@@ -64,8 +66,10 @@ export const dark = {
   background: {
     // paper: '#222B45',
     // default: '#222B45',
-    paper: "#002626",
-    default: "#002626",
+    // paper: "#002626", // prova 1
+    // default: "#002626",
+    paper: '#06262b',
+    default: '#06262b',
 
     level2: '#333',
     level1: '#2D3748',

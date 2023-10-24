@@ -22,6 +22,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
 
   return (
     <Box
+      
       display={'flex'}
       justifyContent={'space-between'}
       alignItems={'center'}

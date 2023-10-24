@@ -16,6 +16,7 @@ import micro from '../../../../micro.jpg';
 import mech from '../../../../mechanic.jpg';
 import test from '../../../../test.jpg';
 import ColumnContainer from 'components/ColumnContainer';
+import Container from 'components/Container';
 
 const mock = [
   {
@@ -129,7 +130,9 @@ const Services = () => {
             </Grid>
           ))}
         </Grid>
-        <VerticalMinimalDesignedBlogCards data={cards} />
+        <Container>
+          <VerticalMinimalDesignedBlogCards data={cards} />
+        </Container>
       </ColumnContainer>
     </Box>
   );
