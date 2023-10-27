@@ -181,7 +181,7 @@ const routes = [
     renderer: (params = {}) => <CompanyTermsView {...params} />,
   },
   {
-    path: '/contact-sidebar-map',
+    path: '/contacts',
     renderer: (params = {}) => <ContactPageSidebarMapView {...params} />,
   },
   {

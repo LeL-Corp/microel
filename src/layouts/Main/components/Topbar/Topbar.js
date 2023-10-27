@@ -22,7 +22,6 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
 
   return (
     <Box
-      
       display={'flex'}
       justifyContent={'space-between'}
       alignItems={'center'}
@@ -87,7 +86,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           <Link
             underline="hover"
             color={mode === 'dark' ? 'white' : '#377DFF'}
-            href="/contact-sidebar-map"
+            href="/contacts"
           >
             Contatti
           </Link>

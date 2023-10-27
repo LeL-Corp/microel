@@ -108,7 +108,7 @@ const pages = {
     },
     {
       title: 'Contact: Map',
-      href: '/contact-sidebar-map',
+      href: '/contacts',
     },
     {
       title: 'Contact: Minimal',

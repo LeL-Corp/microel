@@ -12,7 +12,7 @@ const ContactPageSidebarMap = () => {
   return (
     <Main>
       <Form />
-      <Box position={'relative'} bgcolor={'alternate.main'}>
+      <Box position={'relative'}>
         <Container>
           <Contact />
         </Container>

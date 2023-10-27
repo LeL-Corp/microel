@@ -102,7 +102,15 @@ const Sectors = () => {
           {mock.map((item, i) => (
             <Grid item xs={4} key={i}>
               <Box display={'block'} width={1} height={1}>
-                <Card>
+                <Card
+                  sx={{
+                    transform: 'translateY(0)', 
+                    transition: 'transform 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-10px)',
+                    },
+                  }}
+                >
                   <CardContent
                     sx={{
                       display: 'flex',

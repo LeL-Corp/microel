@@ -13,17 +13,30 @@ const GetStarted = () => {
 
   return (
     <Box>
-      <Typography
-        variant="h4"
-        color="text.primary"
-        align={'center'}
-        gutterBottom
-        sx={{
-          fontWeight: 700,
+      <img
+        anchor="anchor"
+        style={{
+          opacity: '0.4',
+          filter: 'hue-rotate(122deg)',
+          maxWidth: '8%',
+          height: 'auto',
+          maxHeight: '150px',
         }}
-      >
-        Hai un'idea? Contattaci per una consulenza
-      </Typography>
+        src="https://res.cloudinary.com/dslne9y2j/image/upload/v1698184765/Assets/Homepage/pa6ro1vkeih0jehy5hqz.png"
+      ></img>
+      <div style={{ inset: 'unset', top: 'anchor(top)' }} id="anchor">
+        <Typography
+          variant="h4"
+          color="text.primary"
+          align={'center'}
+          gutterBottom
+          sx={{
+            fontWeight: 700,
+          }}
+        >
+          Hai un'idea? Contattaci per una consulenza
+        </Typography>
+      </div>
       {/* <Typography
         variant="h6"
         component="p"
@@ -31,7 +44,6 @@ const GetStarted = () => {
         sx={{ fontWeight: 400 }}
         align={'center'}
       >
-       
       </Typography> */}
       <Box
         display="flex"

@@ -244,7 +244,7 @@ const data = [
       },
       {
         title: 'Contact Sidebar Map',
-        href: '/contact-sidebar-map',
+        href: '/contacts',
         cover:
           'https://assets.maccarianagency.com/screenshots/the-front/img27.png',
         coverDark:

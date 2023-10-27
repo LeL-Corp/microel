@@ -7,11 +7,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
+import { Link } from '@mui/material';
 
 const mock = [
   {
     label: 'Phone',
-    value: '+39 659-657-0133',
+    value: 'tel:+390384 670602',
     icon: (
       <svg
         width={20}
@@ -26,7 +27,7 @@ const mock = [
   },
   {
     label: 'Email',
-    value: 'hi@maccarianagency.com',
+    value: 'mailto:email@gmail.com',
     icon: (
       <svg
         width={20}
@@ -66,21 +67,7 @@ const Contact = () => {
 
   return (
     <Box>
-      <Box marginBottom={2}>
-        <Typography
-          variant={'h4'}
-          sx={{ fontWeight: 700 }}
-          gutterBottom
-          align={'center'}
-        >
-          Contact details
-        </Typography>
-        <Typography color="text.secondary" align={'center'}>
-          Keep track of what's happening with your data, change permissions, and
-          run reports against your data anywhere in the world. Keep track of
-          what's happening with your data, change permissions.
-        </Typography>
-      </Box>
+      <Box marginBottom={2}></Box>
       <Box
         display={'flex'}
         flexDirection={{ xs: 'column', md: 'row' }}
@@ -102,14 +89,25 @@ const Contact = () => {
             >
               <Box
                 component={Avatar}
-                bgcolor={theme.palette.secondary.main}
+                bgcolor={theme.palette.primary.main}
                 width={40}
                 height={40}
               >
                 {item.icon}
               </Box>
             </Box>
-            <ListItemText primary={item.label} secondary={item.value} />
+            <ListItemText
+              primary={item.label}
+              secondary={
+                item.label !== 'Address' ? (
+                  <Link underline="hover" color="inherit" href={item.value}>
+                    <Typography variant={'p'}>{item.value}</Typography>
+                  </Link>
+                ) : (
+                  item.value
+                )
+              }
+            />
           </Box>
         ))}
       </Box>

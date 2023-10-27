@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
+
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Box from '@mui/material/Box';
@@ -30,10 +31,7 @@ const validationSchema = yup.object({
     .trim()
     .email('Please enter a valid email address')
     .required('Email is required.'),
-  message: yup
-    .string()
-    .trim()
-    .required('Please specify your message'),
+  message: yup.string().trim().required('Please specify your message'),
 });
 
 const Contact = () => {
@@ -61,12 +59,12 @@ const Contact = () => {
       <Box>
         <Box marginBottom={4}>
           <Typography variant={'h3'} sx={{ fontWeight: 700 }} gutterBottom>
-            Contact us
+            Contattaci
           </Typography>
           <Typography color="text.secondary">
-            Rather than worrying about switching offices every couple years, you
-            can instead stay in the same location and grow-up from your shared
-            coworking space to an office that takes up an entire floor.
+            Siamo a tua disposizione! <br></br>
+            Indicaci il tuo nome, cognome, la tua mail e il tuo messaggio, ti
+            risponderemo il prima possibile.
           </Typography>
         </Box>
         <Box>
@@ -75,7 +73,7 @@ const Contact = () => {
               <Grid item xs={12} sm={6}>
                 <TextField
                   sx={{ height: 54 }}
-                  label="First name"
+                  label="Nome"
                   variant="outlined"
                   color="primary"
                   size="medium"
@@ -94,7 +92,7 @@ const Contact = () => {
               <Grid item xs={12} sm={6}>
                 <TextField
                   sx={{ height: 54 }}
-                  label="Last name"
+                  label="Cognome"
                   variant="outlined"
                   color="primary"
                   size="medium"
@@ -126,7 +124,7 @@ const Contact = () => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  label="Message"
+                  label="Scrivi il tuo messaggio"
                   multiline
                   rows={6}
                   variant="outlined"
@@ -150,21 +148,17 @@ const Contact = () => {
                   size="medium"
                   type="submit"
                 >
-                  Submit
+                  Invia
                 </Button>
               </Grid>
-              <Grid item xs={12}>
-                <Typography color="text.secondary">
-                  We'll get back to you in 1-2 business days.
-                </Typography>
-              </Grid>
+
               <Grid item xs={12}>
                 <Divider />
               </Grid>
               <Grid item xs={12}>
                 <Box>
                   <Typography component="p" variant="body2" align="left">
-                    By clicking on "submit" you agree to our{' '}
+                    Cliccando "invia" sottoscrivi le nostre{' '}
                     <Box
                       component="a"
                       href=""
@@ -182,7 +176,7 @@ const Contact = () => {
                     >
                       Data Policy
                     </Box>{' '}
-                    and{' '}
+                    e{' '}
                     <Box
                       component="a"
                       href=""
@@ -212,13 +206,13 @@ const Contact = () => {
         marginHeight={0}
         marginWidth={0}
         scrolling="no"
-        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Milan&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Robbio&ie=UTF8&t=&z=14&iwloc=B&output=embed"
         style={{
           minHeight: 300,
-          filter:
-            theme.palette.mode === 'dark'
-              ? 'grayscale(0.5) opacity(0.7)'
-              : 'none',
+          // filter:
+          //   theme.palette.mode === 'dark'
+          //     ? 'grayscale(0.5) opacity(0.7)'
+          //     : 'none',
         }}
       />
     );
@@ -227,7 +221,6 @@ const Contact = () => {
   return (
     <Box
       sx={{
-        width: 1,
         height: 1,
         overflow: 'hidden',
       }}
@@ -244,7 +237,7 @@ const Contact = () => {
             width={1}
             order={{ xs: 2, md: 1 }}
           >
-            <Container>
+            <Container style={{ width: '88%' }}>
               <LeftSide />
             </Container>
           </Box>

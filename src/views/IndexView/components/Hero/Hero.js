@@ -105,6 +105,7 @@ const Hero = () => {
           height: '100%',
           objectFit: 'cover',
           opacity: 0.4,
+          filter: 'hue-rotate(-37deg)',
         }}
       />
       <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
