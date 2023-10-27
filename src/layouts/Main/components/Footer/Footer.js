@@ -48,23 +48,23 @@ const Footer = () => {
             <RowContainer>
               <Box
                 component={Avatar}
-                width={30}
-                height={30}
+                width={44}
+                height={44}
                 bgcolor={alpha(theme.palette.primary.main, 0.1)}
                 color={theme.palette.primary.main}
                 sx={{ cursor: 'pointer' }}
               >
-                <LinkedInIcon />
+                <LinkedInIcon fontSize='large' />
               </Box>
               <Box
                 component={Avatar}
-                width={30}
-                height={30}
+                width={44}
+                height={44}
                 bgcolor={alpha(theme.palette.primary.main, 0.1)}
                 color={theme.palette.primary.main}
                 sx={{ cursor: 'pointer' }}
               >
-                <YouTubeIcon />
+                <YouTubeIcon fontSize='large' />
               </Box>
             </RowContainer>
           </Box>

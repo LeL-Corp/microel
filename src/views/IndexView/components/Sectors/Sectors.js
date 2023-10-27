@@ -99,9 +99,9 @@ const Sectors = () => {
             </Box>
           </Box>
         </Grid>
-        <Grid item container spacing={2} xs={12} md={6}>
+        <Grid item container md={6} xs={12} spacing={2} >
           {mock.map((item, i) => (
-            <Grid item xs={4} key={i}>
+            <Grid item xs={6} sm={6} md={4} key={i}>
               <Box display={'block'} width={1} height={1}>
                 <Card
                   sx={{

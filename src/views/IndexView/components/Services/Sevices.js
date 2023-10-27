@@ -65,7 +65,7 @@ const Services = () => {
   const theme = useTheme();
   return (
     <Box>
-      <ColumnContainer style={{ gap: '5rem' }}>
+      <ColumnContainer style={{ gap: '1rem' }}>
         <Box marginBottom={4}>
           <Box marginBottom={2}>
             <Typography
