@@ -13,6 +13,7 @@ const mock = [
   {
     label: 'Phone',
     value: 'tel:+390384 670602',
+    valueLabel: "Tel. 0384 670602",
     icon: (
       <svg
         width={20}
@@ -27,7 +28,8 @@ const mock = [
   },
   {
     label: 'Email',
-    value: 'mailto:email@gmail.com',
+    value: 'mailto:info@microel.it',
+    valueLabel: "info@microel.it",
     icon: (
       <svg
         width={20}
@@ -42,8 +44,9 @@ const mock = [
     ),
   },
   {
-    label: 'Address',
-    value: 'Via Venini 33, 20147',
+    label: 'Indirizzo',
+    value: 'Via Mortara 192/194 ROBBIO (PV)',
+    valueLabel: "Via Mortara 192/194 ROBBIO (PV)",
     icon: (
       <svg
         width={20}
@@ -99,12 +102,12 @@ const Contact = () => {
             <ListItemText
               primary={item.label}
               secondary={
-                item.label !== 'Address' ? (
+                item.label !== 'Indirizzo' ? (
                   <Link underline="hover" color="inherit" href={item.value}>
-                    <Typography variant={'p'}>{item.value}</Typography>
+                    <Typography variant={'p'}>{item.valueLabel}</Typography>
                   </Link>
                 ) : (
-                  item.value
+                  item.valueLabel
                 )
               }
             />

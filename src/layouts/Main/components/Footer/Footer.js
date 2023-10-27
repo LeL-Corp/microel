@@ -1,10 +1,15 @@
 import React from 'react';
+import { alpha, useTheme } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
+
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/material/styles';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import RowContainer from 'components/RowContainer';
+import Avatar from '@mui/material/Avatar';
 
 const Footer = () => {
   const theme = useTheme();
@@ -18,14 +23,15 @@ const Footer = () => {
           justifyContent={'space-between'}
           alignItems={'center'}
           width={1}
-          flexDirection={{ xs: 'column', sm: 'row' }}
+          flexDirection={'row'}
         >
           <Box
             display={'flex'}
             component="a"
             href="/"
-            title="theFront"
+            title="Microel srl"
             width={200}
+            margin={'0'}
           >
             <Box
               component={'img'}
@@ -39,65 +45,137 @@ const Footer = () => {
             />
           </Box>
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
-            <Box marginTop={1} marginRight={2}>
-              <Link
-                underline="none"
-                component="a"
-                href="/"
-                color="text.primary"
-                variant={'subtitle2'}
+            <RowContainer>
+              <Box
+                component={Avatar}
+                width={30}
+                height={30}
+                bgcolor={alpha(theme.palette.primary.main, 0.1)}
+                color={theme.palette.primary.main}
+                sx={{ cursor: 'pointer' }}
               >
-                Home
-              </Link>
-            </Box>
-            <Box marginTop={1} marginRight={2}>
-              <Link
-                underline="none"
-                component="a"
-                href="https://thefront.maccarianagency.com/docs/introduction"
-                target={'blank'}
-                color="text.primary"
-                variant={'subtitle2'}
+                <LinkedInIcon />
+              </Box>
+              <Box
+                component={Avatar}
+                width={30}
+                height={30}
+                bgcolor={alpha(theme.palette.primary.main, 0.1)}
+                color={theme.palette.primary.main}
+                sx={{ cursor: 'pointer' }}
               >
-                Documentation
-              </Link>
-            </Box>
-            <Box marginTop={1}>
-              <Button
-                variant="outlined"
-                color="primary"
-                component="a"
-                target="blank"
-                href="https://mui.com/store/items/the-front-landing-page/"
-                size="small"
-              >
-                Purchase now
-              </Button>
-            </Box>
+                <YouTubeIcon />
+              </Box>
+            </RowContainer>
           </Box>
         </Box>
       </Grid>
-      <Grid item xs={12}>
+      <Box
+        display={'flex'}
+        justifyContent={'flex-start'}
+        alignItems={'center'}
+        width={1}
+        padding={'20px'}
+        paddingBottom={'0'}
+        gap={'12px'}
+      >
+        <Typography
+          align={'left'}
+          variant={'subtitle2'}
+          component={'address'}
+          sx={{ fontStyle: 'normal' }}
+          color="text.secondary"
+        >
+          Microel srl
+          <br></br>
+          Via Mortara 192/194
+          <br></br>
+          27038 ROBBIO (PV)
+          <br></br>
+          <a
+            style={{ color: '#AEB0B4', textDecoration: 'none' }}
+            href={'tel:+390384 670602'}
+          >
+            <Typography variant={'p'}>Tel: 0384 670602</Typography>
+          </a>
+        </Typography>
+      </Box>
+      <Box
+        display={'flex'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        width={1}
+        flexDirection={'row'}
+        flexWrap={'wrap'}
+        padding={'20px'}
+        paddingTop={"30px"}
+        gap={'12px'}
+      >
+        <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+          <Typography
+            color={'primary.main'}
+            fontSize={'14px'}
+            variant={'h6'}
+            component={Link}
+            to="/"
+          >
+            Soluzioni
+          </Typography>
+        </Box>
+
+        <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+          <Typography
+            color={'primary.main'}
+            fontSize={'14px'}
+            variant={'h6'}
+            component={Link}
+            to="/"
+          >
+            Chi siamo
+          </Typography>
+        </Box>
+
+        <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+          <Typography
+            color={'primary.main'}
+            fontSize={'14px'}
+            variant={'h6'}
+            component={Link}
+            to="/"
+          >
+            Case History
+          </Typography>
+        </Box>
+
+        <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+          <Typography
+            color={'primary.main'}
+            fontSize={'14px'}
+            variant={'h6'}
+            component={Link}
+            to="/contacts"
+          >
+            Contatti
+          </Typography>
+        </Box>
+      </Box>
+      <Box
+        display="flex"
+        flexDirection={'column'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        width={'100%'}
+      >
         <Typography
           align={'center'}
           variant={'subtitle2'}
           color="text.secondary"
           gutterBottom
+          paddingTop={'0'}
         >
-          &copy; theFront. 2021, Maccarian. All rights reserved
+          &copy; Microel srl, 2023. All rights reserved
         </Typography>
-        <Typography
-          align={'center'}
-          variant={'caption'}
-          color="text.secondary"
-          component={'p'}
-        >
-          When you visit or interact with our sites, services or tools, we or
-          our authorised service providers may use cookies for storing
-          information to help provide you with a better, faster and safer
-          experience and for marketing purposes.
-        </Typography>
-      </Grid>
+      </Box>
     </Grid>
   );
 };

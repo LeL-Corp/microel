@@ -46,10 +46,10 @@ export const dark = {
   primary: {
     // main: '#1976d2',
     // main: '#5DB499',
-    main: '#25b0a2',
+    main: '#25b0a2', //verde chiaro
     light: '#2196f3',
     // dark: '#0d47a1',  // hover
-    dark: '#516894',
+    dark: '#516894', //indaco
     contrastText: '#fff',
   },
   secondary: {

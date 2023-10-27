@@ -55,6 +55,7 @@ const Sectors = () => {
         <Grid item container xs={12} md={6} alignItems={'center'}>
           <Box>
             <Typography
+            variant="h5"
               sx={{
                 textTransform: 'uppercase',
                 fontWeight: 'medium',
@@ -64,7 +65,7 @@ const Sectors = () => {
             >
               Ricerca e sviluppo costanti
             </Typography>
-            <Typography variant="h4" gutterBottom sx={{ fontWeight: 700 }}>
+            <Typography variant="p" gutterBottom sx={{ fontWeight: 700 }}>
               I settori in cui operiamo
             </Typography>
             <Typography variant="h6" component="p" color="text.secondary">

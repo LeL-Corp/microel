@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 
 import NavItem from './components/NavItem';
+import { Link } from '@mui/material';
 
 const SidebarNav = ({ pages }) => {
   const theme = useTheme();
@@ -27,64 +28,62 @@ const SidebarNav = ({ pages }) => {
           display={'flex'}
           component="a"
           href="/"
-          title="theFront"
-          width={{ xs: 100, md: 120 }}
+          title="Microel"
+          width={{ xs: 200, md: 220 }}
         >
           <Box
             component={'img'}
             src={
               mode === 'light'
-                ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-                : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
+                ? 'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
+                : 'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
             }
             height={1}
             width={1}
           />
         </Box>
       </Box>
-      <Box paddingX={2} paddingY={2}>
-        <Box>
-          <NavItem title={'Landings'} items={landingPages} />
+      <Box padding={'30px'} paddingLeft={"20px"} flexDirection={'column'} gap={'16px'}>
+        <Box paddingBottom={'20px'}>
+          <Link
+            underline="hover"
+            color={"#fff"}
+            href="/"
+          >
+            Chi siamo
+          </Link>
         </Box>
-        <Box>
-          <NavItem title={'Company'} items={companyPages} />
+        <Box paddingBottom={'20px'}>
+          <Link
+            underline="hover"
+            color={"#fff"}
+            href="/"
+          >
+            Soluzioni
+          </Link>
         </Box>
-        <Box>
-          <NavItem title={'Pages'} items={secondaryPages} />
+        <Box paddingBottom={'20px'}>
+          <Link
+            underline="hover"
+            color={"#fff"}
+            href="/"
+          >
+            Case History
+          </Link>
         </Box>
-        <Box>
-          <NavItem title={'Account'} items={accountPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Blog'} items={blogPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Portfolio'} items={portfolioPages} />
-        </Box>
+
         <Box marginTop={2}>
           <Button
             size={'large'}
             variant="outlined"
+            color={"primary"}
             fullWidth
-            component="a"
-            href="https://thefront.maccarianagency.com/docs/introduction"
-            target={'blank'}
+            component={Link}
+            href="/contacts"
           >
-            Documentation
+            Contatti
           </Button>
-        </Box>
-        <Box marginTop={1}>
-          <Button
-            size={'large'}
-            variant="contained"
-            color="primary"
-            fullWidth
-            component="a"
-            target="blank"
-            href="https://mui.com/store/items/the-front-landing-page/"
-          >
-            Purchase now
-          </Button>
+         
         </Box>
       </Box>
     </Box>

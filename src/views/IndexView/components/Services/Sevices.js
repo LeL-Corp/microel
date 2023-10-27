@@ -9,12 +9,6 @@ import ArchitectureIcon from '@mui/icons-material/Architecture';
 import PolylineIcon from '@mui/icons-material/Polyline';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import { VerticalMinimalDesignedBlogCards } from 'blocks/blog';
-import industry from '../../../../industry.jpg';
-import aero from '../../../../aero.jpeg';
-import packaging from '../../../../pack.jpg';
-import micro from '../../../../micro.jpg';
-import mech from '../../../../mechanic.jpg';
-import test from '../../../../test.jpg';
 import ColumnContainer from 'components/ColumnContainer';
 import Container from 'components/Container';
 
@@ -40,19 +34,22 @@ const mock = [
 ];
 const cards = [
   {
-    image: micro,
+    image:
+      'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410282/Assets/Homepage/uyjrbuat9euvtq4epuhz.jpg',
     description:
       'Servizi di progettazione e sbroglio di circuiti stampati. Sviluppiamo rapidamente i prototipi mediante la tecnica della microfresatura.',
     title: 'PCB Design',
   },
   {
-    image: mech,
+    image:
+      'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410290/Assets/Homepage/azrjakab6byjv8vhxitd.jpg',
     description:
       'La linea di montaggio SMD è composta da un telaio serigrafico automatico, pick & place da 15000 componenti/ora e forno a rifusione a 8 zone',
     title: 'Assemblaggio e saldatura schede elettroniche',
   },
   {
-    image: test,
+    image:
+      'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410299/Assets/Homepage/vyj1sipbfeyo8twaxh6k.jpg',
     description:
       'Camera climatica per prove ambientali e camera prove EMC per i testi di compatibilità elettromagnetica ',
     title: 'Test di compatibilità',
@@ -72,12 +69,13 @@ const Services = () => {
         <Box marginBottom={4}>
           <Box marginBottom={2}>
             <Typography
-              variant="h4"
+              variant="h3"
               color="text.primary"
               align={'center'}
               gutterBottom
               sx={{
                 fontWeight: 700,
+                fontSize: '32px',
               }}
             >
               Elettronica dedicata per esigenze specifiche.
@@ -115,9 +113,9 @@ const Services = () => {
                     {item.icon}
                   </Box>
                   <Typography
-                    variant={'h6'}
+                    variant={'h3'}
                     gutterBottom
-                    sx={{ fontWeight: 500 }}
+                    sx={{ fontWeight: 500, fontSize: '18px !important' }}
                     align={'center'}
                   >
                     {item.title}

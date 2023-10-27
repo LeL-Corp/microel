@@ -14,6 +14,24 @@ const getTheme = (mode, themeToggler) =>
           textTransform: 'none',
           fontWeight: 'medium',
         },
+        h1: {
+          fontSize: '36px',
+        },
+        h2: {
+          fontSize: '24px',
+        },
+        h3: {
+          fontSize: '32px',
+        },
+        h4: {
+          fontSize: '16px',
+        },
+        h5: {
+          fontSize: '16px',
+        },
+        h6: {
+          fontSize: '16px',
+        },
       },
       zIndex: {
         appBar: 1200,

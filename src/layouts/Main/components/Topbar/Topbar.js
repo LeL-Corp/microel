@@ -42,7 +42,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
               : 'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
           }
           height={1}
-          width={0.8}
+          width={1}
         />
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>

@@ -84,7 +84,7 @@ const VerticalMinimalDesignedBlogCards = ({ data }) => {
                   }}
                 />
                 <Box component={CardContent} position={'relative'}>
-                  <Typography variant={'h6'} gutterBottom>
+                  <Typography variant={'h4'} gutterBottom>
                     {item.title}
                   </Typography>
                   <Typography color="text.secondary">

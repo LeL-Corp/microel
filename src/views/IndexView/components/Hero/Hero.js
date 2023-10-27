@@ -4,8 +4,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
-import bkg from '../../../../circuit.jpg';
-import bkg2 from '../../../../bkg2.jpg';
 
 import Container from 'components/Container';
 
@@ -96,7 +94,7 @@ const Hero = () => {
       }}
     >
       <img
-        src={bkg2}
+        src={"https://res.cloudinary.com/dslne9y2j/image/upload/v1698410231/Assets/Homepage/tkd5azizmnc7x1nnqd7d.jpg"}
         style={{
           position: 'absolute',
           top: 0,
@@ -119,7 +117,7 @@ const Hero = () => {
             }}
           >
             <Typography
-              variant="h3"
+              variant="h1"
               color="text.primary"
               gutterBottom
               sx={{
@@ -129,8 +127,8 @@ const Hero = () => {
               Esperti in soluzioni di ingegneria elettronica.
             </Typography>
             <Typography
-              variant="h5"
-              component="p"
+              variant="h2"
+             
               color="text.secondary"
               sx={{ fontWeight: 400 }}
             >
@@ -227,7 +225,7 @@ const Hero = () => {
         sx={{
           width: '100%',
           marginBottom: theme.spacing(-1),
-          zIndex: 2000,
+          zIndex: 1000,
           position: 'relative',
         }}
       >

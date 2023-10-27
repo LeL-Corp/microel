@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 
 const GetStarted = () => {
   const theme = useTheme();
@@ -26,12 +27,13 @@ const GetStarted = () => {
       ></img>
       <div style={{ inset: 'unset', top: 'anchor(top)' }} id="anchor">
         <Typography
-          variant="h4"
+          variant="h5"
           color="text.primary"
           align={'center'}
           gutterBottom
           sx={{
             fontWeight: 700,
+            fontSize: "22px"
           }}
         >
           Hai un'idea? Contattaci per una consulenza
@@ -53,12 +55,13 @@ const GetStarted = () => {
         marginTop={4}
       >
         <Button
-          component={'a'}
+          component={Link}
+          to={'/contacts'}
           variant="contained"
           color="primary"
           size="large"
           fullWidth={isMd ? false : true}
-          href={'/home'}
+         
         >
           Contattaci
         </Button>
@@ -68,8 +71,8 @@ const GetStarted = () => {
           width={{ xs: '100%', md: 'auto' }}
         >
           <Button
-            component={'a'}
-            href={'https://thefront.maccarianagency.com/docs/introduction'}
+            component={Link}
+            to={'/contacts'}
             target={'blank'}
             variant="outlined"
             color="primary"
