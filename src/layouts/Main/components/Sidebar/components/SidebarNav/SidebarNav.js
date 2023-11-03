@@ -68,7 +68,7 @@ const SidebarNav = ({ pages }) => {
             color={"#fff"}
             href="/"
           >
-            Case History
+            Roadmap
           </Link>
         </Box>
 

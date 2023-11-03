@@ -69,6 +69,7 @@ export const dark = {
     // paper: "#002626", // prova 1
     // default: "#002626",
     paper: '#06262b',
+    //paper: "#0e5965",
     default: '#06262b',
 
     level2: '#333',

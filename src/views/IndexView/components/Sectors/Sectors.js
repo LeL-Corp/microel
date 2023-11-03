@@ -55,7 +55,7 @@ const Sectors = () => {
         <Grid item container xs={12} md={6} alignItems={'center'}>
           <Box>
             <Typography
-            variant="h5"
+              variant="h5"
               sx={{
                 textTransform: 'uppercase',
                 fontWeight: 'medium',
@@ -94,18 +94,18 @@ const Sectors = () => {
                   </Box>
                 }
               >
-                Case histories
+                Roadmap
               </Button>
             </Box>
           </Box>
         </Grid>
-        <Grid item container md={6} xs={12} spacing={2} >
+        <Grid item container md={6} xs={12} spacing={2}>
           {mock.map((item, i) => (
             <Grid item xs={6} sm={6} md={4} key={i}>
               <Box display={'block'} width={1} height={1}>
                 <Card
                   sx={{
-                    transform: 'translateY(0)', 
+                    transform: 'translateY(0)',
                     transition: 'transform 0.3s ease',
                     '&:hover': {
                       transform: 'translateY(-10px)',

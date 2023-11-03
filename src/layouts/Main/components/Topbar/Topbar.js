@@ -79,7 +79,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
             color={mode === 'dark' ? 'white' : '#377DFF'}
             href="/customers"
           >
-            Case History
+            Roadmap
           </Link>
         </Box>
         <Box marginLeft={4}>

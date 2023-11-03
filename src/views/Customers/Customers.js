@@ -10,8 +10,8 @@ const Customers = () => {
   const theme = useTheme();
   return (
     <Main>
-      <Box>
-        <Box
+      {/* <Box> */}
+      {/* <Box
           position={'relative'}
           sx={{
             backgroundColor: theme.palette.alternate.main,
@@ -19,8 +19,8 @@ const Customers = () => {
             marginTop: -13,
             paddingTop: 13,
           }}
-        >
-          <Container zIndex={3} position={'relative'}>
+        > */}
+      {/* <Container zIndex={3} position={'relative'}>
             <Container marginLeft={'0 !important'}>
               <Headline />
             </Container>
@@ -43,11 +43,11 @@ const Customers = () => {
             ></path>
           </Box>
         </Box>
-        <Box position={'relative'} zIndex={3} marginTop={{ xs: 0, md: -22 }}>
-          <Container>
-            <Partners />
-          </Container>
-        </Box>
+        <Box position={'relative'} zIndex={3} marginTop={{ xs: 0, md: -22 }}> */}
+      <Container>
+        <Partners />
+      </Container>
+      {/* </Box>
         <Container>
           <Stories />
         </Container>
@@ -56,7 +56,7 @@ const Customers = () => {
             <Contact />
           </Container>
         </Box>
-      </Box>
+      </Box> */}
     </Main>
   );
 };
