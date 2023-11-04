@@ -49,7 +49,7 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
         position={'sticky'}
         sx={{
           top: 0,
-          backgroundColor: trigger ? theme.palette.background.paper : bgcolor,
+          backgroundColor: "#fff",
         }}
         elevation={trigger ? 1 : 0}
       >

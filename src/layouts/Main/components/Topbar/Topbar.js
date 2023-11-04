@@ -49,7 +49,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         <Box>
           <Link
             underline="hover"
-            color={mode === 'dark' ? 'white' : '#377DFF'}
+            color={"text.header"}
             href="/"
           >
             Home
@@ -58,16 +58,16 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         <Box marginLeft={4}>
           <Link
             underline="hover"
-            color={mode === 'dark' ? 'white' : '#377DFF'}
+            color={"text.header"}
             href="/about"
           >
-            About Us
+            Chi siamo
           </Link>
         </Box>
         <Box marginLeft={4}>
           <Link
             underline="hover"
-            color={mode === 'dark' ? 'white' : '#377DFF'}
+            color={"text.header"}
             href="/Soluzioni"
           >
             Settori
@@ -76,7 +76,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         <Box marginLeft={4}>
           <Link
             underline="hover"
-            color={mode === 'dark' ? 'white' : '#377DFF'}
+            color={"text.header"}
             href="/customers"
           >
             Roadmap
@@ -85,7 +85,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         <Box marginLeft={4}>
           <Link
             underline="hover"
-            color={mode === 'dark' ? 'white' : '#377DFF'}
+            color={"text.header"}
             href="/contacts"
           >
             Contatti
