@@ -70,7 +70,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
             color={mode === 'dark' ? 'white' : '#377DFF'}
             href="/Soluzioni"
           >
-            Soluzioni
+            Settori
           </Link>
         </Box>
         <Box marginLeft={4}>

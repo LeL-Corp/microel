@@ -119,7 +119,7 @@ const Footer = () => {
             component={Link}
             to="/"
           >
-            Soluzioni
+            Settori
           </Typography>
         </Box>
 
