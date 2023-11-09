@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Main from 'layouts/Main';
 import Container from 'components/Container';
 import { Contact, Headline, Partners, Stories } from './components';
+import { Hero } from 'views/IndexView/components';
 
 const Customers = () => {
   const theme = useTheme();
@@ -44,9 +45,12 @@ const Customers = () => {
           </Box>
         </Box>
         <Box position={'relative'} zIndex={3} marginTop={{ xs: 0, md: -22 }}> */}
+   
       <Container>
+    
         <Partners />
       </Container>
+      <Hero />
       {/* </Box>
         <Container>
           <Stories />

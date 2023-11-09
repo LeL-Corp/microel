@@ -8,10 +8,12 @@ const StyledContainer = styled('div')(
     start,
 
     align,
+    padding,
 
     relative,
   }) => ({
     display: 'flex',
+    padding: padding ?? 0,
     gap: '1rem',
     justifyContent: `${
       noJustify
