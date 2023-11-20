@@ -19,6 +19,9 @@ const getTheme = (mode, themeToggler) =>
         },
         h2: {
           fontSize: '24px',
+          '@media (max-width: 600px)': {
+            fontSize: '18px',
+          },
         },
         h3: {
           fontSize: '32px',

@@ -22,7 +22,7 @@ export const light = {
   text: {
     primary: '#1e2022',
     secondary: '#677788',
-    header:  '#06262b' 
+    header: '#06262b',
   },
   divider: 'rgba(0, 0, 0, 0.12)',
   background: {
@@ -55,14 +55,14 @@ export const dark = {
   },
   secondary: {
     light: '#FFEA41',
-    main: '#FFE102',
+    main: '#567abe',
     dark: '#DBBE01',
     contrastText: 'rgba(0, 0, 0, 0.87)',
   },
   text: {
     primary: '#EEEEEF',
     secondary: '#AEB0B4',
-    header:  '#06262b' 
+    header: '#06262b',
   },
   divider: 'rgba(255, 255, 255, 0.12)',
   background: {
@@ -70,10 +70,11 @@ export const dark = {
     // default: '#222B45',
     // paper: "#002626", // prova 1
     // default: "#002626",
-    paper: '#06262b',
-    //paper: "#0e5965",
-    default: '#06262b',
-
+    paper: '#06262b', // verde molto scuro
+   
+    default: '#06262b', // verde molto scuro
+    // default: '#0e5763',
+    // paper: '#0e5763',
     level2: '#333',
     level1: '#2D3748',
   },

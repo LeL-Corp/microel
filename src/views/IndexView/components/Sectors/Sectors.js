@@ -16,6 +16,9 @@ import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 import FlightIcon from '@mui/icons-material/Flight';
 
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
+
 export const mock = [
   {
     logo: (
@@ -49,108 +52,127 @@ export const mock = [
 ];
 
 const Sectors = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true });
   return (
-    <Container>
-      <Grid container spacing={4}>
-        <Grid item container xs={12} md={6} alignItems={'center'}>
-          <Box>
-            <Typography
-              variant="h5"
-              sx={{
-                textTransform: 'uppercase',
-                fontWeight: 'medium',
-              }}
-              gutterBottom
-              color={'primary'}
-            >
-              Ricerca e sviluppo costanti
-            </Typography>
-            <Typography variant="p" gutterBottom sx={{ fontWeight: 700 }}>
-              I settori in cui operiamo
-            </Typography>
-            <Typography variant="h6" component="p" color="text.secondary">
-              Il nostro team ha sviluppato un ampio know-how collaborando con
-              aziende di ogni dimensione e ambito di operatività: domotica,
-            </Typography>
-            <Box marginTop={2}>
-              <Button
-                size={'large'}
-                endIcon={
-                  <Box
-                    component={'svg'}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    width={24}
-                    height={24}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </Box>
-                }
+    <div ref={ref}>
+      <Container>
+        <Grid container spacing={4}>
+          <Grid item container xs={12} md={6} alignItems={'center'}>
+            <Box>
+              <div
+                style={{
+                  transform: isInView ? 'none' : 'translateX(-150px)',
+                  opacity: isInView ? 1 : 0,
+                  transition: 'all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                }}
               >
-                Roadmap
-              </Button>
-            </Box>
-          </Box>
-        </Grid>
-        <Grid item container md={6} xs={12} spacing={2}>
-          {mock.map((item, i) => (
-            <Grid item xs={6} sm={6} md={4} key={i}>
-              <Box display={'block'} width={1} height={1}>
-                <Card
+                <Typography
+                  variant="h5"
                   sx={{
-                    transform: 'translateY(0)',
-                    transition: 'transform 0.3s ease',
-                    '&:hover': {
-                      transform: 'translateY(-10px)',
-                    },
+                    textTransform: 'uppercase',
+                    fontWeight: 'bold',
+                    fontSize: '32px',
                   }}
+                  gutterBottom
+                  color={'secondary'}
                 >
-                  <CardContent
+                  Ricerca e sviluppo costanti
+                </Typography>
+                <Typography variant="p" gutterBottom sx={{ fontWeight: 700 }}>
+                  I settori in cui operiamo
+                </Typography>
+                <Typography variant="h6" component="p" color="text.secondary">
+                  Il nostro team ha sviluppato un ampio know-how collaborando
+                  con aziende di ogni dimensione e ambito di operatività:
+                  domotica,
+                </Typography>
+                <Box marginTop={2}>
+                  <Button
+                    size={'large'}
+                    variant={'outlined'}
+                    endIcon={
+                      <Box
+                        component={'svg'}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        width={24}
+                        height={24}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </Box>
+                    }
+                  >
+                    Roadmap
+                  </Button>
+                </Box>
+              </div>
+            </Box>
+          </Grid>
+          <Grid item container md={6} xs={12} spacing={2}>
+            {mock.map((item, i) => (
+              <Grid item xs={6} sm={6} md={4} key={i}>
+                <Box display={'block'} width={1} height={1}>
+                  <Card
                     sx={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      padding: 3,
+                      transform: 'translateY(0)',
+                      transition: 'transform 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-20px)',
+                        boxShadow: 'inset 0px 0px 56px 8px rgba(81, 104, 148)',
+                      },
                     }}
                   >
-                    <Box
+                    <CardContent
                       sx={{
                         display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
                         justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: 3,
                       }}
-                      component={'div'}
-                      height={100}
-                      width={100}
-                      alt={item.name}
                     >
-                      <ColumnContainer alignItems="center" style={{ gap: 10 }}>
-                        {item.logo}
-                        <Typography
-                          component="p"
-                          align="center"
-                          sx={{ fontSize: 12 }}
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                        component={'div'}
+                        height={100}
+                        width={100}
+                        alt={item.name}
+                      >
+                        <ColumnContainer
+                          alignItems="center"
+                          style={{ gap: 10 }}
                         >
-                          {item.name}
-                        </Typography>
-                      </ColumnContainer>
-                    </Box>
-                  </CardContent>
-                </Card>
-              </Box>
-            </Grid>
-          ))}
+                          {item.logo}
+                          <Typography
+                            component="p"
+                            align="center"
+                            sx={{ fontSize: 12 }}
+                          >
+                            {item.name}
+                          </Typography>
+                        </ColumnContainer>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

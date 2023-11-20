@@ -116,7 +116,7 @@ const Agency = () => {
           )}
         />
         <Container>
-          <Goby />
+          <div>parallax here</div>
         </Container>
       </Box>
       <Box

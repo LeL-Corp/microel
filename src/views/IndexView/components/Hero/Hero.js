@@ -4,6 +4,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 import Container from 'components/Container';
 
@@ -81,6 +83,8 @@ const Hero = () => {
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
 
   return (
     <Box
@@ -94,7 +98,9 @@ const Hero = () => {
       }}
     >
       <img
-        src={"https://res.cloudinary.com/dslne9y2j/image/upload/v1698410231/Assets/Homepage/tkd5azizmnc7x1nnqd7d.jpg"}
+        src={
+          'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410231/Assets/Homepage/tkd5azizmnc7x1nnqd7d.jpg'
+        }
         style={{
           position: 'absolute',
           top: 0,
@@ -107,72 +113,71 @@ const Hero = () => {
         }}
       />
       <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
-        <Container>
-          <Box
-            maxWidth={{
-              xs: 1,
-              sm: '60%',
-              zIndex: 1000,
-              position: 'relative',
-            }}
-          >
-            <Typography
-              variant="h1"
-              color="text.primary"
-              gutterBottom
-              sx={{
-                fontWeight: 700,
+        <div
+          ref={ref}
+          style={{
+            transform: isInView ? 'none' : 'translateY(50px)',
+            opacity: isInView ? 1 : 0,
+            transition: `all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s`,
+          }}
+        >
+          <Container>
+            <Box
+              maxWidth={{
+                xs: 1,
+                sm: '60%',
+                zIndex: 1000,
+                position: 'relative',
               }}
             >
-              Esperti in soluzioni di ingegneria elettronica.
-            </Typography>
-            <Typography
-              variant="h2"
-             
-              color="text.secondary"
-              sx={{ fontWeight: 400 }}
-            >
-              Progettazione e produzione schede ed apparecchiature elettroniche
-              per l'automazione.
-            </Typography>
-            <Box
-              display="flex"
-              flexDirection={{ xs: 'column', sm: 'row' }}
-              alignItems={{ xs: 'stretched', sm: 'flex-start' }}
-              marginTop={4}
-            >
-              <Button
-                component={'a'}
-                variant="contained"
-                color="primary"
-                size="large"
-                fullWidth={isMd ? false : true}
-                href={'/home'}
+              <Typography
+                variant="h1"
+                color="text.primary"
+                gutterBottom
+                sx={{
+                  fontWeight: 700,
+                }}
               >
-                Scopri
-              </Button>
+                Esperti in soluzioni di ingegneria elettronica.
+              </Typography>
+              <Typography>
+                Progettazione e produzione schede ed apparecchiature
+                elettroniche per l'automazione.
+              </Typography>
               <Box
-                marginTop={{ xs: 2, sm: 0 }}
-                marginLeft={{ sm: 2 }}
-                width={{ xs: '100%', md: 'auto' }}
+                display="flex"
+                flexDirection={{ xs: 'column', sm: 'row' }}
+                alignItems={{ xs: 'stretched', sm: 'flex-start' }}
+                marginTop={4}
               >
                 <Button
                   component={'a'}
-                  href={
-                    'https://thefront.maccarianagency.com/docs/introduction'
-                  }
-                  target={'blank'}
-                  variant="outlined"
+                  variant="contained"
                   color="primary"
                   size="large"
                   fullWidth={isMd ? false : true}
+                  href={'/home'}
                 >
-                  Contattaci
+                  Scopri
                 </Button>
+                <Box
+                  marginTop={{ xs: 2, sm: 0 }}
+                  marginLeft={{ sm: 2 }}
+                  width={{ xs: '100%', md: 'auto' }}
+                >
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    size="large"
+                    fullWidth={isMd ? false : true}
+                  >
+                    Contattaci
+                  </Button>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        </Container>
+          </Container>
+        </div>
         <Box
           sx={{
             transform: 'rotate(-20deg)',

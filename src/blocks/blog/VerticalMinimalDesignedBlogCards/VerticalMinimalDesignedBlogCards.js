@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
 import Card from '@mui/material/Card';
@@ -11,88 +12,74 @@ import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 
 import Container from 'components/Container';
+import { MotionConfig } from 'framer-motion';
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
-const mock = [
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img2.jpg',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    title: 'Lorem ipsum dolor sit amet,',
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img4.jpg',
-    },
-    date: '04 Aug',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img3.jpg',
-    description: 'Excepteur sint occaecat cupidatat non proident',
-    title: 'Consectetur adipiscing elit',
-    author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img5.jpg',
-    },
-    date: '12 Sep',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img4.jpg',
-    description: 'Eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    title: 'Labore et dolore magna aliqua',
-    author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
-    },
-    date: '22 Nov',
-  },
-];
+
 
 const VerticalMinimalDesignedBlogCards = ({ data }) => {
   const theme = useTheme();
+  const ref= useRef();
+  const isInView = useInView(ref, { once: false });
   return (
     <Container>
+      <div ref={ref}>
       <Grid container spacing={4}>
         {data.map((item, i) => (
           <Grid item xs={12} md={4} key={i}>
-            <Box
-              component={'a'}
-              href={''}
-              display={'block'}
-              width={1}
-              height={1}
-              sx={{
-                textDecoration: 'none',
-                transition: 'all .2s ease-in-out',
-                '&:hover': {
-                  transform: `translateY(-10px)`,
-                },
+            <div
+              style={{
+                transform: isInView ? "none" : "translateY(100px)",
+                opacity: isInView ? 1 : 0,
+                transition: `all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) ${0.5 + i * 0.2}s`,
               }}
             >
               <Box
-                component={Card}
+                component={'a'}
+                href={''}
+                display={'block'}
                 width={1}
                 height={1}
-                boxShadow={4}
-                display={'flex'}
-                flexDirection={'column'}
-                sx={{ backgroundImage: 'none' }}
+                sx={{
+                  textDecoration: 'none',
+                  transition: 'all .2s ease-in-out',
+                  '&:hover': {
+                    transform: `translateY(-10px)`,
+                  },
+                }}
               >
-                <CardMedia
-                  image={item.image}
-                  title={item.title}
-                  sx={{
-                    height: { xs: 200, md: 260 },
-                    position: 'relative',
-                  }}
-                />
-                <Box component={CardContent} position={'relative'}>
-                  <Typography variant={'h4'} gutterBottom>
-                    {item.title}
-                  </Typography>
-                  <Typography color="text.secondary">
-                    {item.description}
-                  </Typography>
-                </Box>
-                <Box flexGrow={1} />
-                {/* <Box padding={2} display={'flex'} flexDirection={'column'}>
+                <Box
+                  component={Card}
+                  width={1}
+                  height={1}
+                  boxShadow={6}
+                  display={'flex'}
+                  flexDirection={'column'}
+                  sx={{ backgroundImage: 'none',
+                  transition: 'all .2s ease-in-out',
+                  '&:hover': {
+                    boxShadow: `0px 10px 13px -7px rgba(37, 176, 162)`,
+                  }, }}
+                >
+                  <CardMedia
+                    image={item.image}
+                    title={item.title}
+                    sx={{
+                      height: { xs: 200, md: 260 },
+                      position: 'relative',
+                    }}
+                  />
+                  <Box component={CardContent} position={'relative'}>
+                    <Typography variant={'h4'} gutterBottom>
+                      {item.title}
+                    </Typography>
+                    <Typography color="text.secondary">
+                      {item.description}
+                    </Typography>
+                  </Box>
+                  <Box flexGrow={1} />
+                  {/* <Box padding={2} display={'flex'} flexDirection={'column'}>
                   <Box marginBottom={2}>
                     <Divider />
                   </Box>
@@ -115,8 +102,9 @@ const VerticalMinimalDesignedBlogCards = ({ data }) => {
                     </Typography>
                   </Box>
                 </Box> */}
+                </Box>
               </Box>
-            </Box>
+            </div>
           </Grid>
         ))}
         <Grid item container justifyContent={'center'} xs={12}>
@@ -148,6 +136,7 @@ const VerticalMinimalDesignedBlogCards = ({ data }) => {
           </Button>
         </Grid>
       </Grid>
+      </div>
     </Container>
   );
 };
