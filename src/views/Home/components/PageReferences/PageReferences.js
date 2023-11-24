@@ -133,8 +133,8 @@ const data = [
           'https://assets.maccarianagency.com/screenshots/the-front/img13--dark.png',
       },
       {
-        title: 'Agency',
-        href: '/agency',
+        title: 'Settori',
+        href: '/settori',
         cover:
           'https://assets.maccarianagency.com/screenshots/the-front/img14.png',
         coverDark:

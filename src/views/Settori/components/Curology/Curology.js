@@ -4,9 +4,9 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-const Trek = () => {
+const Curology = () => {
   const theme = useTheme();
-
+  const language = 'it';
   return (
     <Box>
       <Typography
@@ -19,7 +19,7 @@ const Trek = () => {
           textTransform: 'uppercase',
         }}
       >
-        Trek
+        {language === 'it' ? 'Aviazione' : 'Aviation'}
       </Typography>
       <Typography
         variant="h6"
@@ -30,10 +30,10 @@ const Trek = () => {
           color: theme.palette.common.white,
         }}
       >
-        The world's best bikes and cycling gear
+        {/* Curology custom skincare */}
       </Typography>
     </Box>
   );
 };
 
-export default Trek;
+export default Curology;

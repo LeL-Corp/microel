@@ -4,7 +4,7 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-const Goby = () => {
+const Nike2 = () => {
   const theme = useTheme();
 
   return (
@@ -19,7 +19,7 @@ const Goby = () => {
           textTransform: 'uppercase',
         }}
       >
-        Goby
+        
       </Typography>
       <Typography
         variant="h6"
@@ -30,10 +30,10 @@ const Goby = () => {
           color: theme.palette.common.white,
         }}
       >
-        Electric toothbrush, designed for you
+        Just do it
       </Typography>
     </Box>
   );
 };
 
-export default Goby;
+export default Nike2;

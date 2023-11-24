@@ -3,7 +3,7 @@ export { default as IndexView } from './IndexView';
 export { default as Customers } from './Customers';
 export { default as HireUs } from './HireUs';
 export { default as Faq } from './Faq';
-export { default as Agency } from './Agency';
+export { default as Settori } from './Settori';
 export { default as CareerListing } from './CareerListing';
 export { default as CareerListingMinimal } from './CareerListingMinimal';
 export { default as CareerOpening } from './CareerOpening';

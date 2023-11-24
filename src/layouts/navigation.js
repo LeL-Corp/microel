@@ -45,8 +45,8 @@ const pages = {
       href: '/home',
     },
     {
-      title: 'Agency',
-      href: '/agency',
+      title: 'Settori',
+      href: '/settori',
     },
     {
       title: 'E-Learning',

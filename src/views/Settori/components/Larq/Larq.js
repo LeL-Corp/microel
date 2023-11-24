@@ -4,7 +4,7 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-const Nike2 = () => {
+const Larq = () => {
   const theme = useTheme();
 
   return (
@@ -19,9 +19,9 @@ const Nike2 = () => {
           textTransform: 'uppercase',
         }}
       >
-        Nike
+        Automotive
       </Typography>
-      <Typography
+      {/* <Typography
         variant="h6"
         component="p"
         color="text.primary"
@@ -30,10 +30,9 @@ const Nike2 = () => {
           color: theme.palette.common.white,
         }}
       >
-        Just do it
-      </Typography>
+      </Typography> */}
     </Box>
   );
 };
 
-export default Nike2;
+export default Larq;

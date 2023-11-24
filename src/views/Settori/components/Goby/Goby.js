@@ -4,8 +4,9 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-const Nike = () => {
+const Goby = () => {
   const theme = useTheme();
+  const language = 'it';
 
   return (
     <Box>
@@ -19,7 +20,7 @@ const Nike = () => {
           textTransform: 'uppercase',
         }}
       >
-        Nike
+        {language === 'it' ? 'Pulizia industriale' : 'Industrial cleaning'}
       </Typography>
       <Typography
         variant="h6"
@@ -27,13 +28,13 @@ const Nike = () => {
         color="text.primary"
         align={'center'}
         sx={{
-          color: theme.palette.common.white,
+          color: theme.palette.common.black,
         }}
       >
-        Just do it
+        {/* {language === 'it' ?  'Schede elettroniche per le macchine di pulizia industriale' : 'Electronic boards for industrial cleaning machines'} */}
       </Typography>
     </Box>
   );
 };
 
-export default Nike;
+export default Goby;
