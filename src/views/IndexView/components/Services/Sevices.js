@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -12,8 +11,8 @@ import { VerticalMinimalDesignedBlogCards } from 'blocks/blog';
 import ColumnContainer from 'components/ColumnContainer';
 import Container from 'components/Container';
 import { motion } from 'framer-motion';
-import { useRef } from "react";
-import { useInView } from "framer-motion";
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 const mock = [
   {
@@ -68,7 +67,7 @@ const Services = () => {
   const theme = useTheme();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  
+
   return (
     <Box>
       <ColumnContainer style={{ gap: '1rem' }}>
@@ -93,61 +92,60 @@ const Services = () => {
               sx={{ fontWeight: 400 }}
               align={'center'}
             >
-              Studiamo insieme ogni fase di{' '}
-              <b>progettazione hardware e software</b> della scheda elettronica
+              Le soluzioni <b>dedicate</b> sono il nostro prodotto{' '}
+              <b>standard</b>
             </Typography>
           </Box>
         </Box>
         <div ref={ref}>
-        <Grid container spacing={2}>
-         
-          {mock.map((item, i) => (
-            <Grid item xs={12} md={4} key={i}>
-              <Box width={1} height={1}>
-                <div
-                  style={{
-                    transform: isInView ? "none" : "translateX(-150px)",
-                    opacity: isInView ? 1 : 0,
-                    transition: "all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 1s"
-                  }}
-                >
-                  <Box
-                    display={'flex'}
-                    flexDirection={'column'}
-                    alignItems={'center'}
+          <Grid container spacing={2}>
+            {mock.map((item, i) => (
+              <Grid item xs={12} md={4} key={i}>
+                <Box width={1} height={1}>
+                  <div
+                    style={{
+                      transform: isInView ? 'none' : 'translateX(-150px)',
+                      opacity: isInView ? 1 : 0,
+                      transition:
+                        'all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 1s',
+                    }}
                   >
                     <Box
-                      component={Avatar}
-                      width={60}
-                      height={60}
-                      marginBottom={2}
-                      bgcolor={alpha(theme.palette.primary.main, 0.1)}
-                      color={theme.palette.primary.main}
+                      display={'flex'}
+                      flexDirection={'column'}
+                      alignItems={'center'}
                     >
-                      {item.icon}
+                      <Box
+                        component={Avatar}
+                        width={60}
+                        height={60}
+                        marginBottom={2}
+                        bgcolor={alpha(theme.palette.secondary.dark, 0.8)}
+                        color={theme.palette.primary.main}
+                      >
+                        {item.icon}
+                      </Box>
+                      <Typography
+                        variant={'h3'}
+                        gutterBottom
+                        sx={{ fontWeight: 500, fontSize: '18px !important' }}
+                        align={'center'}
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        align={'center'}
+                        color="text.secondary"
+                        sx={{ display: 'block', maxWidth: '80%' }}
+                      >
+                        {item.subtitle}
+                      </Typography>
                     </Box>
-                    <Typography
-                      variant={'h3'}
-                      gutterBottom
-                      sx={{ fontWeight: 500, fontSize: '18px !important' }}
-                      align={'center'}
-                    >
-                      {item.title}
-                    </Typography>
-                    <Typography
-                      align={'center'}
-                      color="text.secondary"
-                      sx={{ display: 'block', maxWidth: '80%' }}
-                    >
-                      {item.subtitle}
-                    </Typography>
-                  </Box>
-                </div>
-              </Box>
-            </Grid>
-          ))}
-        
-        </Grid>
+                  </div>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
         </div>
         <Container>
           <VerticalMinimalDesignedBlogCards data={cards} />

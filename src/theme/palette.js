@@ -15,7 +15,7 @@ export const light = {
   },
   secondary: {
     light: '#ffb74d',
-    main: '#f9b934',
+    main: '#06262b',
     dark: '#FF9800',
     contrastText: 'rgba(0, 0, 0, 0.87)',
   },
@@ -48,21 +48,22 @@ export const dark = {
     // main: '#1976d2',
     // main: '#5DB499',
     main: '#25b0a2', //verde chiaro
-    light: '#2196f3',
+    light: '#134D56', // verde medio scuro
     // dark: '#0d47a1',  // hover
     dark: '#516894', //indaco
     contrastText: '#fff',
   },
   secondary: {
     light: '#FFEA41',
-    main: '#567abe',
-    dark: '#DBBE01',
+    main: '#06262b',
+    dark: '#5385e6',
     contrastText: 'rgba(0, 0, 0, 0.87)',
   },
   text: {
-    primary: '#EEEEEF',
-    secondary: '#AEB0B4',
+    primary: '#FFF',
+    secondary: '#e7e8ea',
     header: '#06262b',
+    dark: '#06262b',
   },
   divider: 'rgba(255, 255, 255, 0.12)',
   background: {
@@ -70,9 +71,9 @@ export const dark = {
     // default: '#222B45',
     // paper: "#002626", // prova 1
     // default: "#002626",
-    paper: '#06262b', // verde molto scuro
-   
-    default: '#06262b', // verde molto scuro
+    // paper: '#06262b', // verde molto scuro
+    paper: '#043239',
+    default: '#043239', // verde molto scuro
     // default: '#0e5763',
     // paper: '#0e5763',
     level2: '#333',

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -23,35 +24,38 @@ export const mock = [
   {
     logo: (
       <PrecisionManufacturingIcon
-        color="primary"
+        color="secondary"
         style={{ fontSize: '48px' }}
       />
     ),
     name: 'Automazione industriale',
   },
   {
-    logo: <SmartToyIcon color="primary" style={{ fontSize: '48px' }} />,
+    logo: <SmartToyIcon color="secondary" style={{ fontSize: '48px' }} />,
     name: 'Domotica',
   },
   {
-    logo: <WidgetsIcon color="primary" style={{ fontSize: '48px' }} />,
+    logo: <WidgetsIcon color="secondary" style={{ fontSize: '48px' }} />,
     name: 'Macchinari per realizzazione Packaging',
   },
   {
-    logo: <SettingsSuggestIcon color="primary" style={{ fontSize: '48px' }} />,
+    logo: (
+      <SettingsSuggestIcon color="secondary" style={{ fontSize: '48px' }} />
+    ),
     name: 'Macchinari per lavorazione materiali',
   },
   {
-    logo: <ElectricCarIcon color="primary" style={{ fontSize: '48px' }} />,
+    logo: <ElectricCarIcon color="secondary" style={{ fontSize: '48px' }} />,
     name: 'Automotive',
   },
   {
-    logo: <FlightIcon color="primary" style={{ fontSize: '48px' }} />,
+    logo: <FlightIcon color="secondary" style={{ fontSize: '48px' }} />,
     name: 'Strumentazione Aeronautica',
   },
 ];
 
 const Sectors = () => {
+  const theme = useTheme();
   const ref = useRef();
   const isInView = useInView(ref, { once: true });
   return (
@@ -75,7 +79,7 @@ const Sectors = () => {
                     fontSize: '32px',
                   }}
                   gutterBottom
-                  color={'secondary'}
+                  color={'#6096fc'}
                 >
                   Ricerca e sviluppo costanti
                 </Typography>
@@ -122,11 +126,14 @@ const Sectors = () => {
                 <Box display={'block'} width={1} height={1}>
                   <Card
                     sx={{
+                      backgroundColor: theme.palette.secondary.dark,
                       transform: 'translateY(0)',
                       transition: 'transform 0.3s ease',
                       '&:hover': {
-                        transform: 'translateY(-20px)',
-                        boxShadow: 'inset 0px 0px 56px 8px rgba(81, 104, 148)',
+                        transform: 'translateY(-10px)',
+                        '&:hover': {
+                          boxShadow: `0px 10px 13px -7px rgba(37, 176, 162)`,
+                        },
                       },
                     }}
                   >
@@ -158,7 +165,11 @@ const Sectors = () => {
                           <Typography
                             component="p"
                             align="center"
-                            sx={{ fontSize: 12 }}
+                            sx={{
+                              fontWeight: 900,
+                              fontSize: 12,
+                              color: 'text.dark',
+                            }}
                           >
                             {item.name}
                           </Typography>

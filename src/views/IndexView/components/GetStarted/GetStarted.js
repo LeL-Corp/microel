@@ -22,14 +22,15 @@ const GetStarted = () => {
         anchor="anchor"
         style={{
           opacity: '0.4',
-          filter: 'hue-rotate(197deg)',
+          filter: 'hue-rotate(131deg)',
           maxWidth: '8%',
           height: 'auto',
           maxHeight: '150px',
         }}
         src="https://res.cloudinary.com/dslne9y2j/image/upload/v1698184765/Assets/Homepage/pa6ro1vkeih0jehy5hqz.png"
       ></img>
-      <div ref={ref}
+      <div
+        ref={ref}
         style={{
           inset: 'unset',
           top: 'anchor(top)',

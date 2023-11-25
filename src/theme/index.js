@@ -43,6 +43,15 @@ const getTheme = (mode, themeToggler) =>
         appBar: 1200,
         drawer: 1300,
       },
+      breakpoints: {
+        values: {
+          xs: 0, // extra-small devices (phones)
+          sm: 600, // small devices (tablets)
+          md: 960, // medium devices (desktops)
+          lg: 1280, // large devices (large desktops)
+          xl: 1920, // extra-large devices
+        },
+      },
       components: {
         MuiButton: {
           styleOverrides: {

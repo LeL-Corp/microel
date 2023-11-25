@@ -7,6 +7,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Link from '@mui/material/Link';
 
 import { NavItem } from './components';
+import ItalianFlagIcon from 'components/icon/italianFlag.icon';
+import UsaFlagIcon from 'components/icon/usaFlag.icon';
 
 const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
   const theme = useTheme();
@@ -47,49 +49,33 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box>
-          <Link
-            underline="hover"
-            color={"text.header"}
-            href="/"
-          >
+          <Link underline="hover" color={'text.header'} href="/">
             Home
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link
-            underline="hover"
-            color={"text.header"}
-            href="/about"
-          >
+          <Link underline="hover" color={'text.header'} href="/about">
             Chi siamo
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link
-            underline="hover"
-            color={"text.header"}
-            href="/Soluzioni"
-          >
+          <Link underline="hover" color={'text.header'} href="/Soluzioni">
             Settori
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link
-            underline="hover"
-            color={"text.header"}
-            href="/customers"
-          >
+          <Link underline="hover" color={'text.header'} href="/customers">
             Roadmap
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link
-            underline="hover"
-            color={"text.header"}
-            href="/contacts"
-          >
+          <Link underline="hover" color={'text.header'} href="/contacts">
             Contatti
           </Link>
+        </Box>
+        <Box marginLeft={2}>
+          <ItalianFlagIcon />
+          {/* <UsaFlagIcon /> */}
         </Box>
       </Box>
       <Box sx={{ display: { xs: 'block', md: 'none' } }} alignItems={'center'}>
