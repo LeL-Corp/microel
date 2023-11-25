@@ -6,7 +6,7 @@ import {
   Customers as CustomersView,
   HireUs as HireUsView,
   Faq as FaqView,
-  Agency as AgencyView,
+  Settori as SettoriView,
   CareerListing as CareerListingView,
   CareerListingMinimal as CareerListingMinimalView,
   CareerOpening as CareerOpeningView,
@@ -121,8 +121,8 @@ const routes = [
     renderer: (params = {}) => <ExpoView {...params} />,
   },
   {
-    path: '/agency',
-    renderer: (params = {}) => <AgencyView {...params} />,
+    path: '/settori',
+    renderer: (params = {}) => <SettoriView {...params} />,
   },
   {
     path: '/startup',

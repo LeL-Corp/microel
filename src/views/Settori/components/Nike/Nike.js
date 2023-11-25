@@ -4,9 +4,10 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-const Larq = () => {
+const Nike = () => {
   const theme = useTheme();
-
+  const language = 'it';
+  
   return (
     <Box>
       <Typography
@@ -19,7 +20,7 @@ const Larq = () => {
           textTransform: 'uppercase',
         }}
       >
-        Larq
+            {language === 'it' ? 'Domotica' : 'Home automation'}
       </Typography>
       <Typography
         variant="h6"
@@ -30,10 +31,10 @@ const Larq = () => {
           color: theme.palette.common.white,
         }}
       >
-        Self-cleaning water bottle
+        {/* Just do it */}
       </Typography>
     </Box>
   );
 };
 
-export default Larq;
+export default Nike;

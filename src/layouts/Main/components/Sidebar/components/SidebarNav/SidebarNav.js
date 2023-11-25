@@ -59,7 +59,7 @@ const SidebarNav = ({ pages }) => {
             color={"#fff"}
             href="/"
           >
-            Soluzioni
+            Settori
           </Link>
         </Box>
         <Box paddingBottom={'20px'}>

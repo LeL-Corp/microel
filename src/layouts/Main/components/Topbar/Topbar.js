@@ -49,27 +49,48 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box>
-          <Link underline="hover" color={'text.header'} href="/">
+          <Link
+            underline="hover"
+            color={"text.header"}
+            href="/"
+          >
             Home
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link underline="hover" color={'text.header'} href="/about">
+    
+          <Link
+            underline="hover"
+            color={"text.header"}
+            href="/about"
+          >
             Chi siamo
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link underline="hover" color={'text.header'} href="/Soluzioni">
+          <Link
+            underline="hover"
+            color={"text.header"}
+            href="/Settori"
+          >
             Settori
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link underline="hover" color={'text.header'} href="/customers">
+          <Link
+            underline="hover"
+            color={"text.header"}
+            href="/customers"
+          >
             Roadmap
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link underline="hover" color={'text.header'} href="/contacts">
+          <Link
+            underline="hover"
+            color={"text.header"}
+            href="/contacts"
+          >
             Contatti
           </Link>
         </Box>
