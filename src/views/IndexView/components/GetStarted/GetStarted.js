@@ -47,7 +47,7 @@ const GetStarted = () => {
           gutterBottom
           sx={{
             fontWeight: 700,
-            fontSize: '22px',
+            fontSize: '26px',
           }}
         >
           Hai un'idea? Contattaci per una consulenza

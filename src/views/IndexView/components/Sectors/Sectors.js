@@ -57,14 +57,14 @@ export const mock = [
 const Sectors = () => {
   const theme = useTheme();
   const ref = useRef();
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
   return (
-    <div ref={ref}>
+    <div>
       <Container>
         <Grid container spacing={4}>
           <Grid item container xs={12} md={6} alignItems={'center'}>
             <Box>
-              <div
+              <div  ref={ref}
                 style={{
                   transform: isInView ? 'none' : 'translateX(-150px)',
                   opacity: isInView ? 1 : 0,
@@ -88,8 +88,9 @@ const Sectors = () => {
                 </Typography>
                 <Typography variant="h6" component="p" color="text.secondary">
                   Il nostro team ha sviluppato un ampio know-how collaborando
-                  con aziende di ogni dimensione e ambito di operatività:
-                  domotica,
+                  con aziende di ogni dimensione e ambito di operatività.
+                  Per ognuno di questi, sviluppiamo un percorso di ricerca su misura.
+                
                 </Typography>
                 <Box marginTop={2}>
                   <Button
@@ -114,7 +115,7 @@ const Sectors = () => {
                       </Box>
                     }
                   >
-                    Roadmap
+                    Scopri la Roadmap
                   </Button>
                 </Box>
               </div>

@@ -10,7 +10,12 @@ import { NavItem } from './components';
 import ItalianFlagIcon from 'components/icon/italianFlag.icon';
 import UsaFlagIcon from 'components/icon/usaFlag.icon';
 
+import { useLanguage } from 'context/LanguageContext';
+
 const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
+  const { changeLanguage } = useLanguage();
+  const { language } = useLanguage();
+  console.log('language', language);
   const theme = useTheme();
   const { mode } = theme.palette;
   const {
@@ -21,6 +26,8 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
     portfolio: portfolioPages,
     blog: blogPages,
   } = pages;
+
+  const { toggleLanguage } = useLanguage();
 
   return (
     <Box
@@ -49,53 +56,33 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box>
-          <Link
-            underline="hover"
-            color={"text.header"}
-            href="/"
-          >
+          <Link underline="hover" color={'text.header'} href="/">
             Home
           </Link>
         </Box>
         <Box marginLeft={4}>
-    
-          <Link
-            underline="hover"
-            color={"text.header"}
-            href="/about"
-          >
+          <Link underline="hover" color={'text.header'} href="/about">
             Chi siamo
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link
-            underline="hover"
-            color={"text.header"}
-            href="/Settori"
-          >
+          <Link underline="hover" color={'text.header'} href="/Settori">
             Settori
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link
-            underline="hover"
-            color={"text.header"}
-            href="/customers"
-          >
+          <Link underline="hover" color={'text.header'} href="/customers">
             Roadmap
           </Link>
         </Box>
         <Box marginLeft={4}>
-          <Link
-            underline="hover"
-            color={"text.header"}
-            href="/contacts"
-          >
+          <Link underline="hover" color={'text.header'} href="/contacts">
             Contatti
           </Link>
         </Box>
         <Box marginLeft={2}>
-          <ItalianFlagIcon />
+          <Button onClick={() => changeLanguage('en')}>lingua</Button>
+          {/* <ItalianFlagIcon /> */}
           {/* <UsaFlagIcon /> */}
         </Box>
       </Box>

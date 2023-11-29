@@ -66,7 +66,7 @@ const cards = [
 const Services = () => {
   const theme = useTheme();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
 
   return (
     <Box>

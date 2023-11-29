@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useInView } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import NoSsr from '@mui/material/NoSsr';
@@ -17,6 +18,7 @@ import {
   Reviews,
   Contact,
 } from './components';
+import ParallaxComponent from './components/Parallax/Parallax.component';
 
 const Settori = () => {
   useEffect(() => {
@@ -62,21 +64,56 @@ const Settori = () => {
     backgroundImage: `url(${bgImage})`,
     filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none',
   });
+  const ref = useRef();
+  const isInView = useInView(ref, { once: false });
+  const parallaxData = [
+    {
+      sector: 'Automazione industriale',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+    },
+    {
+      sector: 'Automotive',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857562/electric-car-battery-1680x904_tcm8-241935_u7qayu.png',
+    },
+    {
+      sector: 'Cleaning',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+    },
+    {
+      sector: 'Cleaning',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+    },
+    {
+      sector: 'Cleaning',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+    },
+    {
+      sector: 'Cleaning',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+    },
+  ];
 
   return (
     <Main>
-    
       <Box
-        minHeight={'100vh'}
+        minHeight={'60vh'}
         display={'flex'}
         alignItems={'center'}
-        bgcolor={'alternate.main'}
+        bgcolor={'main'}
         marginTop={-13}
         paddingTop={13}
       >
         <Container>
           <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
-            <Welcome />
+            <div ref={ref}>
+              <Welcome />
+            </div>
             <Box marginTop={4}>
               <NoSsr>
                 <Box
@@ -99,136 +136,8 @@ const Settori = () => {
             </Box>
           </Box>
         </Container>
-        
       </Box>
-      <Box
-        className={'jarallax'}
-        data-jarallax
-        data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-        id="agency__portfolio-item--js-scroll"
-      >
-         <Box
-          className={'jarallax-img'}
-          sx={styles(
-            'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857562/electric-car-battery-1680x904_tcm8-241935_u7qayu.png',
-          )}
-          style={{ filter: "brightness(80%)", WebkitFilter: "brightness(50%)" }}
-        />
-        <Container>
-          <Larq />
-        </Container>
-      </Box>
-      <Box
-        className={'jarallax'}
-        data-jarallax
-        data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-      >
-        <Box
-          className={'jarallax-img'}
-          sx={styles(
-            'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
-          )}
-          style={{ filter: "brightness(80%)", WebkitFilter: "brightness(50%)" }}
-        />
-         <Container>
-          <Goby />
-        </Container>
-      </Box>
-
-      {/* <Box
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-        bgcolor={'alternate.main'}
-      >
-        <Container>
-          <Process />
-        </Container>
-      </Box> */}
-      <Box
-        className={'jarallax'}
-        data-jarallax
-        data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-        id="agency__portfolio-item--js-scroll"
-      >
-        
-        <Box
-          className={'jarallax-img'}
-          sx={styles(
-            'https://res.cloudinary.com/dslne9y2j/image/upload/v1700858660/1_eNmC2Z_ZgLEvwOwO7OfehQ_imqjjh.jpg',
-          )}
-          style={{ filter: "brightness(80%)", WebkitFilter: "brightness(50%)" }}
-        />
-        <Container>
-          <Nike />
-        </Container>
-      </Box>
-      <Box
-        className={'jarallax'}
-        data-jarallax
-        data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-        id="agency__portfolio-item--js-scroll"
-      >
-        <Box
-          className={'jarallax-img'}
-          sx={styles(
-            'https://res.cloudinary.com/dslne9y2j/image/upload/v1700859629/siemens-industrial-automation-image_fcpawp.jpg',
-          )}
-          style={{ filter: "brightness(80%)", WebkitFilter: "brightness(50%)" }}
-        />
-        <Container>
-          <Trek />
-        </Container>
-      </Box>
-      {/* <Box
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-        bgcolor={'alternate.main'}
-      >
-        <Container>
-          <Reviews />
-        </Container>
-      </Box> */}
-      <Box
-        className={'jarallax'}
-        data-jarallax
-        data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-        id="agency__portfolio-item--js-scroll"
-      >
-        <Box
-          className={'jarallax-img'}
-          sx={styles(
-            'https://res.cloudinary.com/dslne9y2j/image/upload/v1700860383/UTAS_Plane_R6_001_yprqza.jpg',
-          )}
-          style={{ filter: "brightness(80%)", WebkitFilter: "brightness(50%)" }}
-        />
-        <Container>
-          <Curology />
-        </Container>
-      </Box>
-  
-        
+      <ParallaxComponent parallaxData={parallaxData} />
     </Main>
   );
 };

@@ -43,10 +43,11 @@ const Partners = () => {
   const isTablet = useMediaQuery('(min-width: 667px) and (max-width: 1199px)');
   const isMobile = useMediaQuery('(max-width: 800px)');
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
 
   return (
-    <div ref={ref}
+    <div
+      ref={ref}
       style={{
         backgroundSize: 'cover',
 
@@ -57,56 +58,64 @@ const Partners = () => {
       }}
     >
       <Box>
-        
-          <Box
-            sx={{
-              position: 'relative',
+        <Box
+          sx={{
+            position: 'relative',
+          }}
+        >
+          <img
+            src={
+              'https://res.cloudinary.com/dslne9y2j/image/upload/v1699633073/Assets/Roadmap/dm9vphopfgwmas7uisox.png'
+            }
+            style={{
+              position: 'absolute',
+              top: 0,
+              right: '0%',
+              width: '75%',
+              height: '86%',
+              objectFit: 'cover',
+              opacity: 0.2,
+              filter: 'hue-rotate(-37deg)',
+              transform: 'rotate(-90deg)',
             }}
-          >
-            <img
-              src={
-                'https://res.cloudinary.com/dslne9y2j/image/upload/v1699633073/Assets/Roadmap/dm9vphopfgwmas7uisox.png'
-              }
-              style={{
-                position: 'absolute',
-                top: 0,
-                right: '0%',
-                width: '75%',
-                height: '86%',
-                objectFit: 'cover',
-                opacity: 0.2,
-                filter: 'hue-rotate(-37deg)',
-                transform: 'rotate(-90deg)',
-              }}
-            />
-            <RowContainer end>
+          />
+          <RowContainer end>
             <div
               style={{
-                transform: isInView ? "none" : "translateX(100px)",
+                transform: isInView ? 'none' : 'translateX(100px)',
                 opacity: isInView ? 1 : 0,
                 transition: `all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s`,
               }}
             >
-                <Typography
-                  variant="h1"
-                  sx={{
-                    fontWeight: 700,
-                    marginBottom: '2rem',
-                    color: `#fff`,
-                    textAlign: "right"
-                  }}
-                >
-                  La nostra Roadmap
-                </Typography>
-                <Typography variant="h2">
-                  Le soluzioni <u>dedicate</u> sono il nostro prodotto <u>standard</u>.
-                </Typography>
-              </div>
-            </RowContainer>
+              <Typography
+                variant="h1"
+                sx={{
+                  fontWeight: 700,
+                  marginBottom: '2rem',
+                  color: `#fff`,
+                  textAlign: 'right',
+                }}
+              >
+                La nostra Roadmap
+              </Typography>
+              <Typography
+                variant="h2"
+                sx={{
+                  lineHeight: '2.5rem',
+                  fontWeight: 400,
+                  marginBottom: '2rem',
+                  color: `#fff`,
+                  textAlign: 'right',
+                }}
+              >
+                Passione, dedizione, esperienza:<br></br>il tuo successo è il
+                nostro <u>obiettivo</u>.
+              </Typography>
+            </div>
+          </RowContainer>
 
-            <VerticalLinearStepper />
-          </Box>
-       
+          <VerticalLinearStepper />
+        </Box>
       </Box>
     </div>
   );

@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import CssBaseline from '@mui/material/CssBaseline';
 import getTheme from 'theme';
 import AOS from 'aos';
-
+import { useLanguage } from 'context/LanguageContext';
 export const useDarkMode = () => {
   const [themeMode, setTheme] = useState('light');
   const [mountedComponent, setMountedComponent] = useState(false);
@@ -56,16 +56,17 @@ export default function Page({ children }) {
   }, []);
 
   const [themeMode, themeToggler, mountedComponent] = useDarkMode();
+  const { language, changeLanguage } = useLanguage();
 
   useEffect(() => {
     AOS.refresh();
-  }, [mountedComponent, themeMode]);
+  }, [mountedComponent, themeMode, language]);
 
   return (
     <ThemeProvider theme={getTheme(themeMode, themeToggler)}>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
-      <Paper elevation={0}>{children}</Paper>
+      <Paper elevation={0}>{React.cloneElement(children, { language, changeLanguage })}</Paper>
     </ThemeProvider>
   );
 }
