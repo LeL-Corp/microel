@@ -206,7 +206,7 @@ const Contact = () => {
         marginHeight={0}
         marginWidth={0}
         scrolling="no"
-        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Robbio&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.2987733776217!2d8.59824197712027!3d45.282183971071646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478654c845554df3%3A0x5ed45c7712c9b043!2sFlybox%20Avionics%20%2F%20Microel!5e0!3m2!1sit!2sit!4v1701332645264!5m2!1sit!2sit"
         style={{
           minHeight: 300,
           // filter:
