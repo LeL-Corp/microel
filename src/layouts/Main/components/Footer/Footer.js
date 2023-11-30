@@ -10,10 +10,15 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import RowContainer from 'components/RowContainer';
 import Avatar from '@mui/material/Avatar';
+import translations from 'translations/Translations';
+import { useLanguage } from 'context/LanguageContext';
+import ItalianFlagIcon from 'components/icon/italianFlag.icon';
+import UsaFlagIcon from 'components/icon/usaFlag.icon';
 
 const Footer = () => {
   const theme = useTheme();
   const { mode } = theme.palette;
+  const { language, changeLanguage } = useLanguage();
 
   return (
     <Grid container spacing={2}>
@@ -27,23 +32,22 @@ const Footer = () => {
         >
           <Box
             display={'flex'}
-            component="a"
-            href="/"
+            component={Link}
+            to="/"
             title="Microel srl"
-            width={200}
+            width={250}
             margin={'0'}
           >
             <Box
               component={'img'}
               src={
-                mode === 'light'
-                  ? 'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
-                  : 'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
+                'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
               }
               height={1}
               width={1}
             />
           </Box>
+       
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
             <RowContainer>
               <Box
@@ -54,7 +58,7 @@ const Footer = () => {
                 color={theme.palette.primary.main}
                 sx={{ cursor: 'pointer' }}
               >
-                <LinkedInIcon fontSize='large' />
+                <LinkedInIcon fontSize="large" />
               </Box>
               <Box
                 component={Avatar}
@@ -62,9 +66,9 @@ const Footer = () => {
                 height={44}
                 bgcolor={alpha(theme.palette.primary.main, 0.1)}
                 color={theme.palette.primary.main}
-                sx={{ cursor: 'pointer' }}
+                sx={{ cursor: 'pointer', marginRight: '20px' }}
               >
-                <YouTubeIcon fontSize='large' />
+                <YouTubeIcon fontSize="large" />
               </Box>
             </RowContainer>
           </Box>
@@ -72,7 +76,7 @@ const Footer = () => {
       </Grid>
       <Box
         display={'flex'}
-        justifyContent={'flex-start'}
+        justifyContent={'space-between'}
         alignItems={'center'}
         width={1}
         padding={'20px'}
@@ -99,6 +103,20 @@ const Footer = () => {
             <Typography variant={'p'}>Tel: 0384 670602</Typography>
           </a>
         </Typography>
+        <Button
+            size={'large'}
+            variant="outlined"
+            color={'primary'}
+            onClick={() => changeLanguage(language === 'en' ? 'it' : 'en')}
+            sx={{ marginRight: '20px' }}
+          >
+            <RowContainer>
+              <Typography variant="body1" color={'#fff'}>
+                {language === 'it' ? 'Lingua:' : 'Language:'}
+              </Typography>
+              {language === 'it' ? <ItalianFlagIcon /> : <UsaFlagIcon />}
+            </RowContainer>
+          </Button>
       </Box>
       <Box
         display={'flex'}
@@ -108,7 +126,7 @@ const Footer = () => {
         flexDirection={'row'}
         flexWrap={'wrap'}
         padding={'20px'}
-        paddingTop={"30px"}
+        paddingTop={'30px'}
         gap={'12px'}
       >
         <Box display="flex" flexDirection={'column'} width={'fit-content'}>
@@ -119,7 +137,7 @@ const Footer = () => {
             component={Link}
             to="/"
           >
-            Settori
+            {translations.navigation.home[language]}
           </Typography>
         </Box>
 
@@ -129,9 +147,20 @@ const Footer = () => {
             fontSize={'14px'}
             variant={'h6'}
             component={Link}
-            to="/"
+            to="/about"
           >
-            Chi siamo
+            {translations.navigation.about[language]}
+          </Typography>
+        </Box>
+        <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+          <Typography
+            color={'primary.main'}
+            fontSize={'14px'}
+            variant={'h6'}
+            component={Link}
+            to="/areas"
+          >
+            {translations.navigation.areas[language]}
           </Typography>
         </Box>
 
@@ -141,9 +170,9 @@ const Footer = () => {
             fontSize={'14px'}
             variant={'h6'}
             component={Link}
-            to="/"
+            to="/roadmap"
           >
-            Roadmap
+            {translations.navigation.roadmap[language]}
           </Typography>
         </Box>
 
@@ -155,7 +184,7 @@ const Footer = () => {
             component={Link}
             to="/contacts"
           >
-            Contatti
+            {translations.navigation.contacts[language]}
           </Typography>
         </Box>
       </Box>
@@ -175,7 +204,9 @@ const Footer = () => {
         >
           &copy; Microel srl, 2023. All rights reserved
         </Typography>
+        
       </Box>
+      
     </Grid>
   );
 };

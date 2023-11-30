@@ -1,6 +1,6 @@
 export { default as Home } from './Home';
 export { default as IndexView } from './IndexView';
-export { default as Customers } from './Customers';
+export { default as Roadmap } from './Roadmap';
 export { default as HireUs } from './HireUs';
 export { default as Faq } from './Faq';
 export { default as Settori } from './Settori';

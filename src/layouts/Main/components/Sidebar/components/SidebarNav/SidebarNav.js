@@ -4,22 +4,22 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
+import { useLanguage } from 'context/LanguageContext';
+import translations from 'translations/Translations';
 
 import NavItem from './components/NavItem';
-import { Link } from '@mui/material';
+import { Link } from 'react-router-dom';
+import ItalianFlagIcon from 'components/icon/italianFlag.icon';
+import UsaFlagIcon from 'components/icon/usaFlag.icon';
+import ColumnContainer from 'components/ColumnContainer';
+import RowContainer from 'components/RowContainer';
+import { Typography } from '@mui/material';
+import NavigationLink from 'components/NavigationLink';
 
 const SidebarNav = ({ pages }) => {
   const theme = useTheme();
   const { mode } = theme.palette;
-
-  const {
-    landings: landingPages,
-    secondary: secondaryPages,
-    company: companyPages,
-    account: accountPages,
-    portfolio: portfolioPages,
-    blog: blogPages,
-  } = pages;
+  const { language, changeLanguage } = useLanguage();
 
   return (
     <Box>
@@ -34,57 +34,68 @@ const SidebarNav = ({ pages }) => {
           <Box
             component={'img'}
             src={
-              mode === 'light'
-                ? 'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
-                : 'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
+              'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
             }
             height={1}
             width={1}
           />
         </Box>
       </Box>
-      <Box padding={'30px'} paddingLeft={"20px"} flexDirection={'column'} gap={'16px'}>
-        <Box paddingBottom={'20px'}>
-          <Link
-            underline="hover"
-            color={"#fff"}
-            href="/"
-          >
-            Chi siamo
-          </Link>
-        </Box>
-        <Box paddingBottom={'20px'}>
-          <Link
-            underline="hover"
-            color={"#fff"}
-            href="/"
-          >
-            Settori
-          </Link>
-        </Box>
-        <Box paddingBottom={'20px'}>
-          <Link
-            underline="hover"
-            color={"#fff"}
-            href="/"
-          >
-            Roadmap
-          </Link>
-        </Box>
-
-        <Box marginTop={2}>
-          <Button
-            size={'large'}
-            variant="outlined"
-            color={"primary"}
-            fullWidth
-            component={Link}
-            href="/contacts"
-          >
-            Contatti
-          </Button>
-         
-        </Box>
+      <Box
+        padding={'30px'}
+        paddingLeft={'20px'}
+        paddingBottom="8px"
+        flexDirection={'column'}
+        gap={'16px'}
+      >
+        <ColumnContainer halfGap>
+          <Box paddingBottom={'20px'}>
+            <NavigationLink to="/">
+              {translations.navigation.home[language]}
+            </NavigationLink>
+          </Box>
+          <Box paddingBottom={'20px'}>
+            <NavigationLink to="/about">
+              {translations.navigation.about[language]}
+            </NavigationLink>
+          </Box>
+          <Box paddingBottom={'20px'}>
+            <NavigationLink to="/areas">
+              {translations.navigation.areas[language]}
+            </NavigationLink>
+          </Box>
+          <Box paddingBottom={'20px'}>
+            <NavigationLink to="/roadmap">
+              {translations.navigation.roadmap[language]}
+            </NavigationLink>
+          </Box>
+        </ColumnContainer>
+      </Box>
+      <Button
+        size={'large'}
+        variant="outlined"
+        color={'primary'}
+        fullWidth
+        onClick={() => changeLanguage(language === 'en' ? 'it' : 'en')}
+      >
+        <RowContainer>
+          <Typography variant="body1" color={'#fff'}>
+            {language === 'it' ? 'Lingua:' : 'Language:'}
+          </Typography>
+          {language === 'it' ? <ItalianFlagIcon /> : <UsaFlagIcon />}
+        </RowContainer>
+      </Button>
+      <Box marginTop={2}>
+        <Button
+          variant="contained"
+          size="large"
+          color={'primary'}
+          fullWidth
+          component={Link}
+          to="/contacts"
+        >
+          {translations.buttons.contact[language]}
+        </Button>
       </Box>
     </Box>
   );

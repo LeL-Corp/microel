@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import CreditCardsIllustration from 'svg/illustrations/CreditCards';
+// import CreditCardsIllustration from 'svg/illustrations/CreditCards';
 
 import Container from 'components/Container';
 
@@ -68,7 +68,7 @@ const CtaWithIllustration = () => {
         <Grid item xs={12} md={6}>
           <Box height={1} width={1} display={'flex'} justifyContent={'center'}>
             <Box height={1} width={1} maxWidth={450}>
-              <CreditCardsIllustration width={'100%'} height={'100%'} />
+              {/* <CreditCardsIllustration width={'100%'} height={'100%'} /> */}
             </Box>
           </Box>
         </Grid>

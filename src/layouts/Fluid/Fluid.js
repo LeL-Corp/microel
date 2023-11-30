@@ -75,8 +75,8 @@ const Fluid = ({
                 component={'img'}
                 src={
                   mode === 'light' && !colorInvert
-                    ? 'https://i.postimg.cc/Y9SwHLKC/Progetto-senza-titolo-2.png'
-                    : 'https://i.postimg.cc/Y9SwHLKC/Progetto-senza-titolo-2.png'
+                    ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
+                    : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
                 }
                 height={1}
                 width={1}

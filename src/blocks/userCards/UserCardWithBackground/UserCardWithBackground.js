@@ -97,7 +97,7 @@ const UserCardWithBackground = () => {
                     stroke="currentColor"
                     width={28}
                     height={28}
-                    color={'primary.dark'}
+                    color={'tertiary.dark'}
                     marginLeft={1}
                   >
                     <path

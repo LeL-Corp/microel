@@ -4,7 +4,7 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import LaptopSkeletonIllustration from 'svg/illustrations/LaptopSkeleton';
+// import LaptopSkeletonIllustration from 'svg/illustrations/LaptopSkeleton';
 
 import Container from 'components/Container';
 
@@ -92,7 +92,7 @@ const HeroWithPrimaryBackgroundAndDesktopScreenshot = () => {
                     height={'auto'}
                     sx={{ verticalAlign: 'middle' }}
                   >
-                    <LaptopSkeletonIllustration />
+                    {/* <LaptopSkeletonIllustration /> */}
                   </Box>
                   <Box
                     position={'absolute'}

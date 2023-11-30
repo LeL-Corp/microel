@@ -16,8 +16,9 @@ import Container from 'components/Container';
 import { MotionConfig } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import translations from 'translations/Translations';
 
-const VerticalMinimalDesignedBlogCards = ({ data }) => {
+const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
   const theme = useTheme();
   const ref = useRef();
   const isInView = useInView(ref, { once: false });
@@ -64,7 +65,7 @@ const VerticalMinimalDesignedBlogCards = ({ data }) => {
                       backgroundImage: 'none',
                       transition: 'all .2s ease-in-out',
                       '&:hover': {
-                        boxShadow: `4px 10px 13px -2px ${theme.palette.secondary.dark}`,
+                        boxShadow: `4px 10px 13px -2px ${theme.palette.tertiary.main}`,
                       },
                     }}
                   >
@@ -85,6 +86,7 @@ const VerticalMinimalDesignedBlogCards = ({ data }) => {
                         color="text.primary"
                         variant={'h4'}
                         gutterBottom
+                        sx={{ fontWeight: 700 }}
                       >
                         {item.title}
                       </Typography>
@@ -93,29 +95,6 @@ const VerticalMinimalDesignedBlogCards = ({ data }) => {
                       </Typography>
                     </Box>
                     <Box flexGrow={1} />
-                    {/* <Box padding={2} display={'flex'} flexDirection={'column'}>
-                  <Box marginBottom={2}>
-                    <Divider />
-                  </Box>
-                  <Box
-                    display={'flex'}
-                    justifyContent={'space-between'}
-                    alignItems={'center'}
-                  >
-                    <Box display={'flex'} alignItems={'center'}>
-                      <Avatar
-                        src={item.author.avatar}
-                        sx={{ marginRight: 1 }}
-                      />
-                      <Typography color={'text.secondary'}>
-                        {item.author.name}
-                      </Typography>
-                    </Box>
-                    <Typography color={'text.secondary'}>
-                      {item.date}
-                    </Typography>
-                  </Box>
-                </Box> */}
                   </Box>
                 </Box>
               </div>
@@ -150,7 +129,7 @@ const VerticalMinimalDesignedBlogCards = ({ data }) => {
                 </Box>
               }
             >
-              Lo nostre soluzioni
+              {translations.buttons.solutions[language]}
             </Button>
           </Grid>
         </Grid>

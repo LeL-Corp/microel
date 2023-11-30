@@ -1,4 +1,4 @@
-// TODO: change theme to match the agency theme
+
 
 export const light = {
   alternate: {
@@ -18,6 +18,10 @@ export const light = {
     main: '#06262b',
     dark: '#FF9800',
     contrastText: 'rgba(0, 0, 0, 0.87)',
+  },
+  tertiary: {
+    main:  '#5385e6', // indaco brillante
+    dark: '#516894', //indaco
   },
   text: {
     primary: '#1e2022',
@@ -44,38 +48,30 @@ export const dark = {
     white: '#fff',
   },
   mode: 'dark',
-  primary: {
-    // main: '#1976d2',
-    // main: '#5DB499',
-    main: '#25b0a2', //verde chiaro
-    light: '#134D56', // verde medio scuro
-    // dark: '#0d47a1',  // hover
-    dark: '#516894', //indaco
+  primary: { // verde chiaro
+    main: '#25b0a2', //primary chiaro
+    light: '#134D56', //primary intermedio
+    // dark: '#516894', //indaco
     contrastText: '#fff',
   },
-  secondary: {
-    light: '#FFEA41',
+  secondary: { // verde scuro
     main: '#06262b',
-    dark: '#5385e6',
+    // dark: '#5385e6',
     contrastText: 'rgba(0, 0, 0, 0.87)',
   },
+  tertiary: {
+    main:  '#5385e6', // indaco brillante
+    dark: '#516894', //indaco
+  },
   text: {
-    primary: '#FFF',
-    secondary: '#e7e8ea',
-    header: '#06262b',
-    dark: '#06262b',
+    primary: '#FFF', // bianco
+    secondary: '#e7e8ea', // grigio
+    dark: '#06262b',// verde scurissimo
   },
   divider: 'rgba(255, 255, 255, 0.12)',
   background: {
-    // paper: '#222B45',
-    // default: '#222B45',
-    // paper: "#002626", // prova 1
-    // default: "#002626",
-    // paper: '#06262b', // verde molto scuro
-    paper: '#043239',
-    default: '#043239', // verde molto scuro
-    // default: '#0e5763',
-    // paper: '#0e5763',
+    paper: '#043239', // verde scuro
+    default: '#043239', // verde scuro
     level2: '#333',
     level1: '#2D3748',
   },

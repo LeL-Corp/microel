@@ -18,7 +18,7 @@ const Sidebar = ({ open, variant, onClose }) => {
           maxWidth: 320,
           top: { xs: 0, md: 71 },
           height: { xs: '100%', md: 'calc(100% - 71px)' },
-          background: theme.palette.background.default,
+          background: theme.palette.alternate.main,
         },
       }}
     >

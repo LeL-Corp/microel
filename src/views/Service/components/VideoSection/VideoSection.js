@@ -4,7 +4,7 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import PhoneSkeletonIllustration from 'svg/illustrations/PhoneSkeleton';
+// import PhoneSkeletonIllustration from 'svg/illustrations/PhoneSkeleton';
 
 const VideoSection = () => {
   const theme = useTheme();
@@ -36,7 +36,7 @@ const VideoSection = () => {
                 height={'auto'}
                 sx={{ verticalAlign: 'middle' }}
               >
-                <PhoneSkeletonIllustration />
+                {/* <PhoneSkeletonIllustration /> */}
               </Box>
               <Box
                 position={'absolute'}

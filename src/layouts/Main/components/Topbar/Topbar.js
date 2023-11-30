@@ -4,18 +4,16 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
-import Link from '@mui/material/Link';
-
+import { Link } from 'react-router-dom';
 import { NavItem } from './components';
 import ItalianFlagIcon from 'components/icon/italianFlag.icon';
 import UsaFlagIcon from 'components/icon/usaFlag.icon';
-
 import { useLanguage } from 'context/LanguageContext';
+import translations from 'translations/Translations';
+import NavigationLink from 'components/NavigationLink';
 
 const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
-  const { changeLanguage } = useLanguage();
-  const { language } = useLanguage();
-  console.log('language', language);
+  const { changeLanguage, language } = useLanguage();
   const theme = useTheme();
   const { mode } = theme.palette;
   const {
@@ -27,8 +25,6 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
     blog: blogPages,
   } = pages;
 
-  const { toggleLanguage } = useLanguage();
-
   return (
     <Box
       display={'flex'}
@@ -38,17 +34,15 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
     >
       <Box
         display={'flex'}
-        component="a"
-        href="/"
-        title="theFront"
+        component={Link}
+        to="/"
+        title="Microel srl"
         width={{ xs: 200, md: 300 }}
       >
         <Box
           component={'img'}
           src={
-            mode === 'light' && !colorInvert
-              ? 'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
-              : 'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
+            'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
           }
           height={1}
           width={1}
@@ -56,34 +50,36 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box>
-          <Link underline="hover" color={'text.header'} href="/">
-            Home
-          </Link>
+          <NavigationLink dark to="/">
+            {translations.navigation.home[language]}
+          </NavigationLink>
         </Box>
         <Box marginLeft={4}>
-          <Link underline="hover" color={'text.header'} href="/about">
-            Chi siamo
-          </Link>
+          <NavigationLink dark to="/about">
+            {translations.navigation.about[language]}
+          </NavigationLink>
         </Box>
         <Box marginLeft={4}>
-          <Link underline="hover" color={'text.header'} href="/Settori">
-            Settori
-          </Link>
+          <NavigationLink dark to="/areas">
+            {translations.navigation.areas[language]}
+          </NavigationLink>
         </Box>
         <Box marginLeft={4}>
-          <Link underline="hover" color={'text.header'} href="/customers">
-            Roadmap
-          </Link>
+          <NavigationLink dark to="/roadmap">
+            {translations.navigation.roadmap[language]}
+          </NavigationLink>
         </Box>
         <Box marginLeft={4}>
-          <Link underline="hover" color={'text.header'} href="/contacts">
-            Contatti
-          </Link>
+          <NavigationLink dark to="/contacts">
+            {translations.navigation.contacts[language]}
+          </NavigationLink>
         </Box>
         <Box marginLeft={2}>
-          <Button onClick={() => changeLanguage('en')}>lingua</Button>
-          {/* <ItalianFlagIcon /> */}
-          {/* <UsaFlagIcon /> */}
+          <Button
+            onClick={() => changeLanguage(language === 'en' ? 'it' : 'en')}
+          >
+            {language === 'it' ? <ItalianFlagIcon /> : <UsaFlagIcon />}
+          </Button>
         </Box>
       </Box>
       <Box sx={{ display: { xs: 'block', md: 'none' } }} alignItems={'center'}>

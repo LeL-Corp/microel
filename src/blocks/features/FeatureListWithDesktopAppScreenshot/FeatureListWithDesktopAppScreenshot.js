@@ -9,7 +9,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 
-import LaptopSkeletonIllustration from 'svg/illustrations/LaptopSkeleton';
+// import LaptopSkeletonIllustration from 'svg/illustrations/LaptopSkeleton';
 import Container from 'components/Container';
 
 const mock = [

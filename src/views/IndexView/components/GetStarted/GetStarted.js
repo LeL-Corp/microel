@@ -7,8 +7,11 @@ import { useTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { useLanguage } from 'context/LanguageContext';
+import translations from 'translations/Translations';
 
 const GetStarted = () => {
+  const { language } = useLanguage();
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -50,7 +53,7 @@ const GetStarted = () => {
             fontSize: '26px',
           }}
         >
-          Hai un'idea? Contattaci per una consulenza
+          {translations.home.section5.heading[language]}
         </Typography>
       </div>
       {/* <Typography
@@ -76,7 +79,7 @@ const GetStarted = () => {
           size="large"
           fullWidth={isMd ? false : true}
         >
-          Contattaci
+          {translations.buttons.contact[language]}
         </Button>
         <Box
           marginTop={{ xs: 2, sm: 0 }}
@@ -92,7 +95,7 @@ const GetStarted = () => {
             size="large"
             fullWidth={isMd ? false : true}
           >
-            Dove siamo
+            {translations.buttons.where[language]}
           </Button>
         </Box>
       </Box>

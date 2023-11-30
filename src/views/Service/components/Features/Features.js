@@ -9,7 +9,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
-import PhoneSkeletonIllustration from 'svg/illustrations/PhoneSkeleton';
+// import PhoneSkeletonIllustration from 'svg/illustrations/PhoneSkeleton';
 
 const Features = () => {
   const theme = useTheme();
@@ -104,7 +104,7 @@ const Features = () => {
                 height={'auto'}
                 sx={{ verticalAlign: 'middle' }}
               >
-                <PhoneSkeletonIllustration />
+                {/* <PhoneSkeletonIllustration /> */}
               </Box>
               <Box
                 position={'absolute'}

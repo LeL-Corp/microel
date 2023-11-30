@@ -3,22 +3,12 @@ import { useInView } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import NoSsr from '@mui/material/NoSsr';
-
 import Main from 'layouts/Main';
 import Container from 'components/Container';
 import {
   Welcome,
-  Goby,
-  Process,
-  Nike2,
-  Larq,
-  Nike,
-  Trek,
-  Curology,
-  Reviews,
-  Contact,
 } from './components';
-import ParallaxComponent from './components/Parallax/Parallax.component';
+import Parallax from './components/Parallax/Parallax';
 
 const Settori = () => {
   useEffect(() => {
@@ -137,7 +127,7 @@ const Settori = () => {
           </Box>
         </Container>
       </Box>
-      <ParallaxComponent parallaxData={parallaxData} />
+      <Parallax parallaxData={parallaxData} />
     </Main>
   );
 };

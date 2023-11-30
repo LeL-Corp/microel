@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import PhoneSkeletonIllustration from 'svg/illustrations/PhoneSkeleton';
+// import PhoneSkeletonIllustration from 'svg/illustrations/PhoneSkeleton';
 
 const Hero = () => {
   const theme = useTheme();
@@ -114,7 +114,7 @@ const Hero = () => {
                 height={'auto'}
                 sx={{ verticalAlign: 'middle' }}
               >
-                <PhoneSkeletonIllustration />
+                {/* <PhoneSkeletonIllustration /> */}
               </Box>
               <Box
                 position={'absolute'}

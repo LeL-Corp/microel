@@ -13,7 +13,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 
-import LaptopSkeletonIllustration from 'svg/illustrations/LaptopSkeleton';
+// import LaptopSkeletonIllustration from 'svg/illustrations/LaptopSkeleton';
 
 const About = () => {
   const theme = useTheme();
@@ -131,7 +131,7 @@ const About = () => {
                   height={'auto'}
                   sx={{ verticalAlign: 'middle' }}
                 >
-                  <LaptopSkeletonIllustration />
+                  {/* <LaptopSkeletonIllustration /> */}
                 </Box>
                 <Box
                   position={'absolute'}

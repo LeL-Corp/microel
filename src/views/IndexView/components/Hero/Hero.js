@@ -2,10 +2,13 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { useLanguage } from 'context/LanguageContext';
+import translations from 'translations/Translations';
 
 import Container from 'components/Container';
 
@@ -79,6 +82,7 @@ const images = [
 ];
 
 const Hero = () => {
+  const { language } = useLanguage();
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -138,11 +142,10 @@ const Hero = () => {
                   fontWeight: 700,
                 }}
               >
-                Esperti in soluzioni di ingegneria elettronica.
+                {translations.home.hero.heading[language]}
               </Typography>
               <Typography>
-                Progettazione e produzione schede ed apparecchiature
-                elettroniche per l'automazione.
+                {translations.home.hero.subHeading[language]}
               </Typography>
               <Box
                 display="flex"
@@ -151,14 +154,14 @@ const Hero = () => {
                 marginTop={4}
               >
                 <Button
-                  component={'a'}
+                  component={Link}
                   variant="contained"
                   color="primary"
                   size="large"
                   fullWidth={isMd ? false : true}
-                  href={'/home'}
+                  to={'/home'}
                 >
-                  Scopri
+                  {translations.buttons.discover[language]}
                 </Button>
                 <Box
                   marginTop={{ xs: 2, sm: 0 }}
@@ -170,8 +173,10 @@ const Hero = () => {
                     color="primary"
                     size="large"
                     fullWidth={isMd ? false : true}
+                    component={Link}
+                    to={'/contacts'}
                   >
-                    Contattaci
+                    {translations.buttons.contact[language]}
                   </Button>
                 </Box>
               </Box>
@@ -191,33 +196,7 @@ const Hero = () => {
             top={0}
             position={'absolute'}
             sx={{ transform: 'translate3d(20%, -50%, 0)' }}
-          >
-            {/* {images.map((item, i) => (
-              <Box key={i} marginTop={{ sm: -(i * 16) }} marginX={1}>
-                {item.group.map((g, j) => (
-                  <Box
-                    key={j}
-                    padding={1}
-                    bgcolor={'background.paper'}
-                    borderRadius={2}
-                    boxShadow={3}
-                    marginTop={2}
-                  >
-                    <Box
-                      component={'img'}
-                      loading="lazy"
-                      src={
-                        theme.palette.mode === 'dark' ? g.coverDark : g.cover
-                      }
-                      height={1}
-                      width={1}
-                      maxWidth={320}
-                    />
-                  </Box>
-                ))}
-              </Box>
-            ))} */}
-          </Box>
+          ></Box>
         </Box>
       </Box>
       <Box

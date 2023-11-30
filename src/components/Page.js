@@ -64,7 +64,6 @@ export default function Page({ children }) {
 
   return (
     <ThemeProvider theme={getTheme(themeMode, themeToggler)}>
-      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
       <Paper elevation={0}>{React.cloneElement(children, { language, changeLanguage })}</Paper>
     </ThemeProvider>

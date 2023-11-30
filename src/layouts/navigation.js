@@ -46,7 +46,7 @@ const pages = {
     },
     {
       title: 'Settori',
-      href: '/settori',
+      href: '/areas',
     },
     {
       title: 'E-Learning',
@@ -84,7 +84,7 @@ const pages = {
     },
     {
       title: 'Customer Stories',
-      href: '/customers',
+      href: '/roadmap',
     },
     {
       title: 'Hire Us',

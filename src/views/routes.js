@@ -3,7 +3,7 @@ import React from 'react';
 import {
   IndexView,
   Home as HomeView,
-  Customers as CustomersView,
+  Roadmap as RoadmapView,
   HireUs as HireUsView,
   Faq as FaqView,
   Settori as SettoriView,
@@ -65,8 +65,8 @@ const routes = [
     renderer: (params = {}) => <HomeView {...params} />,
   },
   {
-    path: '/customers',
-    renderer: (params = {}) => <CustomersView {...params} />,
+    path: '/roadmap',
+    renderer: (params = {}) => <RoadmapView {...params} />,
   },
   {
     path: '/hire-us',
@@ -121,7 +121,7 @@ const routes = [
     renderer: (params = {}) => <ExpoView {...params} />,
   },
   {
-    path: '/settori',
+    path: '/areas',
     renderer: (params = {}) => <SettoriView {...params} />,
   },
   {

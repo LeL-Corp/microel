@@ -16,9 +16,11 @@ import WidgetsIcon from '@mui/icons-material/Widgets';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 import FlightIcon from '@mui/icons-material/Flight';
+import translations from 'translations/Translations';
 
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { useLanguage } from 'context/LanguageContext';
 
 export const mock = [
   {
@@ -58,13 +60,15 @@ const Sectors = () => {
   const theme = useTheme();
   const ref = useRef();
   const isInView = useInView(ref, { once: false });
+  const { language } = useLanguage();
   return (
     <div>
       <Container>
         <Grid container spacing={4}>
           <Grid item container xs={12} md={6} alignItems={'center'}>
             <Box>
-              <div  ref={ref}
+              <div
+                ref={ref}
                 style={{
                   transform: isInView ? 'none' : 'translateX(-150px)',
                   opacity: isInView ? 1 : 0,
@@ -81,16 +85,13 @@ const Sectors = () => {
                   gutterBottom
                   color={'#6096fc'}
                 >
-                  Ricerca e sviluppo costanti
+                  {translations.home.section4.heading[language]}
                 </Typography>
                 <Typography variant="p" gutterBottom sx={{ fontWeight: 700 }}>
-                  I settori in cui operiamo
+                  {translations.home.section4.subHeading[language]}
                 </Typography>
                 <Typography variant="h6" component="p" color="text.secondary">
-                  Il nostro team ha sviluppato un ampio know-how collaborando
-                  con aziende di ogni dimensione e ambito di operatività.
-                  Per ognuno di questi, sviluppiamo un percorso di ricerca su misura.
-                
+                  {translations.home.section4.paragraph[language]}
                 </Typography>
                 <Box marginTop={2}>
                   <Button
@@ -115,7 +116,7 @@ const Sectors = () => {
                       </Box>
                     }
                   >
-                    Scopri la Roadmap
+                    {translations.buttons.solutions[language]}
                   </Button>
                 </Box>
               </div>
@@ -127,7 +128,7 @@ const Sectors = () => {
                 <Box display={'block'} width={1} height={1}>
                   <Card
                     sx={{
-                      backgroundColor: theme.palette.secondary.dark,
+                      backgroundColor: theme.palette.tertiary.main,
                       transform: 'translateY(0)',
                       transition: 'transform 0.3s ease',
                       '&:hover': {

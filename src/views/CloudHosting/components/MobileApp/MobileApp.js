@@ -10,7 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 
-import PhoneSkeletonIllustration from 'svg/illustrations/PhoneSkeleton';
+// import PhoneSkeletonIllustration from 'svg/illustrations/PhoneSkeleton';
 
 const MobileApp = () => {
   const theme = useTheme();
@@ -134,7 +134,7 @@ const MobileApp = () => {
                 height={'auto'}
                 sx={{ verticalAlign: 'middle' }}
               >
-                <PhoneSkeletonIllustration />
+                {/* <PhoneSkeletonIllustration /> */}
               </Box>
               <Box
                 position={'absolute'}
