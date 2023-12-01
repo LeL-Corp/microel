@@ -13,68 +13,65 @@ const Welcome = () => {
 
   const theme = useTheme();
   const language = 'it';
-  console.log("isinview", isInView)
+  console.log('isinview', isInView);
 
   const GridItemHeadlineBlock = () => (
-   
-      <Box>
-        <div
-         style={{
+    <Box>
+      <div
+        style={{
           transform: isInView ? 'none' : '',
           opacity: isInView ? 1 : 0,
           transition: `all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.2s`,
         }}
+      >
+        <Typography
+          variant="h1"
+          align={'center'}
+          gutterBottom
+          sx={{
+            fontWeight: 900,
+          }}
         >
-          <Typography
-            variant="h3"
-            align={'center'}
-            gutterBottom
-            sx={{
-              fontWeight: 900,
-            }}
-          >
-            {language === 'it'
-              ? 'Le soluzioni dedicate sono il nostro prodotto standard'
-              : 'Dedicated solutions are our standard product'}
-          </Typography>
-          <Typography
-            variant="h6"
-            component="p"
-            color="text.secondary"
-            align={'center'}
-            sx={{
-              fontWeight: 400,
-            }}
-          >
-            {language === 'it'
-              ? 'Condividi le tue idee, il tuo budget e i tuoi tempi con noi'
-              : 'Share your ideas, budget, and timeline with us,'}
-            <br />
-            {language === 'it'
-              ? 'e ti connetteremo con le soluzioni che soddisfano le tue esigenze specifiche.'
-              : 'and we’ll connect you solutions that match your specific needs.'}
-          </Typography>
-        </div>
-      </Box>
- 
+          {language === 'it'
+            ? 'Le soluzioni dedicate sono il nostro prodotto standard'
+            : 'Dedicated solutions are our standard product'}
+        </Typography>
+        <Typography
+          component="p"
+          color="text.secondary"
+          align={'center'}
+          sx={{
+            fontWeight: 400,
+          }}
+        >
+          {language === 'it'
+            ? 'Condividi le tue idee, il tuo budget e i tuoi tempi con noi'
+            : 'Share your ideas, budget, and timeline with us,'}
+          <br />
+          {language === 'it'
+            ? 'e ti connetteremo con le soluzioni che soddisfano le tue esigenze specifiche.'
+            : 'and we’ll connect you solutions that match your specific needs.'}
+        </Typography>
+      </div>
+    </Box>
   );
 
   return (
     <div ref={ref}>
-    <Box>
-      <Grid container spacing={4}>
-        <Grid item xs={12}>
-          <Box
-            width="100%"
-            height="100%"
-            display="flex"
-            justifyContent={'center'}
-          >
-            <GridItemHeadlineBlock />
-          </Box>
+      <Box>
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <Box
+              width="100%"
+              height="100%"
+              display="flex"
+              justifyContent={'center'}
+            >
+              <GridItemHeadlineBlock />
+            </Box>
+          </Grid>
         </Grid>
-      </Grid>
-    </Box>
+      </Box>
     </div>
   );
 };

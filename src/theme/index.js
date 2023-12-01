@@ -15,16 +15,16 @@ const getTheme = (mode, themeToggler) =>
           fontWeight: 'medium',
         },
         h1: {
-          fontSize: '36px',
+          fontSize: '32px',
         },
         h2: {
-          fontSize: '24px',
+          fontSize: '28px',
           '@media (max-width: 600px)': {
             fontSize: '18px',
           },
         },
         h3: {
-          fontSize: '32px',
+          fontSize: '26px',
           '@media (max-width: 600px)': {
             fontSize: '24px',
           },
@@ -61,7 +61,7 @@ const getTheme = (mode, themeToggler) =>
               paddingTop: 10,
               paddingBottom: 10,
             },
-            containedSecondary: { color: 'white' } ,
+            containedSecondary: { color: 'white' },
           },
         },
         MuiInputBase: {

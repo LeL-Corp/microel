@@ -38,7 +38,6 @@ const Hero = () => {
         sx={{
           position: 'absolute',
           objectFit: 'cover',
-          /* support for plugin https://github.com/bfred-it/object-fit-images */
           fontFamily: 'object-fit: cover;',
           top: 0,
           left: 0,
@@ -49,7 +48,7 @@ const Hero = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           backgroundImage:
-            'url(https://assets.maccarianagency.com/backgrounds/img52.jpg)',
+            'url(https://res.cloudinary.com/dslne9y2j/image/upload/v1701453856/Assets/About_us/ek5qyis66hlqw1thiyyj.jpg)',
         }}
       />
       <Box
@@ -68,26 +67,29 @@ const Hero = () => {
       <Container position={'relative'} zIndex={2}>
         <Box>
           <Typography
-            variant="h2"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            variant="h1"
+            align={'left'}
             gutterBottom
             sx={{
               fontWeight: 900,
-              color: 'common.white',
-              textTransform: 'uppercase',
             }}
           >
-            About us
+            Benvenuti nel cuore della nostra azienda,
           </Typography>
           <Typography
-            variant="h6"
+            data-aos="fade-up"
+            data-aos-duration="1000"
             component="p"
-            color="text.primary"
+            color="text.secondary"
+            align={'left'}
             sx={{
-              color: 'common.white',
+              fontWeight: 700,
+              fontSize: '22px',
             }}
           >
-            We are founded by a leading academic and researcher in the field of
-            Industrial Systems Engineering.
+            dove passione e innovazione si fondono per creare soluzioni uniche.
           </Typography>
         </Box>
       </Container>
