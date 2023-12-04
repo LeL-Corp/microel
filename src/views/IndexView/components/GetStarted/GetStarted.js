@@ -10,7 +10,7 @@ import { useRef } from 'react';
 import { useLanguage } from 'context/LanguageContext';
 import translations from 'translations/Translations';
 
-const GetStarted = () => {
+const GetStarted = ({ withImage = true }) => {
   const { language } = useLanguage();
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
@@ -21,17 +21,20 @@ const GetStarted = () => {
 
   return (
     <Box>
-      <img
-        anchor="anchor"
-        style={{
-          opacity: '0.4',
-          filter: 'hue-rotate(131deg)',
-          maxWidth: '8%',
-          height: 'auto',
-          maxHeight: '150px',
-        }}
-        src="https://res.cloudinary.com/dslne9y2j/image/upload/v1698184765/Assets/Homepage/pa6ro1vkeih0jehy5hqz.png"
-      ></img>
+      {withImage ? (
+        <img
+          anchor="anchor"
+          style={{
+            opacity: '0.4',
+            filter: 'hue-rotate(131deg)',
+            maxWidth: '8%',
+            height: 'auto',
+            maxHeight: '150px',
+          }}
+          src="https://res.cloudinary.com/dslne9y2j/image/upload/v1698184765/Assets/Homepage/pa6ro1vkeih0jehy5hqz.png"
+        ></img>
+      ) : null}
+
       <div
         ref={ref}
         style={{

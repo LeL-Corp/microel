@@ -12,15 +12,16 @@ import Container from 'components/Container';
 
 const mock = [
   {
-    label: 'Phone',
-    value: '+39 659-657-0133',
+    label: 'Telefono',
+    value: 'tel:+390384 670602',
+    valueLabel: 'Tel. 0384 670602',
     icon: (
       <svg
         width={20}
         height={20}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
-        fill="currentColor"
+        fill="#5285E6"
       >
         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
       </svg>
@@ -28,14 +29,15 @@ const mock = [
   },
   {
     label: 'Email',
-    value: 'hi@maccarianagency.com',
+    value: 'mailto:info@microel.it',
+    valueLabel: 'info@microel.it',
     icon: (
       <svg
         width={20}
         height={20}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
-        fill="currentColor"
+        fill="#5285E6"
       >
         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
@@ -43,15 +45,16 @@ const mock = [
     ),
   },
   {
-    label: 'Address',
-    value: 'Via Venini 33, 20147',
+    label: 'Indirizzo',
+    value: 'Via Mortara 192/194 ROBBIO (PV)',
+    valueLabel: 'Via Mortara 192/194 ROBBIO (PV)',
     icon: (
       <svg
         width={20}
         height={20}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
-        fill="currentColor"
+        fill="#5285E6"
       >
         <path
           fillRule="evenodd"
@@ -71,12 +74,7 @@ const Contact = () => {
       <Box>
         <Box marginBottom={2}>
           <Typography variant={'h4'} sx={{ fontWeight: 700 }} gutterBottom>
-            Contact us
-          </Typography>
-          <Typography color="text.secondary">
-            Rather than worrying about switching offices every couple years, you
-            can instead stay in the same location and grow-up from your shared
-            coworking space to an office that takes up an entire floor.
+            Siamo a disposizione, ci trovi qui:
           </Typography>
         </Box>
         <Box
@@ -124,13 +122,9 @@ const Contact = () => {
         marginHeight={0}
         marginWidth={0}
         scrolling="no"
-        src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Milan&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.2987733776217!2d8.59824197712027!3d45.282183971071646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478654c845554df3%3A0x5ed45c7712c9b043!2sFlybox%20Avionics%20%2F%20Microel!5e0!3m2!1sit!2sit!4v1701332645264!5m2!1sit!2sit"
         style={{
           minHeight: 300,
-          filter:
-            theme.palette.mode === 'dark'
-              ? 'grayscale(0.5) opacity(0.7)'
-              : 'none',
         }}
       />
     );

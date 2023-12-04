@@ -32,7 +32,7 @@ const steps = [
   {
     label: "What's next?",
     description:
-      "Abbiamo lavorato in svariati settori e non vediamo l'ora di scoprire quale sarà la sfida che tu ci proporrai. ",
+      "Il tuo successo è il nostro obiettivo: non vediamo l'ora di scoprire quale sarà la sfida che tu ci proporrai. ",
   },
 ];
 

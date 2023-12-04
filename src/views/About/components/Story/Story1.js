@@ -6,7 +6,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-const Story = ({ data }) => {
+const Story1 = ({ data }) => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -52,26 +52,23 @@ const Story = ({ data }) => {
           xs={12}
           md={6}
         >
-          <Box maxWidth={390} width={1}>
+          <Box maxWidth={200} width={1}>
             {data.image ? (
- <Box
- component={'img'}
- src={data.image}
- width={1}
- height={1}
- sx={{
-   filter:
-     theme.palette.mode === 'dark' ? 'brightness(0.8)' : 'none',
- }}
-/>
-
+              <Box
+                component={'img'}
+                src={data.image}
+                width={1}
+                height={1}
+                sx={{
+                  borderRadius: '8px',
+                }}
+              />
             ) : null}
-            </Box>
-           
+          </Box>
         </Grid>
       </Grid>
     </Box>
   );
 };
 
-export default Story;
+export default Story1;

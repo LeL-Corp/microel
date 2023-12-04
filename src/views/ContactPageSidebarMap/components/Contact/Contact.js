@@ -70,7 +70,6 @@ const Contact = () => {
 
   return (
     <Box>
-      <Box marginBottom={2}></Box>
       <Box
         display={'flex'}
         flexDirection={{ xs: 'column', md: 'row' }}

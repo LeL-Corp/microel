@@ -15,32 +15,37 @@ const Gallery = () => {
 
   const photos = [
     {
-      src: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
-      source: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
+      src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/xnl5p9qyrtfftwpzeqc8',
+      source:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/xnl5p9qyrtfftwpzeqc8',
       rows: 2,
       cols: 1,
     },
     {
-      src: 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
-      source: 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
+      src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmp6kijybwlkibzxnnhv',
+      source:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmp6kijybwlkibzxnnhv',
       rows: 1,
       cols: 2,
     },
     {
-      src: 'https://assets.maccarianagency.com/backgrounds/img22.jpg',
-      source: 'https://assets.maccarianagency.com/backgrounds/img22.jpg',
+      src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/h8jklckpuqlqrx1ouixl',
+      source:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/h8jklckpuqlqrx1ouixl',
       rows: 1,
       cols: 1,
     },
     {
-      src: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
-      source: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
+      src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/jysxe6lnnperioec42xm',
+      source:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/jysxe6lnnperioec42xm',
       rows: 1,
       cols: 1,
     },
     {
-      src: 'https://assets.maccarianagency.com/backgrounds/img21.jpg',
-      source: 'https://assets.maccarianagency.com/backgrounds/img21.jpg',
+      src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/t5chpxzf8pbm19k8535k',
+      source:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/t5chpxzf8pbm19k8535k',
       rows: 1,
       cols: 2,
     },
@@ -71,11 +76,11 @@ const Gallery = () => {
             marginTop: theme.spacing(1),
           }}
         >
-          Small team. Big hearts.
+          Uno sguardo al nostro lavoro:
         </Typography>
         <Typography variant="h6" align={'center'} color={'text.secondary'}>
-          Our focus is always on finding the best people to work with. Our bar
-          is high, but you look ready to take on the challenge.
+          I nostri team curano tutti i dettagli, dal design, alla produzione,
+          alla manutenzione.
         </Typography>
       </Box>
       <Box>
@@ -83,7 +88,7 @@ const Gallery = () => {
           variant="quilted"
           cols={4}
           rowHeight={isMd ? 300 : 220}
-          gap={isMd ? 16 : 8}
+          gap={isMd ? 45 : 8}
         >
           {photosToShow.map((item, i) => (
             <ImageListItem
@@ -99,8 +104,7 @@ const Gallery = () => {
                 loading="lazy"
                 style={{
                   objectFit: 'cover',
-                  filter:
-                    theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none',
+                
                   cursor: 'poiner',
                   borderRadius: 8,
                 }}

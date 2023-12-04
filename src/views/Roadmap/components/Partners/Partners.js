@@ -98,7 +98,7 @@ const Partners = () => {
               >
                 La nostra Roadmap
               </Typography>
-              <Typography
+              {/* <Typography
                 variant="h2"
                 sx={{
                   lineHeight: '2.5rem',
@@ -110,7 +110,7 @@ const Partners = () => {
               >
                 Passione, dedizione, esperienza:<br></br>il tuo successo è il
                 nostro <u>obiettivo</u>.
-              </Typography>
+              </Typography> */}
             </div>
           </RowContainer>
 

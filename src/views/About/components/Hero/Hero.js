@@ -2,10 +2,12 @@ import React, { useEffect } from 'react';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material/styles';
 
 import Container from 'components/Container';
 
 const Hero = () => {
+  const theme = useTheme();
   useEffect(() => {
     const jarallaxInit = async () => {
       const jarallaxElems = document.querySelectorAll('.jarallax');
@@ -64,7 +66,15 @@ const Hero = () => {
           zIndex: 1,
         }}
       />
-      <Container position={'relative'} zIndex={2}>
+      <Container
+        position={'relative'}
+        zIndex={2}
+        style={{
+          backgroundColor: theme.palette.secondary.main,
+          filter: 'opacity(0.9)',
+          maxWidth: 'unset !important',
+        }}
+      >
         <Box>
           <Typography
             data-aos="fade-up"
@@ -76,7 +86,7 @@ const Hero = () => {
               fontWeight: 900,
             }}
           >
-            Benvenuti nel cuore della nostra azienda,
+            Benvenuti nel cuore della nostra azienda
           </Typography>
           <Typography
             data-aos="fade-up"
@@ -89,7 +99,7 @@ const Hero = () => {
               fontSize: '22px',
             }}
           >
-            dove passione e innovazione si fondono per creare soluzioni uniche.
+            {/* dove passione e innovazione si fondono per creare soluzioni uniche. */}
           </Typography>
         </Box>
       </Container>

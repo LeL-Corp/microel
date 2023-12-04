@@ -159,7 +159,7 @@ const Hero = () => {
                   color="primary"
                   size="large"
                   fullWidth={isMd ? false : true}
-                  to={'/home'}
+                  to={'/about'}
                 >
                   {translations.buttons.discover[language]}
                 </Button>
