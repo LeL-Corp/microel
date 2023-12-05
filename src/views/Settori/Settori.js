@@ -5,9 +5,7 @@ import Box from '@mui/material/Box';
 import NoSsr from '@mui/material/NoSsr';
 import Main from 'layouts/Main';
 import Container from 'components/Container';
-import {
-  Welcome,
-} from './components';
+import { Welcome } from './components';
 import Parallax from './components/Parallax/Parallax';
 
 const Settori = () => {
@@ -59,33 +57,73 @@ const Settori = () => {
   const parallaxData = [
     {
       sector: 'Automazione industriale',
+      description:
+        'Realizziamo schede elettroniche ottimizzate che garantiscono elevate prestazioni, basso consumo energetico e una robustezza straordinaria per affrontare gli ambienti industriali più impegnativi.',
+      // imageUrl:
+      //   'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/jj1g1o6hqkex2guwjucq',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/w4oxmbodeyvpcktji2tg',
+    },
+    {
+      sector: 'Strumentazione Avionica',
+      description:
+        'La linea Flybox Avionics offre strumentazione di bordo integrata con sensori di alta precisione che offrono un controllo avanzato.',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/irut8he5jyewbptbwna4',
+    },
+    {
+      sector: 'Azionamenti per motori',
+      description:
+        'Miglioriamo le prestazioni dinamiche dei motori grazie a schede elettroniche ottimizzate per gestire una vasta gamma di motori, dai tradizionali motori a induzione a quelli ad alta efficienza e a controllo avanzato.',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/q00toy3fzpe0h5uokqjz',
+    },
+   
+    {
+      sector: 'Macchine per test',
+      description:
+        'Schede elettroniche progettate per integrarsi con una vasta gamma di macchine per test, consentendo una varietà di protocolli di misurazione e analisi',
+      // imageUrl:
+      //   'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/mmkhfhfbtqbwpdennoct',
+      imageUrl: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/big9koda5yzwskxidimt',
+    },
+
+   
+    {
+      sector: 'Macchine per Packaging',
+      description:
+        'Schede elettroniche progettate per integrarsi senza problemi con una vasta gamma di macchine per il packaging, quali incartatrici, sigillatrici e sistemi di etichettatura, per una maggiore precisione di confezionamento e flessibilità',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/qg0dmohn78xj3apljesl',
+    },
+
+    {
+      sector: 'Macchine per Cleaning',
+      description:
+        'Le nostre schede elettroniche sono integrate in apparecchiature di pulizia quali lavasciuga, aspirapolvere industriali e sistemi di pulizia automatizzati',
       imageUrl:
         'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
     },
     {
-      sector: 'Automotive',
+      sector: 'Macchine per settore Calzaturiero',
+      description:
+        'Ci concentriamo sulla flessibilità delle soluzioni, adattabili alle varie esigenze del settore calzaturiero, le nostre schede elettroniche sono integrate in macchinari specializzati utilizzati in ogni fase della produzione',
       imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857562/electric-car-battery-1680x904_tcm8-241935_u7qayu.png',
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/ybccvvrpu1j4s39zcydx',
     },
     {
-      sector: 'Cleaning',
+      sector: 'Elettrodomestici per il Bianco',
+      description:
+        'Le nostre schede elettroniche sono integrate in elettrodomestici quali lavatrici, asciugatrici, lavastoviglie e apparecchi per la cura del bucato. La nostra tecnologia avanzata consente un controllo preciso dei cicli di lavaggio, asciugatura e altri processi',
       imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+        'https://res.cloudinary.com/dslne9y2j/image/upload/v1701809565/Assets/Sectors/ho3dj1osyr8wvebv1v66.jpg',
     },
     {
-      sector: 'Cleaning',
+      sector: 'Macchine per la lavorazione dei metalli',
+      description:
+        'Le schede elettroniche sviluppate da noi sono integrate in macchinari come torni, frese, laser, per una gestione sofisticata dei parametri di lavorazione',
       imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
-    },
-    {
-      sector: 'Cleaning',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
-    },
-    {
-      sector: 'Cleaning',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/zdvtn1pjubxygvl9pxtw',
     },
   ];
 

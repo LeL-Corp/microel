@@ -4,14 +4,14 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-const SingleSector = () => {
+const SingleSector = ({ data }) => {
   const theme = useTheme();
   const language = 'it';
 
   return (
     <Box>
       <Typography
-        variant="h1"
+        variant="h2"
         align={'center'}
         gutterBottom
         sx={{
@@ -20,18 +20,23 @@ const SingleSector = () => {
           textTransform: 'uppercase',
         }}
       >
-        {language === 'it' ? 'Pulizia industriale' : 'Industrial cleaning'}
+        {data.sector}
       </Typography>
       <Typography
-        variant="h6"
+        // variant="h6"
         component="p"
         color="text.primary"
         align={'center'}
         sx={{
-          color: theme.palette.common.black,
+          fontSize: '1.3rem',
+          color: theme.palette.common.white,
+          paddingLeft: '5%',
+          paddingRight: '5%',
+          paddingTop:'20px',
+          textAlign: 'center',
         }}
       >
-        {/* {language === 'it' ?  'Schede elettroniche per le macchine di pulizia industriale' : 'Electronic boards for industrial cleaning machines'} */}
+        {data.description}
       </Typography>
     </Box>
   );

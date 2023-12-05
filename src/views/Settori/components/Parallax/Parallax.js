@@ -28,7 +28,7 @@ const Parallax = ({ parallaxData }) => {
           data-jarallax
           data-speed="0.2"
           position={'relative'}
-          minHeight={'50vh'}
+          minHeight={'60vh'}
           display={'flex'}
           alignItems={'center'}
         >
@@ -36,12 +36,12 @@ const Parallax = ({ parallaxData }) => {
             className={'jarallax-img'}
             sx={styles(item.imageUrl)}
             style={{
-              filter: 'brightness(80%)',
-              WebkitFilter: 'brightness(50%)',
+              filter: 'brightness(35%)',
+              WebkitFilter: 'brightness(35%)',
             }}
           />
           <Container>
-            <SingleSector />
+            <SingleSector data={item}/>
           </Container>
         </Box>
       ))}
