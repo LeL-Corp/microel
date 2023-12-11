@@ -25,8 +25,7 @@ const Story1 = ({ data }) => {
         >
           <Box>
             <Typography
-              data-aos="fade-left"
-              data-aos-duration="1000"
+              data-aos="fade-up"
               variant={'h3'}
               gutterBottom
               color={'primary.main'}
@@ -35,8 +34,7 @@ const Story1 = ({ data }) => {
               {data.title}
             </Typography>
             <Typography
-              data-aos="fade-left"
-              data-aos-duration="1000"
+              data-aos="fade-up"
               component={'p'}
               sx={{ lineHeight: 1.8 }}
             >

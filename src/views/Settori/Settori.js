@@ -7,8 +7,14 @@ import Main from 'layouts/Main';
 import Container from 'components/Container';
 import { Welcome } from './components';
 import Parallax from './components/Parallax/Parallax';
+import translations from 'translations/Translations';
+import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { useMediaQuery } from '@mui/material';
+import { useLanguage } from 'context/LanguageContext';
 
 const Settori = () => {
+  const { language, changeLanguage } = useLanguage();
   useEffect(() => {
     const jarallaxInit = async () => {
       const jarallaxElems = document.querySelectorAll('.jarallax');
@@ -35,6 +41,9 @@ const Settori = () => {
   };
 
   const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
+    defaultMatches: true,
+  });
 
   const styles = (bgImage) => ({
     position: 'absolute',
@@ -78,17 +87,17 @@ const Settori = () => {
       imageUrl:
         'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/q00toy3fzpe0h5uokqjz',
     },
-   
+
     {
       sector: 'Macchine per test',
       description:
         'Schede elettroniche progettate per integrarsi con una vasta gamma di macchine per test, consentendo una varietà di protocolli di misurazione e analisi',
       // imageUrl:
       //   'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/mmkhfhfbtqbwpdennoct',
-      imageUrl: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/big9koda5yzwskxidimt',
+      imageUrl:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/big9koda5yzwskxidimt',
     },
 
-   
     {
       sector: 'Macchine per Packaging',
       description:
@@ -125,12 +134,18 @@ const Settori = () => {
       imageUrl:
         'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/zdvtn1pjubxygvl9pxtw',
     },
+    {
+      sector: 'E tu in quale settore operi?',
+      description:
+        'Mettiamo a disposizione la nostra esperienza per trovare la soluzione più adatta alle tue esigenze',
+      imageUrl: '',
+    },
   ];
 
   return (
     <Main>
       <Box
-        minHeight={'60vh'}
+        minHeight={'90vh'}
         display={'flex'}
         alignItems={'center'}
         bgcolor={'main'}
@@ -139,10 +154,9 @@ const Settori = () => {
       >
         <Container>
           <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
-            <div ref={ref}>
-              <Welcome />
-            </div>
-            <Box marginTop={4}>
+            <Welcome />
+
+            <Box marginTop={4} id="agency__portfolio-item--js-scroll">
               <NoSsr>
                 <Box
                   component={'svg'}
@@ -166,6 +180,42 @@ const Settori = () => {
         </Container>
       </Box>
       <Parallax parallaxData={parallaxData} />
+      <Box
+        display="flex"
+        flexDirection={{ xs: 'column', sm: 'row' }}
+        alignItems={{ xs: 'stretched', sm: 'flex-start' }}
+        justifyContent={'center'}
+        marginTop={2}
+        marginBottom={12}
+      >
+        <Button
+          component={Link}
+          to={'/contacts'}
+          variant="contained"
+          color="primary"
+          size="large"
+          fullWidth={isMd ? false : true}
+        >
+          {translations.buttons.contact[language]}
+        </Button>
+        <Box
+          marginTop={{ xs: 2, sm: 0 }}
+          marginLeft={{ sm: 2 }}
+          width={{ xs: '100%', md: 'auto' }}
+        >
+          <Button
+            component={Link}
+            to={'/contacts'}
+            target={'blank'}
+            variant="outlined"
+            color="primary"
+            size="large"
+            fullWidth={isMd ? false : true}
+          >
+            {translations.buttons.where[language]}
+          </Button>
+        </Box>
+      </Box>
     </Main>
   );
 };

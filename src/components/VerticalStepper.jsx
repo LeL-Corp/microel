@@ -55,7 +55,7 @@ const CustomDescription = styled(RowContainer)(({ index }) => ({
         : '0px 10px 13px -7px rgba(81, 104, 148)',
   },
   '@media (min-width: 892px)': {
-    minWidth: "600px"
+    minWidth: '600px',
   },
 }));
 
@@ -79,8 +79,8 @@ export default function VerticalLinearStepper() {
           <Step key={step.label}>
             <StepLabel>
               <Typography
-                variant="h2"
-                sx={{ fontWeight: 800, fontSize: '14px' }}
+                // variant="h2"
+                sx={{ fontWeight: 400, fontSize: '20px' }}
               >
                 {step.label}
               </Typography>
@@ -90,31 +90,26 @@ export default function VerticalLinearStepper() {
               TransitionProps={{ unmountOnExit: false }}
             >
               <CustomDescription index={index}>
-                <motion.div initial={{ y: 30, opacity: 0 }}
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 4, delay: index * 1.5 }}>
-                <motion.Typography
-                  
+                  transition={{ duration: 1, delay: index * 0.8 }}
                 >
-                  {step.description}
-                  
-                </motion.Typography>
-                {
-                    (index ===
-                      steps.length - 1 ? (
-                        <Button
-                          variant="outlined"
-                          color="primary"
-                          size="large"
-                          fullWidth={false}
-                        >
-                          {' '}
-                          Contattaci
-                        </Button>
-                      ) : null)
-                  }
+                  <motion.Typography sx={{ fontSize: '18px' }}>
+                    {step.description}
+                  </motion.Typography>
+                  {index === steps.length - 1 ? (
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      size="large"
+                      fullWidth={false}
+                    >
+                      {' '}
+                      Contattaci
+                    </Button>
+                  ) : null}
                 </motion.div>
-           
               </CustomDescription>
             </StepContent>
           </Step>

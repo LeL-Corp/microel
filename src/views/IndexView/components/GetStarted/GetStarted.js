@@ -52,7 +52,7 @@ const GetStarted = ({ withImage = true }) => {
           align={'center'}
           gutterBottom
           sx={{
-            fontWeight: 700,
+            fontWeight: 500,
             fontSize: '26px',
           }}
         >

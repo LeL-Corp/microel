@@ -21,6 +21,8 @@ import translations from 'translations/Translations';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import { useLanguage } from 'context/LanguageContext';
+import { Link } from 'react-router-dom';
+import { Dvr } from '@mui/icons-material';
 
 export const mock = [
   {
@@ -33,8 +35,8 @@ export const mock = [
     name: 'Automazione industriale',
   },
   {
-    logo: <SmartToyIcon color="secondary" style={{ fontSize: '48px' }} />,
-    name: 'Domotica',
+    logo: <Dvr color="secondary" style={{ fontSize: '48px' }} />,
+    name: 'Macchine per i test',
   },
   {
     logo: <WidgetsIcon color="secondary" style={{ fontSize: '48px' }} />,
@@ -52,7 +54,7 @@ export const mock = [
   },
   {
     logo: <FlightIcon color="secondary" style={{ fontSize: '48px' }} />,
-    name: 'Strumentazione Aeronautica',
+    name: 'Strumentazione Avionica',
   },
 ];
 
@@ -95,6 +97,8 @@ const Sectors = () => {
                 </Typography>
                 <Box marginTop={2}>
                   <Button
+                    component={Link}
+                    to={'/areas'}
                     size={'large'}
                     variant={'outlined'}
                     endIcon={

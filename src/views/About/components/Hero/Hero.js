@@ -62,7 +62,7 @@ const Hero = () => {
           bottom: 0,
           width: 1,
           height: 1,
-          background: alpha('#161c2d', 0.4),
+          background: alpha('#161c2d', 0.6),
           zIndex: 1,
         }}
       />
@@ -70,7 +70,7 @@ const Hero = () => {
         position={'relative'}
         zIndex={2}
         style={{
-          backgroundColor: theme.palette.secondary.main,
+          // backgroundColor: theme.palette.primary.main,
           filter: 'opacity(0.9)',
           maxWidth: 'unset !important',
         }}

@@ -17,6 +17,7 @@ import { MotionConfig } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import translations from 'translations/Translations';
+import { Link } from 'react-router-dom';
 
 const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
   const theme = useTheme();
@@ -103,6 +104,8 @@ const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
           <Grid item container justifyContent={'center'} xs={12}>
             <Button
               fullWidth
+              component={Link}
+              to="/roadmap"
               variant={'outlined'}
               size={'large'}
               sx={{
@@ -129,7 +132,7 @@ const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
                 </Box>
               }
             >
-              {translations.buttons.solutions[language]}
+              {translations.buttons.roadmap[language]}
             </Button>
           </Grid>
         </Grid>

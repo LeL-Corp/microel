@@ -28,7 +28,7 @@ const Parallax = ({ parallaxData }) => {
           data-jarallax
           data-speed="0.2"
           position={'relative'}
-          minHeight={'60vh'}
+          minHeight={index < parallaxData.length - 1 ? '80vh' : '30vh'}
           display={'flex'}
           alignItems={'center'}
         >
@@ -41,7 +41,7 @@ const Parallax = ({ parallaxData }) => {
             }}
           />
           <Container>
-            <SingleSector data={item}/>
+            <SingleSector data={item} />
           </Container>
         </Box>
       ))}

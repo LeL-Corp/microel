@@ -5,6 +5,10 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Slider from 'react-slick';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import { Container } from '@mui/material';
 
 const Gallery = () => {
   const theme = useTheme();
@@ -18,43 +22,51 @@ const Gallery = () => {
       src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/xnl5p9qyrtfftwpzeqc8',
       source:
         'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/xnl5p9qyrtfftwpzeqc8',
-      rows: 2,
-      cols: 1,
+      title: 'Titolo',
+      description: 'Descrizione',
     },
     {
       src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmp6kijybwlkibzxnnhv',
       source:
         'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmp6kijybwlkibzxnnhv',
-      rows: 1,
-      cols: 2,
+      title: 'Titolo',
+      description: 'Descrizione',
     },
     {
       src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/h8jklckpuqlqrx1ouixl',
       source:
         'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/h8jklckpuqlqrx1ouixl',
-      rows: 1,
-      cols: 1,
+      title: 'Titolo',
+      description: 'Descrizione',
     },
     {
       src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/jysxe6lnnperioec42xm',
       source:
         'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/jysxe6lnnperioec42xm',
-      rows: 1,
-      cols: 1,
+      title: 'Titolo',
+      description: 'Descrizione',
     },
     {
       src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/t5chpxzf8pbm19k8535k',
       source:
         'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/t5chpxzf8pbm19k8535k',
-      rows: 1,
-      cols: 2,
+      title: 'Titolo',
+      description: 'Descrizione',
     },
   ];
 
   const photosToShow = isMd ? photos : photos.slice(0, photos.length - 1);
-
+  const sliderOpts = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    slidesToShow: isMd ? 3 : 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
   return (
-    <Box>
+    <Container sx={{ padding: '60px 0px 100px' }}>
       <Box marginBottom={4}>
         <Typography
           sx={{
@@ -76,14 +88,14 @@ const Gallery = () => {
             marginTop: theme.spacing(1),
           }}
         >
-          Uno sguardo al nostro lavoro:
+          Uno sguardo al nostro lavoro
         </Typography>
         <Typography variant="h6" align={'center'} color={'text.secondary'}>
-          I nostri team curano tutti i dettagli, dal design, alla produzione,
+          I nostri team curano tutti i dettagli: dal design, alla produzione,
           alla manutenzione.
         </Typography>
       </Box>
-      <Box>
+      {/* <Box>
         <ImageList
           variant="quilted"
           cols={4}
@@ -112,8 +124,70 @@ const Gallery = () => {
             </ImageListItem>
           ))}
         </ImageList>
-      </Box>
-    </Box>
+      </Box> */}
+
+      <Slider {...sliderOpts}>
+        {photosToShow.map((item, i) => (
+          <Box key={i} padding={{ xs: 1, md: 2, lg: 3 }}>
+            <Box
+              display={'block'}
+              width={1}
+              height={1}
+              sx={{
+                position: 'relative',
+                overflow: 'hidden',
+                borderRadius: 2,
+                '&:hover': {
+                  '& img': {
+                    transform: 'scale(1.2)',
+                  },
+                  '& .portfolio-main-item': {
+                    bottom: 0,
+                  },
+                },
+              }}
+            >
+              <Box
+                component={Card}
+                width={1}
+                height={1}
+                display={'flex'}
+                flexDirection={'column'}
+                sx={{ backgroundImage: 'none' }}
+              >
+                <CardMedia
+                  image={item.src}
+                  sx={{
+                    cursor: 'move',
+                    cursor: 'grab',
+                    cursor: '-moz-grab',
+                    cursor: '-webkit-grab',
+                    position: 'relative',
+                    height: { xs: 240, sm: 340, md: 280 },
+                    overflow: 'hidden',
+                  }}
+                ></CardMedia>
+                <Box
+                  position={'absolute'}
+                  bottom={'-100%'}
+                  left={0}
+                  right={0}
+                  padding={4}
+                  bgcolor={'tertiary.main'}
+                  className={'portfolio-main-item'}
+                  sx={{ transition: 'bottom 0.3s ease 0s' }}
+                >
+                  <Typography variant={'h6'} fontWeight={700} gutterBottom>
+                    {item.title}
+                  </Typography>
+                  <Typography>{item.description}</Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        ))}
+      </Slider>
+    </Container>
   );
 };
 

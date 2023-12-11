@@ -58,12 +58,12 @@ const translations = {
     },
     section1: {
       heading: {
-        it: 'Elettronica dedicata per esigenze specifiche.',
-        en: 'Dedicated electronics for specific needs.',
-      },
-      subHeading: {
         it: 'Le soluzioni dedicate sono il nostro prodotto standard.',
         en: 'Dedicated solutions are our standard product.',
+      },
+      subHeading: {
+        it: 'Elettronica dedicata per esigenze specifiche.',
+        en: 'Dedicated electronics for specific needs.',
       },
     },
     section2: {

@@ -52,9 +52,7 @@ const About = () => {
       <Container maxWidth={800} paddingY={'0 !important'}>
         <Divider />
       </Container>
-      {/* <Container>
-        <Team />
-      </Container> */}
+   
       <Box bgcolor={'secondary.main'}>
         <Container>
           <Gallery />

@@ -4,14 +4,18 @@ import Box from '@mui/material/Box';
 
 import Main from 'layouts/Main';
 import Container from 'components/Container';
-import {  Partners } from './components';
+import { Partners, Solutions } from './components';
 
 const Roadmap = () => {
   const theme = useTheme();
-  return (     
+  return (
     <Main>
       <Container>
         <Partners />
+        <Container>
+         
+          <Solutions />
+        </Container>
       </Container>
     </Main>
   );
