@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import { Link } from 'react-router-dom';
 
 const Story1 = ({ data }) => {
   const theme = useTheme();
@@ -38,7 +39,13 @@ const Story1 = ({ data }) => {
               component={'p'}
               sx={{ lineHeight: 1.8 }}
             >
-              {data.text}
+              {data.text}{' '}
+              <a
+                style={{ color: '#fff' }}
+                href="https://www.flyboxavionics.it/index.html"
+              >
+                Flybox Avionics
+              </a>
             </Typography>
           </Box>
         </Grid>
