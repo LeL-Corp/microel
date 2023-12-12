@@ -20,13 +20,13 @@ const getTheme = (mode, themeToggler) =>
         h2: {
           fontSize: '28px',
           '@media (max-width: 600px)': {
-            fontSize: '18px',
+            fontSize: '24px',
           },
         },
         h3: {
           fontSize: '26px',
           '@media (max-width: 600px)': {
-            fontSize: '24px',
+            fontSize: '18px',
           },
         },
         h4: {

@@ -27,7 +27,7 @@ const Story2 = ({ data }) => {
             <Typography
               data-aos="fade-up"
               data-aos-duration="1000"
-              variant={'h3'}
+              variant={'h2'}
               gutterBottom
               color={'primary.main'}
               sx={{ fontWeight: 700 }}

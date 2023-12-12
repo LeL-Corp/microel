@@ -7,12 +7,13 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom';
 
+
 const Story1 = ({ data }) => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
-
+ 
   return (
     <Box>
       <Grid container spacing={4} direction={isMd ? data.direction : 'column'}>
@@ -27,7 +28,7 @@ const Story1 = ({ data }) => {
           <Box>
             <Typography
               data-aos="fade-up"
-              variant={'h3'}
+              variant={'h2'}
               gutterBottom
               color={'primary.main'}
               sx={{ fontWeight: 700 }}

@@ -7,3 +7,4 @@ export { default as Story2 } from './Story/Story2';
 export { default as Team } from './Team';
 export { default as WhoWeAre } from './WhoWeAre';
 export { default as Application } from './Application';
+export { default as AboutTags } from './Tags/AboutTags';

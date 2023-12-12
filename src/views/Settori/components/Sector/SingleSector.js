@@ -20,6 +20,8 @@ const SingleSector = ({ data }) => {
           fontWeight: 900,
           color: theme.palette.common.white,
           textTransform: 'uppercase',
+
+          
         }}
       >
         {data.sector}

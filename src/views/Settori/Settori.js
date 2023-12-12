@@ -8,7 +8,7 @@ import Container from 'components/Container';
 import { Welcome } from './components';
 import Parallax from './components/Parallax/Parallax';
 import translations from 'translations/Translations';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
 import { useLanguage } from 'context/LanguageContext';
@@ -134,12 +134,6 @@ const Settori = () => {
       imageUrl:
         'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/zdvtn1pjubxygvl9pxtw',
     },
-    {
-      sector: 'E tu in quale settore operi?',
-      description:
-        'Mettiamo a disposizione la nostra esperienza per trovare la soluzione più adatta alle tue esigenze',
-      imageUrl: '',
-    },
   ];
 
   return (
@@ -180,6 +174,48 @@ const Settori = () => {
         </Container>
       </Box>
       <Parallax parallaxData={parallaxData} />
+      <Box ref={ref} sx={{ paddingTop: '50px' }}>
+        <Typography
+          variant="h2"
+          align={'center'}
+          gutterBottom
+          sx={{
+            fontWeight: 900,
+            color: theme.palette.common.white,
+            textTransform: 'uppercase',
+            paddingTop: '100px',
+
+            transform: isInView ? 'none' : 'translateY(50px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+          }}
+        >
+          E tu in quale settore operi?
+        </Typography>
+        <Typography
+          // variant="h6"
+          component="p"
+          color="text.primary"
+          align={'center'}
+          sx={{
+            fontSize: '1.3rem',
+            color: theme.palette.common.white,
+            paddingLeft: '5%',
+            paddingRight: '5%',
+            paddingTop: '20px',
+            textAlign: 'center',
+            paddingBottom: '60px',
+
+            transform: isInView ? 'none' : 'translateY(50px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+          }}
+        >
+          Mettiamo a disposizione la nostra esperienza per trovare la soluzione
+          più adatta alle tue esigenze
+        </Typography>
+      </Box>
+
       <Box
         display="flex"
         flexDirection={{ xs: 'column', sm: 'row' }}
@@ -187,6 +223,7 @@ const Settori = () => {
         justifyContent={'center'}
         marginTop={2}
         marginBottom={12}
+        sx={{ paddingBottom: '50px' }}
       >
         <Button
           component={Link}

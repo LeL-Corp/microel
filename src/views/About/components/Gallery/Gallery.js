@@ -69,8 +69,8 @@ const Gallery = () => {
     <Container sx={{ padding: '60px 0px 100px' }}>
       <Box marginBottom={4}>
         <Typography
+          variant="h2"
           sx={{
-            textTransform: 'uppercase',
             fontWeight: 700,
           }}
           gutterBottom
@@ -80,7 +80,7 @@ const Gallery = () => {
           Gallery
         </Typography>
         <Typography
-          variant="h4"
+          variant="h3"
           align={'center'}
           gutterBottom
           sx={{
@@ -90,7 +90,12 @@ const Gallery = () => {
         >
           Uno sguardo al nostro lavoro
         </Typography>
-        <Typography variant="h6" align={'center'} color={'text.secondary'}>
+        <Typography
+          component="p"
+          align={'center'}
+          color={'text.secondary'}
+          sx={{ textAlign: 'center' }}
+        >
           I nostri team curano tutti i dettagli: dal design, alla produzione,
           alla manutenzione.
         </Typography>

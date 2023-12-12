@@ -84,7 +84,7 @@ const Solutions = () => {
               >
                 <Box
                   width={1}
-                  height={1}
+                  height={'270px'}
                   //   data-aos={'fade-up'}
                   //   data-aos-delay={i * 100}
                   //   data-aos-offset={100}

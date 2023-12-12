@@ -28,7 +28,7 @@ const Parallax = ({ parallaxData }) => {
           data-jarallax
           data-speed="0.2"
           position={'relative'}
-          minHeight={index < parallaxData.length - 1 ? '80vh' : '30vh'}
+          minHeight={'80vh'}
           display={'flex'}
           alignItems={'center'}
         >

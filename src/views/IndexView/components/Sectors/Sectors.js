@@ -24,6 +24,8 @@ import { useLanguage } from 'context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Dvr } from '@mui/icons-material';
 
+import { motion } from 'framer-motion';
+
 export const mock = [
   {
     logo: (
@@ -130,59 +132,72 @@ const Sectors = () => {
             {mock.map((item, i) => (
               <Grid item xs={6} sm={6} md={4} key={i}>
                 <Box display={'block'} width={1} height={1}>
-                  <Card
-                    sx={{
-                      backgroundColor: theme.palette.tertiary.main,
-                      transform: 'translateY(0)',
-                      transition: 'transform 0.3s ease',
-                      '&:hover': {
-                        transform: 'translateY(-10px)',
-                        '&:hover': {
-                          boxShadow: `0px 10px 13px -7px rgba(37, 176, 162)`,
-                        },
-                      },
+                  <motion.div
+                    key={i}
+                    ref={ref}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{
+                      delay: i * 0.1,
+                      duration: 1,
+                      ease: 'easeInOut',
                     }}
+                    style={{ margin: 0.5 }}
                   >
-                    <CardContent
+                    <Card
                       sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        padding: 3,
+                        backgroundColor: theme.palette.tertiary.main,
+                        transform: 'translateY(0)',
+                        transition: 'transform 0.3s ease',
+                        '&:hover': {
+                          transform: 'translateY(-10px)',
+                          '&:hover': {
+                            boxShadow: `0px 10px 13px -7px rgba(37, 176, 162)`,
+                          },
+                        },
                       }}
                     >
-                      <Box
+                      <CardContent
                         sx={{
                           display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
                           justifyContent: 'center',
+                          alignItems: 'center',
+                          padding: 3,
                         }}
-                        component={'div'}
-                        height={100}
-                        width={100}
-                        alt={item.name}
                       >
-                        <ColumnContainer
-                          alignItems="center"
-                          style={{ gap: 10 }}
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                          }}
+                          component={'div'}
+                          height={100}
+                          width={100}
+                          alt={item.name}
                         >
-                          {item.logo}
-                          <Typography
-                            component="p"
-                            align="center"
-                            sx={{
-                              fontWeight: 900,
-                              fontSize: 12,
-                              color: 'text.dark',
-                            }}
+                          <ColumnContainer
+                            alignItems="center"
+                            style={{ gap: 10 }}
                           >
-                            {item.name}
-                          </Typography>
-                        </ColumnContainer>
-                      </Box>
-                    </CardContent>
-                  </Card>
+                            {item.logo}
+                            <Typography
+                              component="p"
+                              align="center"
+                              sx={{
+                                fontWeight: 900,
+                                fontSize: 12,
+                                color: 'text.dark',
+                              }}
+                            >
+                              {item.name}
+                            </Typography>
+                          </ColumnContainer>
+                        </Box>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 </Box>
               </Grid>
             ))}
