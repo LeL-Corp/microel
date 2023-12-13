@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -24,7 +24,12 @@ const NotFoundCover = () => {
           overflow: 'hidden',
         }}
       >
-        <Container paddingX={0} paddingY={0} maxWidth={{ sm: 1, md: 1236 }}>
+        <Container
+          paddingX={6}
+          paddingY={0}
+          maxWidth={{ sm: 1, md: 1236 }}
+          height={1}
+        >
           <Box
             display={'flex'}
             flexDirection={{ xs: 'column', md: 'row' }}
@@ -47,17 +52,12 @@ const NotFoundCover = () => {
                     404
                   </Typography>
                   <Typography
-                    variant="h6"
-                    component="p"
+                    variant="h2"
                     color="text.secondary"
                     align={isMd ? 'left' : 'center'}
+                    paddingTop={2}
                   >
-                    Oops! Looks like you followed a bad link.
-                    <br />
-                    If you think this is a problem with us, please{' '}
-                    <Link href={''} underline="none">
-                      tell us
-                    </Link>
+                    Oops! Pagina non trovata.
                   </Typography>
                   <Box
                     marginTop={4}
@@ -69,9 +69,9 @@ const NotFoundCover = () => {
                       variant="contained"
                       color="primary"
                       size="large"
-                      href={'/'}
+                      to={'/'}
                     >
-                      Back home
+                      Torna alla home
                     </Button>
                   </Box>
                 </Box>
@@ -129,17 +129,21 @@ const NotFoundCover = () => {
                         component={'img'}
                         loading="lazy"
                         src={
-                          'https://assets.maccarianagency.com/backgrounds/img23.jpg'
+                          'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410231/Assets/Homepage/tkd5azizmnc7x1nnqd7d.jpg'
                         }
+                        display={{
+                          sm: 'none',
+                          xs: 'none',
+                          md: 'block',
+                          lg: 'block',
+                          xl: 'block',
+                        }}
                         height={{ xs: 'auto', md: 1 }}
                         maxHeight={{ xs: 300, md: 1 }}
                         width={1}
                         maxWidth={1}
                         sx={{
-                          filter:
-                            theme.palette.mode === 'dark'
-                              ? 'brightness(0.7)'
-                              : 'none',
+                          filter: 'hue-rotate(-37deg)',
                         }}
                       />
                     </Box>

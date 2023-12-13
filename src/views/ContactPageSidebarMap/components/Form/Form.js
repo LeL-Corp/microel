@@ -2,6 +2,7 @@
 import React from 'react';
 import { useState } from 'react';
 import emailjs, { send } from '@emailjs/browser';
+import { Link } from 'react-router-dom';
 
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -202,26 +203,17 @@ const Contact = () => {
                   <Typography component="p" variant="body2" align="left">
                     Cliccando "invia" sottoscrivi le nostre{' '}
                     <Box
-                      component="a"
-                      href=""
+                      component={Link}
+                      to="/privacy-policy"
                       color={theme.palette.text.primary}
                       fontWeight={'700'}
                     >
                       Privacy Policy
                     </Box>
-                    ,{' '}
-                    <Box
-                      component="a"
-                      href=""
-                      color={theme.palette.text.primary}
-                      fontWeight={'700'}
-                    >
-                      Data Policy
-                    </Box>{' '}
                     e{' '}
                     <Box
-                      component="a"
-                      href=""
+                      component={Link}
+                      to="/cookies-policy"
                       color={theme.palette.text.primary}
                       fontWeight={'700'}
                     >

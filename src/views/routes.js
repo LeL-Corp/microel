@@ -35,6 +35,7 @@ import {
   PortfolioGrid as PortfolioGridView,
   CompanyTerms as CompanyTermsView,
   ContactPageSidebarMap as ContactPageSidebarMapView,
+  CookiesPolicy as CookiesPolicyView,
   ContactPageCover as ContactPageCoverView,
   AboutSideCover as AboutSideCoverView,
   BlogSearch as BlogSearchView,
@@ -183,6 +184,14 @@ const routes = [
   {
     path: '/contacts',
     renderer: (params = {}) => <ContactPageSidebarMapView {...params} />,
+  },
+  {
+    path: '/privacy-policy',
+    renderer: (params = {}) => <ContactPageSidebarMapView {...params} />,
+  },
+  {
+    path: '/cookies-policy',
+    renderer: (params = {}) => <CookiesPolicyView {...params} />,
   },
   {
     path: '/contact-page-cover',
