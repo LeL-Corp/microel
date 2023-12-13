@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
+import { useState } from 'react';
+import emailjs, { send } from '@emailjs/browser';
 
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -10,8 +12,9 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
-
 import Container from 'components/Container';
+import RowContainer from 'components/RowContainer';
+import { CircularProgress } from '@mui/material';
 
 const validationSchema = yup.object({
   firstName: yup
@@ -38,21 +41,44 @@ const Contact = () => {
   const theme = useTheme();
 
   const LeftSide = () => {
+    const [emailSent, setEmailSent] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [emailError, setEmailError] = useState(false);
     const initialValues = {
       firstName: '',
       lastName: '',
       email: '',
       message: '',
     };
+    const {
+      REACT_APP_EMAILJS_SERVICE_ID,
+      REACT_APP_EMAILJS_TEMPLATE_ID,
+      REACT_APP_EMAILJS_PUBLIC_KEY,
+    } = process.env;
 
-    const onSubmit = (values) => {
-      return values;
+    const sendEmail = async (values, { resetForm }) => {
+      try {
+        setLoading(true);
+        await emailjs.send(
+          `${REACT_APP_EMAILJS_SERVICE_ID}`,
+          `${REACT_APP_EMAILJS_TEMPLATE_ID}`,
+          values,
+          `${REACT_APP_EMAILJS_PUBLIC_KEY}`,
+        );
+
+        resetForm();
+        setEmailSent(true);
+      } catch (e) {
+        setEmailError(true);
+      } finally {
+        setLoading(false);
+      }
     };
 
     const formik = useFormik({
-      initialValues,
+      initialValues: initialValues,
       validationSchema: validationSchema,
-      onSubmit,
+      onSubmit: sendEmail,
     });
 
     return (
@@ -63,8 +89,7 @@ const Contact = () => {
           </Typography>
           <Typography color="text.secondary">
             Siamo a tua disposizione! <br></br>
-            Indicaci il tuo nome, cognome, la tua mail e il tuo messaggio, ti
-            risponderemo il prima possibile.
+            Ti risponderemo il prima possibile.
           </Typography>
         </Box>
         <Box>
@@ -141,15 +166,32 @@ const Contact = () => {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Button
-                  sx={{ height: 54, minWidth: 150 }}
-                  variant="contained"
-                  color="primary"
-                  size="medium"
-                  type="submit"
-                >
-                  Invia
-                </Button>
+                <RowContainer>
+                  <Button
+                    sx={{ height: 54, minWidth: 150 }}
+                    variant="contained"
+                    color={'primary'}
+                    size="medium"
+                    type="submit"
+                  >
+                    {loading ? (
+                      <CircularProgress color="secondary" />
+                    ) : emailSent ? (
+                      'Inviato!'
+                    ) : (
+                      'Invia'
+                    )}
+                  </Button>
+                  {emailSent ? (
+                    <Typography
+                      variant={'p'}
+                      sx={{ fontWeight: 700 }}
+                      gutterBottom
+                    >
+                      Grazie, a presto!
+                    </Typography>
+                  ) : null}
+                </RowContainer>
               </Grid>
 
               <Grid item xs={12}>
