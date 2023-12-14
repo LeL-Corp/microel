@@ -29,6 +29,7 @@ const About = () => {
     //   'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/pnrbxz4t19emktnqdb9v',
     image:
       'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmzge04qi3fodiopd21c',
+    
 
     imageAlt: 'La nostra storia',
     direction: 'row',

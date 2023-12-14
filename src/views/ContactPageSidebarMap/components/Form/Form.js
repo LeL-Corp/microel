@@ -209,7 +209,7 @@ const Contact = () => {
                       fontWeight={'700'}
                     >
                       Privacy Policy
-                    </Box>
+                    </Box>{' '}
                     e{' '}
                     <Box
                       component={Link}

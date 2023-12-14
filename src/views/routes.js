@@ -7,6 +7,7 @@ import {
   About as AboutView,
   ContactPageSidebarMap as ContactPageSidebarMapView,
   CookiesPolicy as CookiesPolicyView,
+  PrivacyPolicy as PrivacyPolicyView,
   NotFoundCover as NotFoundCoverView,
 } from 'views';
 
@@ -35,7 +36,7 @@ const routes = [
   },
   {
     path: '/privacy-policy',
-    renderer: (params = {}) => <ContactPageSidebarMapView {...params} />,
+    renderer: (params = {}) => <PrivacyPolicyView {...params} />,
   },
   {
     path: '/cookies-policy',

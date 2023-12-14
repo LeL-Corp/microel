@@ -53,7 +53,7 @@ const GetStarted = ({ withImage = true }) => {
           gutterBottom
           sx={{
             fontWeight: 500,
-            fontSize: '26px',
+            fontSize: '26px !important',
           }}
         >
           {translations.home.section5.heading[language]}
@@ -90,9 +90,9 @@ const GetStarted = ({ withImage = true }) => {
           width={{ xs: '100%', md: 'auto' }}
         >
           <Button
-            component={Link}
-            to={'/contacts'}
-            target={'blank'}
+             component={Link}
+             to={'/contacts'}
+            
             variant="outlined"
             color="primary"
             size="large"

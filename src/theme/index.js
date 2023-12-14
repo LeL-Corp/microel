@@ -30,13 +30,13 @@ const getTheme = (mode, themeToggler) =>
           },
         },
         h4: {
-          fontSize: '16px',
+          fontSize: '18px',
         },
         h5: {
-          fontSize: '16px',
+          fontSize: '18px',
         },
         h6: {
-          fontSize: '16px',
+          fontSize: '18px',
         },
       },
       zIndex: {
@@ -88,7 +88,6 @@ const getTheme = (mode, themeToggler) =>
             },
           },
         },
-       
       },
       themeToggler,
     }),

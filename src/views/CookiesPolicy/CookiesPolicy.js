@@ -12,6 +12,7 @@ import { useInView } from 'framer-motion';
 import { useLanguage } from 'context/LanguageContext';
 import translations from 'translations/Translations';
 import cookiesDescription from './CookiesDescription';
+import ColumnContainer from 'components/ColumnContainer';
 
 const CookiesPolicy = () => {
   const theme = useTheme();
@@ -43,17 +44,20 @@ const CookiesPolicy = () => {
                 position: 'relative',
               }}
             >
-              <Typography
-                variant="h1"
-                color="text.primary"
-                gutterBottom
-                sx={{
-                  fontWeight: 700,
-                  marginBottom: '4rem',
-                }}
-              >
-                Cookies Policy - Informativa sui Cookies
-              </Typography>
+              <ColumnContainer style={{ marginBottom: '3rem', gap: '0' }}>
+                <Typography
+                  variant="h1"
+                  color="text.primary"
+                  gutterBottom
+                  sx={{
+                    fontWeight: 700,
+                    marginTop: '3rem',
+                    marginBottom: '0.5rem',
+                  }}
+                >
+                  Cookies Policy - Informativa sui Cookies
+                </Typography>
+              </ColumnContainer>
 
               <Typography variant="p">
                 La presente Cookie Policy (Informativa sui cookie) e'
@@ -70,22 +74,195 @@ const CookiesPolicy = () => {
                 che i siti non funzionino correttamente (in particolare per
                 quello che riguarda i cookie tecnici e di sessione).
               </Typography>
-              {cookiesDescription.map((item, i) => (
-                <>
+              <ul>
+                <li>
                   <Typography
                     variant="h3"
-                    sx={{ marginBottom: '2rem', marginTop: '4rem' }}
+                    sx={{
+                      marginTop: '1rem',
+                      marginBottom: '0.5rem',
+                      fontSize: '20px !important',
+                      fontWeight: 700,
+                    }}
                   >
-                    {item.title}
+                    COSA SONO I COOKIE ?
                   </Typography>
-                  <Typography variant="body1">{item.paragraph}</Typography>
-                  {item.subParagraph ? (
-                    <Typography variant="body1">{item.subParagraph}</Typography>
-                  ) : null}
-                </>
-              ))}
+                  <Typography>
+                    I cookie sono piccoli file che vengono salvati sul vostro
+                    computer (o altri dispositivi abilitati alla navigazione su
+                    internet, per esempio smartphone o tablet) dal browser che
+                    viene utilizzato per la navigazione (come Firefox, Chrome,
+                    Internet Explorer, ecc.)
+                  </Typography>
+                </li>
 
-              <ul
+                <li>
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      marginTop: '1rem',
+                      marginBottom: '0.5rem',
+                      fontSize: '20px !important',
+                      fontWeight: 700,
+                    }}
+                  >
+                    PERCHE' SI UTILIZZANO I COOKIE ?
+                  </Typography>
+                  <Typography>
+                    La maggior parte dei siti web utilizza uno o piu' cookie per
+                    memorizzare informazioni di vario tipo, informazioni che
+                    possono essere fondamentali per poter utilizzare il sito (ad
+                    esempio per un sito ecommerce potrebbe essere un cookie che
+                    serve a memorizzare quali articoli sono presenti a carrello)
+                    oppure informazioni piu' indirizzate alla profilazione
+                    dell'utente (ad esempio per effettuare operazioni di
+                    remarketing o retargeting).
+                  </Typography>
+                </li>
+
+                <li>
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      marginTop: '1rem',
+                      marginBottom: '0.5rem',
+                      fontSize: '20px !important',
+                      fontWeight: 700,
+                    }}
+                  >
+                    QUALE TIPO DI COOKIE E' UTILIZZATO SU QUESTO SITO ?
+                  </Typography>
+                  <Typography>
+                    I siti gestiti da Microel srl utilizzano esclusivamente
+                    cookie tecnici o di sessione che siano strettamente
+                    necessari all'utilizzo del sito da parte degli utenti, e non
+                    utilizza nessun tipo di cookie per il remarketing o per
+                    profilare l'utente.
+                  </Typography>
+
+                  <li>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        marginTop: '1rem',
+                        marginBottom: '0.5rem',
+                        fontSize: '20px !important',
+                        fontWeight: 700,
+                      }}
+                    >
+                      ELENCO DEI COOKIE UTILIZZATI SUI SITI DI PROPRIETA' DI
+                      MICROEL SRL
+                    </Typography>
+                    <ul>
+                      <li>
+                        <Typography>
+                          <strong>Nome cookie: PHPSESSID</strong>
+                        </Typography>
+                      </li>
+                      <li>
+                        <Typography>
+                          <strong>Tipo:</strong> Cookie tecnico
+                        </Typography>
+                      </li>
+                      <li>
+                        <Typography>
+                          <strong>Descrizione:</strong> Il cookie PHPSESSID è un cookie
+                          nativo di PHP e consente ai siti Web di memorizzare
+                          dati sullo stato della sessione. Nel sito Web viene
+                          utilizzato per stabilire una sessione utente e per
+                          comunicare i dati sullo stato attraverso un cookie
+                          temporaneo, comunemente denominato cookie di sessione.
+                          Poiché il cookie PHPSESSID non ha una scadenza temporale,
+                          scompare quando si chiude il client.
+                        </Typography>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <Typography
+                      variant="h3"
+                      sx={{
+                        marginTop: '1rem',
+                        marginBottom: '0.5rem',
+                        fontSize: '20px !important',
+                        fontWeight: 700,
+                      }}
+                    >
+                      COOKIE DI TERZE PARTI
+                    </Typography>
+                    <ul>
+                      <li>
+                        <Typography>
+                          Nel corso della navigazione sui siti gestiti da
+                          Microel srl l’utente potrebbe ricevere sul suo
+                          terminale anche cookie di siti o di web server diversi
+                          (c.d. cookie di “terze parti”): ciò accade perché sul
+                          sito possono essere presenti elementi come, ad
+                          esempio, immagini, mappe, suoni, specifici link a
+                          pagine web di altri domini che risiedono su server
+                          diversi da quello sul quale si trova la pagina
+                          richiesta. In altre parole, detti cookie sono
+                          impostati direttamente da gestori di siti web o server
+                          diversi dal Sito. Questi terzi potrebbero in teoria
+                          impostare cookie mentre visitate il sito e ottenere
+                          così informazioni relative al fatto che avete visitato
+                          il nostro sito. Ognuno di essi dispone di una propria
+                          informativa sulla privacy che può essere diversa da
+                          quella adottata da questo sito web. Se l’utente decide
+                          di non concedere l’autorizzazione per l’impiego di
+                          cookie di terze parti, potranno essere utilizzare
+                          esclusivamente le funzioni del sito, che non
+                          richiedono tali cookie.
+                        </Typography>
+                      </li>
+                      <li>
+                        <Typography>
+                          <strong>Nome:</strong> Tecnologia Flash
+                        </Typography>
+                      </li>
+                      <li>
+                        <Typography>
+                          <strong>Descrizione:</strong> Il nostro sito web può
+                          utilizzare Adobe Flash Player per offrire alcuni
+                          contenuti multimediali. Sulla maggior parte dei
+                          computer il programma risulta installato di “default”.
+                        </Typography>
+                      </li>
+                      <li>
+                        <Typography>
+                          <strong>
+                            Link all’informativa privacy della terza parte:
+                          </strong>{' '}
+                          <a style={{ color: "#fff"}}href="http://www.adobe.com/products/flashplayer/security">
+                            http://www.adobe.com/products/flashplayer/security
+                          </a>
+                        </Typography>
+                      </li>
+                    </ul>
+                  </li>
+                </li>
+
+                <li>
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      marginTop: '1rem',
+                      marginBottom: '0.5rem',
+                      fontSize: '20px !important',
+                      fontWeight: 700,
+                    }}
+                  >
+                    COME DISABILITARE I COOKIE MEDIANTE LA CONFIGURAZIONE DEL
+                    BROWSER
+                  </Typography>
+                  <Typography>
+                    Se si vuole modificare le impostazioni del tuo browser
+                    riguardo la memorizzazione dei cookies, vengono riportati
+                    qui di seguito i link alle pagine dei browser più
+                    utilizzati:
+                  </Typography>
+                </li>
+                <ul
                 style={{
                   listStyle: 'none',
                   padding: '0px',
@@ -116,12 +293,7 @@ const CookiesPolicy = () => {
                   </a>
                 </li>
               </ul>
-              <Box
-                display="flex"
-                flexDirection={{ xs: 'column', sm: 'row' }}
-                alignItems={{ xs: 'stretched', sm: 'flex-start' }}
-                marginTop={4}
-              ></Box>
+              </ul>
             </Box>
           </Container>
 

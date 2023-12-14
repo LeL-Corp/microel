@@ -9,6 +9,7 @@ import Avatar from '@mui/material/Avatar';
 import { useTheme } from '@mui/material/styles';
 
 import Container from 'components/Container';
+import { Link } from '@mui/material';
 
 const mock = [
   {
@@ -104,7 +105,18 @@ const Contact = () => {
                   {item.icon}
                 </Box>
               </Box>
-              <ListItemText primary={item.label} secondary={item.value} />
+              <ListItemText
+              primary={item.label}
+              secondary={
+                item.label !== 'Indirizzo' ? (
+                  <Link underline="hover" color="inherit" href={item.value}>
+                    <Typography variant={'p'}>{item.valueLabel}</Typography>
+                  </Link>
+                ) : (
+                  item.valueLabel
+                )
+              }
+            />
             </Box>
           ))}
         </Box>
