@@ -14,6 +14,7 @@ import translations from 'translations/Translations';
 const IndexView = () => {
   const { language } = useLanguage();
   const theme = useTheme();
+  
   return (
     <Box sx={{ overflowX: 'hidden' }}>
       <Main bgcolor={'background.paper'}>

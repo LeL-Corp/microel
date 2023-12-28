@@ -8,6 +8,11 @@ import { Form, Contact } from './components';
 
 const ContactPageSidebarMap = () => {
   const theme = useTheme();
+  if (document.cookie) {
+    console.log('Cookies are being gathered');
+  } else {
+    console.log('No cookies are being gathered');
+  }
 
   return (
     <Main>

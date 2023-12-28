@@ -58,7 +58,7 @@ const PrivacyPolicy = () => {
                 >
                   Privacy Policy e Informativa ART. 13 (EU) 2016/679 (GDPR)
                 </Typography>
-                <Typography variant="h2" sx={{fontWeight: 700}}>
+                <Typography variant="h2" sx={{ fontWeight: 700 }}>
                   General Data Protection Regulation(European regulation on
                   personal data protection)
                 </Typography>
@@ -354,7 +354,12 @@ const PrivacyPolicy = () => {
                     del trattamento (studi professionali eroganti servizi
                     contabili etc.) e soggetti cui disposizioni di legge o
                     normative comunitarie riconoscono la facoltà di accedere ai
-                    dati. Il servizio di web hosting è localizzato in UE.
+                    dati. Il servizio di web hosting è localizzato in UE. La
+                    compilazione del form di contatto utilizza il servizio
+                    EmailJS: per ulteriori informazioni in merito a come EmailJs
+                    esegue il trattamento dei dati, si fa riferimento alla
+                    privacy policy di EmailJS disponibile al seguente link:
+                    https://www.emailjs.com/legal/privacy-policy/.
                   </Typography>
                 </li>
 

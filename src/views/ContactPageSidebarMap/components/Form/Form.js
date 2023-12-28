@@ -167,6 +167,31 @@ const Contact = () => {
                 />
               </Grid>
               <Grid item xs={12}>
+                <Box>
+                  <Typography component="p" variant="body2" align="left">
+                    Cliccando "invia" sottoscrivi le nostre{' '}
+                    <Box
+                      component={Link}
+                      to="/privacy-policy"
+                      color={theme.palette.text.primary}
+                      fontWeight={'700'}
+                    >
+                      Privacy Policy
+                    </Box>{' '}
+                    e{' '}
+                    <Box
+                      component={Link}
+                      to="/cookies-policy"
+                      color={theme.palette.text.primary}
+                      fontWeight={'700'}
+                    >
+                      Cookie Policy
+                    </Box>
+                    .
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item xs={12}>
                 <RowContainer>
                   <Button
                     sx={{ height: 54, minWidth: 150 }}
@@ -197,31 +222,6 @@ const Contact = () => {
 
               <Grid item xs={12}>
                 <Divider />
-              </Grid>
-              <Grid item xs={12}>
-                <Box>
-                  <Typography component="p" variant="body2" align="left">
-                    Cliccando "invia" sottoscrivi le nostre{' '}
-                    <Box
-                      component={Link}
-                      to="/privacy-policy"
-                      color={theme.palette.text.primary}
-                      fontWeight={'700'}
-                    >
-                      Privacy Policy
-                    </Box>{' '}
-                    e{' '}
-                    <Box
-                      component={Link}
-                      to="/cookies-policy"
-                      color={theme.palette.text.primary}
-                      fontWeight={'700'}
-                    >
-                      Cookie Policy
-                    </Box>
-                    .
-                  </Typography>
-                </Box>
               </Grid>
             </Grid>
           </form>
