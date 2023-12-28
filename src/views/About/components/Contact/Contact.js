@@ -28,23 +28,23 @@ const mock = [
       </svg>
     ),
   },
-  {
-    label: 'Email',
-    value: 'mailto:info@microel.it',
-    valueLabel: 'info@microel.it',
-    icon: (
-      <svg
-        width={20}
-        height={20}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="#5285E6"
-      >
-        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-      </svg>
-    ),
-  },
+  // {
+  //   label: 'Email',
+  //   value: 'mailto:info@microel.it',
+  //   valueLabel: 'info@microel.it',
+  //   icon: (
+  //     <svg
+  //       width={20}
+  //       height={20}
+  //       xmlns="http://www.w3.org/2000/svg"
+  //       viewBox="0 0 20 20"
+  //       fill="#5285E6"
+  //     >
+  //       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+  //       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+  //     </svg>
+  //   ),
+  // },
   {
     label: 'Indirizzo',
     value: 'Via Mortara 192/194 ROBBIO (PV)',
@@ -82,6 +82,8 @@ const Contact = () => {
           display={'flex'}
           flexDirection={'column'}
           justifyContent={'space-between'}
+          gap={3}
+          marginTop={6}
         >
           {mock.map((item, i) => (
             <Box
@@ -106,17 +108,26 @@ const Contact = () => {
                 </Box>
               </Box>
               <ListItemText
-              primary={item.label}
-              secondary={
-                item.label !== 'Indirizzo' ? (
-                  <Link underline="hover" color="inherit" href={item.value}>
-                    <Typography variant={'p'}>{item.valueLabel}</Typography>
-                  </Link>
-                ) : (
-                  item.valueLabel
-                )
-              }
-            />
+                primary={
+                  <Typography
+                    variant={'h4'}
+                    fontWeight={700}
+                    fontSize="18px !important"
+                    marginBottom={1.5}
+                  >
+                    {item.label}
+                  </Typography>
+                }
+                secondary={
+                  item.label !== 'Indirizzo' ? (
+                    <Link underline="hover" color="inherit" href={item.value}>
+                      <Typography variant={'p'}>{item.valueLabel}</Typography>
+                    </Link>
+                  ) : (
+                    item.valueLabel
+                  )
+                }
+              />
             </Box>
           ))}
         </Box>

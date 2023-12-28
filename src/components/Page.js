@@ -6,37 +6,37 @@ import CssBaseline from '@mui/material/CssBaseline';
 import getTheme from 'theme';
 import AOS from 'aos';
 import { useLanguage } from 'context/LanguageContext';
-export const useDarkMode = () => {
-  const [themeMode, setTheme] = useState('light');
-  const [mountedComponent, setMountedComponent] = useState(false);
+// export const useDarkMode = () => {
+//   const [themeMode, setTheme] = useState('dark');
+//   const [mountedComponent, setMountedComponent] = useState(false);
 
-  const setMode = (mode) => {
-    try {
-      window.localStorage.setItem('themeMode', mode);
-    } catch {
-      /* do nothing */
-    }
+//   // const setMode = (mode) => {
+//   //   try {
+//   //     window.localStorage.setItem('themeMode', mode);
+//   //   } catch {
+//   //     /* do nothing */
+//   //   }
 
-    setTheme(mode);
-  };
+//   //   setTheme(mode);
+//   // };
 
-  const themeToggler = () => {
-    themeMode === 'light' ? setMode('dark') : setMode('light');
-  };
+//   // const themeToggler = () => {
+//   //   themeMode === 'light' ? setMode('dark') : setMode('light');
+//   // };
 
-  useEffect(() => {
-    try {
-      const localTheme = window.localStorage.getItem('themeMode');
-      localTheme ? setTheme(localTheme) : setMode('light');
-    } catch {
-      setMode('light');
-    }
+//   // useEffect(() => {
+//   //   try {
+//   //     const localTheme = window.localStorage.getItem('themeMode');
+//   //     localTheme ? setTheme(localTheme) : setMode('light');
+//   //   } catch {
+//   //     setMode('light');
+//   //   }
 
-    setMountedComponent(true);
-  }, []);
+//   //   setMountedComponent(true);
+//   // }, []);
 
-  return [themeMode, themeToggler, mountedComponent];
-};
+//   return [themeMode, themeToggler, mountedComponent];
+// };
 
 export default function Page({ children }) {
   React.useEffect(() => {
@@ -55,17 +55,19 @@ export default function Page({ children }) {
     });
   }, []);
 
-  const [themeMode, themeToggler, mountedComponent] = useDarkMode();
+  // const [themeMode, themeToggler, mountedComponent] = useDarkMode();
   const { language, changeLanguage } = useLanguage();
 
   useEffect(() => {
     AOS.refresh();
-  }, [mountedComponent, themeMode, language]);
+  }, [language]);
 
   return (
-    <ThemeProvider theme={getTheme(themeMode, themeToggler)}>
+    <ThemeProvider theme={getTheme()}>
       <CssBaseline />
-      <Paper elevation={0}>{React.cloneElement(children, { language, changeLanguage })}</Paper>
+      <Paper elevation={0}>
+        {React.cloneElement(children, { language, changeLanguage })}
+      </Paper>
     </ThemeProvider>
   );
 }

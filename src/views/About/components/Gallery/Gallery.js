@@ -133,7 +133,7 @@ const Gallery = () => {
 
       <Slider {...sliderOpts}>
         {photosToShow.map((item, i) => (
-          <Box key={i} padding={{ xs: 1, md: 2, lg: 3 }}>
+          <Box key={i} padding={{ xs: 1, md: 1.5, lg: 1.5 }}>
             <Box
               display={'block'}
               width={1}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 
@@ -19,6 +20,8 @@ import RowContainer from 'components/RowContainer';
 import ColumnContainer from 'components/ColumnContainer';
 import { GetStarted } from 'views/IndexView/components';
 import AboutTags from './components/Tags/AboutTags';
+import translations from 'translations/Translations';
+import { useLanguage } from 'context/LanguageContext';
 
 const About = () => {
   const aboutUs1 = {
@@ -29,7 +32,6 @@ const About = () => {
     //   'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/pnrbxz4t19emktnqdb9v',
     image:
       'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmzge04qi3fodiopd21c',
-    
 
     imageAlt: 'La nostra storia',
     direction: 'row',
@@ -42,9 +44,52 @@ const About = () => {
     imageAlt: 'I princípi che ci guidano: operosità, ricerca, innovazione',
     direction: 'row-reverse',
   };
+  const { language } = useLanguage();
 
   return (
     <Main colorInvert={true}>
+      <Helmet
+        title={translations.metaTags.about.title[language]}
+        meta={[
+          {
+            name: 'description',
+            content: translations.metaTags.about.description[language],
+          },
+          {
+            name: 'keywords',
+            content: translations.metaTags.about.keywords[language],
+          },
+          {
+            name: 'robots',
+            content: 'index, follow',
+          },
+          {
+            property: 'og:title',
+            content: translations.metaTags.openGraphTitle[language],
+          },
+          { property: 'og:type', content: 'website' },
+          {
+            property: 'og:description',
+            content: translations.metaTags.openGraphDescription[language],
+          },
+          {
+            property: 'og:image',
+            content:
+              'https://res.cloudinary.com/dslne9y2j/image/upload/v1697838605/Assets/Transpared-bg/logoonly_spfzrg.png',
+          },
+        ]}
+        link={[
+          {
+            rel: 'canonical',
+            href: 'https://www.microel.it/about/',
+          },
+          {
+            rel: 'alternate',
+            href: 'https://www.microel.it/about/',
+            hreflang: 'x-default',
+          },
+        ]}
+      ></Helmet>
       <Hero />
       <Container>
         <Story1 data={aboutUs1} />

@@ -64,13 +64,28 @@ const AboutTags = () => {
               style={{ margin: 0.5 }}
             >
               <Chip
-                // data-aos="fade-up"
-                // data-aos-delay={i * 100}
-                // data-aos-offset={100}
-                // data-aos-duration={600}
-                label={item}
+                label={
+                  <Typography
+                    variant="h5"
+                    align={'center'}
+                    sx={{
+                      fontWeight: 700,
+                      marginBottom: 0,
+                      fontSize: '16px !important',
+                    }}
+                  >
+                    {item}
+                  </Typography>
+                }
                 clickable
-                sx={{ margin: 0.5 }}
+                sx={{
+                  margin: 0.5,
+                  backgroundColor: theme.palette.tertiary.main,
+                  fontWeight: 700,
+                  '&:hover': {
+                    backgroundColor: theme.palette.tertiary.dark,
+                  },
+                }}
               />
             </motion.div>
           ))}

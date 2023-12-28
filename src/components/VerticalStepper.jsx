@@ -79,8 +79,8 @@ export default function VerticalLinearStepper() {
           <Step key={step.label}>
             <StepLabel>
               <Typography
-                // variant="h2"
-                sx={{ fontWeight: 400, fontSize: '20px' }}
+                variant="h2"
+                sx={{ fontWeight: 400, fontSize: '22px !important' }}
               >
                 {step.label}
               </Typography>
@@ -95,15 +95,16 @@ export default function VerticalLinearStepper() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 1, delay: index * 0.8 }}
                 >
-                  <motion.Typography sx={{ fontSize: '18px' }}>
+                  <motion.p style={{ fontSize: '18px' }}>
                     {step.description}
-                  </motion.Typography>
+                  </motion.p>
                   {index === steps.length - 1 ? (
                     <Button
                       variant="outlined"
                       color="primary"
                       size="large"
                       fullWidth={false}
+                      sx={{ fontWeight: '700 !important' }}
                     >
                       {' '}
                       Contattaci

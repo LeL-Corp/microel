@@ -11,6 +11,7 @@ import { useLanguage } from 'context/LanguageContext';
 import translations from 'translations/Translations';
 
 import Container from 'components/Container';
+import { textFieldClasses } from '@mui/material';
 
 const images = [
   {
@@ -129,7 +130,9 @@ const Hero = () => {
             <Box
               maxWidth={{
                 xs: 1,
-                sm: '60%',
+                sm: '80%',
+                md: 1,
+                lg: 1,
                 zIndex: 1000,
                 position: 'relative',
               }}
@@ -140,13 +143,28 @@ const Hero = () => {
                 gutterBottom
                 sx={{
                   fontWeight: 700,
+                  lineHeight: '1.1 !important',
+                  '& span': {
+                    '@media (max-width: 600px)': {
+                      fontSize: '18px !important',
+                      fontWeight: '500',
+                    },
+                  },
                 }}
               >
                 {translations.home.hero.heading[language]}
+                <br></br>
+                <span
+                  style={{
+                    fontSize: '22px',
+                    color: theme.palette.text.primary,
+                    lineHeight: '0.8 !important',
+                  }}
+                >
+                  {translations.home.hero.subHeading[language]}
+                </span>
               </Typography>
-              <Typography>
-                {translations.home.hero.subHeading[language]}
-              </Typography>
+
               <Box
                 display="flex"
                 flexDirection={{ xs: 'column', sm: 'row' }}

@@ -41,36 +41,38 @@ const SidebarNav = ({ pages }) => {
           />
         </Box>
       </Box>
-      <Box
-        padding={'30px'}
-        paddingLeft={'20px'}
-        paddingBottom="8px"
-        flexDirection={'column'}
-        gap={'16px'}
-      >
-        <ColumnContainer halfGap>
-          <Box paddingBottom={'20px'}>
-            <NavigationLink to="/">
-              {translations.navigation.home[language]}
-            </NavigationLink>
-          </Box>
-          <Box paddingBottom={'20px'}>
-            <NavigationLink to="/about">
-              {translations.navigation.about[language]}
-            </NavigationLink>
-          </Box>
-          <Box paddingBottom={'20px'}>
-            <NavigationLink to="/areas">
-              {translations.navigation.areas[language]}
-            </NavigationLink>
-          </Box>
-          <Box paddingBottom={'20px'}>
-            <NavigationLink to="/roadmap">
-              {translations.navigation.roadmap[language]}
-            </NavigationLink>
-          </Box>
-        </ColumnContainer>
-      </Box>
+      <nav>
+        <Box
+          padding={'30px'}
+          paddingLeft={'20px'}
+          paddingBottom="8px"
+          flexDirection={'column'}
+          gap={'16px'}
+        >
+          <ColumnContainer halfGap>
+            <Box paddingBottom={'20px'}>
+              <NavigationLink to="/">
+                {translations.navigation.home[language]}
+              </NavigationLink>
+            </Box>
+            <Box paddingBottom={'20px'}>
+              <NavigationLink to="/about">
+                {translations.navigation.about[language]}
+              </NavigationLink>
+            </Box>
+            <Box paddingBottom={'20px'}>
+              <NavigationLink to="/areas">
+                {translations.navigation.areas[language]}
+              </NavigationLink>
+            </Box>
+            <Box paddingBottom={'20px'}>
+              <NavigationLink to="/roadmap">
+                {translations.navigation.roadmap[language]}
+              </NavigationLink>
+            </Box>
+          </ColumnContainer>
+        </Box>
+      </nav>
       <Button
         size={'large'}
         variant="outlined"

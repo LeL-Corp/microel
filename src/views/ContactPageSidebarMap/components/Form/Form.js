@@ -85,10 +85,10 @@ const Contact = () => {
     return (
       <Box>
         <Box marginBottom={4}>
-          <Typography variant={'h3'} sx={{ fontWeight: 700 }} gutterBottom>
+          <Typography variant={'h1'} sx={{ fontWeight: 700 }} gutterBottom>
             Contattaci
           </Typography>
-          <Typography color="text.secondary">
+          <Typography color="text.secondary" variant={'p'} fontSize="18px">
             Siamo a tua disposizione! <br></br>
             Ti risponderemo il prima possibile.
           </Typography>

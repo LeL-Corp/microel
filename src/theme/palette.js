@@ -1,43 +1,4 @@
-
-
-export const light = {
-  alternate: {
-    main: '#f7faff',
-    dark: '#edf1f7',
-  },
-  cardShadow: 'rgba(23, 70, 161, .11)',
-  mode: 'light',
-  primary: {
-    main: '#377dff',
-    light: '#467de3',
-    dark: '#2f6ad9',
-    contrastText: '#fff',
-  },
-  secondary: {
-    light: '#ffb74d',
-    main: '#06262b',
-    dark: '#FF9800',
-    contrastText: 'rgba(0, 0, 0, 0.87)',
-  },
-  tertiary: {
-    main:  '#5385e6', // indaco brillante
-    dark: '#516894', //indaco
-  },
-  text: {
-    primary: '#1e2022',
-    secondary: '#677788',
-    header: '#06262b',
-  },
-  divider: 'rgba(0, 0, 0, 0.12)',
-  background: {
-    paper: '#ffffff',
-    default: '#ffffff',
-    level2: '#f5f5f5',
-    level1: '#ffffff',
-  },
-};
-
-export const dark = {
+export const palette = {
   alternate: {
     main: '#1a2138',
     dark: '#151a30',

@@ -1,4 +1,83 @@
 const translations = {
+  metaTags: {
+    title: {
+      it: "Microel | Progettazione e produzione di schede e apparecchiature elettroniche dedicate per l'automazione industriale",
+      en: 'Microel | Custom electronic boards and equipment design and production for industrial automation',
+    },
+    description: {
+      it: "Microel è specializzata nella progettazione e produzione di schede e apparecchiature elettroniche su misura per l'automazione industriale.",
+      en: 'Microel is specialized in the design and production of custom electronic boards and equipment for industrial automation.',
+    },
+    keywords: {
+      it: 'Microel, progettazione, produzione, schede elettroniche su misura, automazione industriale, elettronica, ingegneria elettronica',
+      en: 'Microel, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
+    },
+    openGraphTitle: {
+      it: `Microel - Progettazione e produzione schede elettroniche dedicate`,
+      en: 'Microel - Custom electronic boards design and production',
+      },
+    openGraphDescription: {
+      it: `Schede e apparecchiature elettroniche personalizzate`,
+      en: 'Design, production and sale of custom electronic boards for industrial automation.',
+    },
+    about: {
+      title: {
+        it: 'Chi siamo - Microel | Progettazione e produzione di schede elettroniche su misura',
+        en: 'About us - Microel | Custom electronic boards design and production',
+      },
+      description: {
+        it: "Scopri Microel, specializzata nella progettazione e produzione di schede elettroniche su misura per l'automazione industriale.",
+        en: 'Discover Microel, specialized in the design and production of custom electronic boards for industrial automation.',
+      },
+      keywords: {
+        it: 'Chi siamo, progettazione, produzione, schede elettroniche su misura, automazione industriale, elettronica, ingegneria elettronica',
+        en: 'About us, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
+      },
+    },
+    areas: {
+      title: {
+        it: 'Settori - Microel | Soluzioni su misura',
+        en: 'Areas - Microel | Custom Industrial Automation Solutions',
+      },
+      description: {
+        it: 'Scopri i settori in cui Microel opera, offrendo soluzioni di automazione industriale su misura.',
+        en: 'Discover the sectors in which Microel operates, offering custom industrial automation solutions.',
+      },
+      keywords: {
+        it: 'Settori, progettazione, produzione, schede elettroniche su misura, automazione industriale, elettronica, ingegneria elettronica',
+        en: 'Areas, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
+      },
+    },
+    roadmap: {
+      title: {
+        it: 'Roadmap - Microel | Studio, progettazione, realizzazione, obiettivi',
+        en: 'Roadmap - Microel | Study, design, realization, objectives',
+      },
+      description: {
+        it: 'Scopri la roadmap di Microel, il tuo partner per soluzioni di automazione industriale su misura.',
+        en: 'Discover the roadmap of Microel, your partner for custom industrial automation solutions.',
+      },
+      keywords: {
+        it: 'Roadmap, progettazione, produzione, schede elettroniche su misura, automazione industriale, elettronica, ingegneria elettronica',
+        en: 'Roadmap, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
+      },
+    },
+    contacts: {
+      title: {
+        it: 'Contatti - Microel | Contattaci per schede elettroniche su misura',
+        en: 'Contacts - Microel | Contact us for custom electronic boards solutions',
+      },
+      description: {
+        it: 'Contattaci per una consulenza su soluzioni di automazione industriale su misura. Scopri dove siamo situati.',
+        en: 'Contact us for a consultation on custom industrial automation solutions. Find out where we are located.',
+      },
+      keywords: {
+        it: 'Contatti, progettazione, produzione, schede elettroniche su misura, automazione industriale, elettronica, ingegneria elettronica',
+        en: 'Contacts, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
+      },
+    },
+  },
+
   buttons: {
     discover: {
       it: 'Scopri',
@@ -52,8 +131,8 @@ const translations = {
         en: 'Experts in Electronic Engineering solutions.',
       },
       subHeading: {
-        it: "Progettazione e produzione schede ed apparecchiature elettroniche per l'automazione.",
-        en: 'Design and production of electronic boards and equipment for automation.',
+        it: "Progettazione e produzione schede ed apparecchiature elettroniche per l'automazione customizzate",
+        en: 'Design and production of custom electronic boards and equipment for automation.',
       },
     },
     section1: {

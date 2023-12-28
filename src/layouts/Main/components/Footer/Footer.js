@@ -47,7 +47,7 @@ const Footer = () => {
               width={1}
             />
           </Box>
-       
+
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
             <RowContainer>
               <Box
@@ -104,20 +104,21 @@ const Footer = () => {
           </a>
         </Typography>
         <Button
-            size={'large'}
-            variant="outlined"
-            color={'primary'}
-            onClick={() => changeLanguage(language === 'en' ? 'it' : 'en')}
-            sx={{ marginRight: '20px' }}
-          >
-            <RowContainer>
-              <Typography variant="body1" color={'#fff'}>
-                {language === 'it' ? 'Lingua:' : 'Language:'}
-              </Typography>
-              {language === 'it' ? <ItalianFlagIcon /> : <UsaFlagIcon />}
-            </RowContainer>
-          </Button>
+          size={'large'}
+          variant="outlined"
+          color={'primary'}
+          onClick={() => changeLanguage(language === 'en' ? 'it' : 'en')}
+          sx={{ marginRight: '20px' }}
+        >
+          <RowContainer>
+            <Typography variant="body1" color={'#fff'}>
+              {language === 'it' ? 'Lingua:' : 'Language:'}
+            </Typography>
+            {language === 'it' ? <ItalianFlagIcon /> : <UsaFlagIcon />}
+          </RowContainer>
+        </Button>
       </Box>
+
       <Box
         display={'flex'}
         justifyContent={'center'}
@@ -128,6 +129,7 @@ const Footer = () => {
         padding={'20px'}
         paddingTop={'30px'}
         gap={'12px'}
+        component={'nav'}
       >
         <Box display="flex" flexDirection={'column'} width={'fit-content'}>
           <Typography
@@ -188,6 +190,7 @@ const Footer = () => {
           </Typography>
         </Box>
       </Box>
+
       <Box
         display="flex"
         flexDirection={'column'}
@@ -204,9 +207,7 @@ const Footer = () => {
         >
           &copy; Microel srl, 2023. All rights reserved
         </Typography>
-        
       </Box>
-      
     </Grid>
   );
 };

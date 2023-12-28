@@ -187,7 +187,7 @@ const Sectors = () => {
                               align="center"
                               sx={{
                                 fontWeight: 900,
-                                fontSize: 12,
+                                fontSize: 13,
                                 color: 'text.dark',
                               }}
                             >

@@ -55,13 +55,13 @@ const Solutions = () => {
       <div ref={ref}>
         <Box marginBottom={8} marginTop={8}>
           <Typography
-            variant="h4"
+            variant="h3"
             align={'center'}
             data-aos={'fade-up'}
             gutterBottom
             sx={{
               fontWeight: 500,
-              fontSize: '20px',
+              fontSize: '22px !important',
               marginTop: theme.spacing(1),
               marginBottom: '30px',
             }}
@@ -129,8 +129,9 @@ const Solutions = () => {
                         </ListItemAvatar>
                         <ListItemText
                           sx={{ margin: 0 }}
-                          primary={item.title}
-                          //   secondary={item.title}
+                          primary={
+                            <Typography variant={'h3'}>{item.title}</Typography>
+                          }
                         />
                       </ListItem>
                     </Box>

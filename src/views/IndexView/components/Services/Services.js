@@ -26,17 +26,29 @@ const Services = () => {
     {
       title: translations?.home?.section2?.box1?.heading[language],
       subtitle: translations.home.section2.box1.subHeading[language],
-      icon: <ArchitectureIcon sx={{"& path" : {color: theme.palette.tertiary.main}}}/>,
+      icon: (
+        <ArchitectureIcon
+          sx={{ '& path': { color: theme.palette.tertiary.main } }}
+        />
+      ),
     },
     {
       title: translations?.home?.section2?.box2?.heading[language],
       subtitle: translations.home.section2.box2.subHeading[language],
-      icon: <PolylineIcon sx={{"& path" : {color: theme.palette.tertiary.main}}}/>,
+      icon: (
+        <PolylineIcon
+          sx={{ '& path': { color: theme.palette.tertiary.main } }}
+        />
+      ),
     },
     {
       title: translations?.home?.section2?.box3?.heading[language],
       subtitle: translations.home.section2.box3.subHeading[language],
-      icon: <RocketLaunchIcon sx={{"& path" : {color: theme.palette.tertiary.main}}}/>,
+      icon: (
+        <RocketLaunchIcon
+          sx={{ '& path': { color: theme.palette.tertiary.main } }}
+        />
+      ),
     },
   ];
   const section3 = [
@@ -66,7 +78,7 @@ const Services = () => {
         <Box marginBottom={4}>
           <Box marginBottom={2}>
             <Typography
-              variant="h3"
+              variant="h2"
               color="tertiary.main"
               align={'center'}
               gutterBottom
@@ -81,7 +93,7 @@ const Services = () => {
               variant="h6"
               component="p"
               color="text.secondary"
-              sx={{ fontWeight: 400 }}
+              sx={{ fontWeight: 400, fontSize: '22px !important' }}
               align={'center'}
             >
               {translations.home.section1.subHeading[language]}
@@ -119,7 +131,7 @@ const Services = () => {
                       <Typography
                         variant={'h3'}
                         gutterBottom
-                        sx={{ fontWeight: 500, fontSize: '18px !important' }}
+                        sx={{ fontWeight: 500 }}
                         align={'center'}
                       >
                         {item.title}
@@ -127,7 +139,11 @@ const Services = () => {
                       <Typography
                         align={'center'}
                         color="text.secondary"
-                        sx={{ display: 'block', maxWidth: '80%' }}
+                        sx={{
+                          display: 'block',
+                          maxWidth: '80%',
+                          fontSize: '16px !important',
+                        }}
                       >
                         {item.subtitle}
                       </Typography>
@@ -139,7 +155,10 @@ const Services = () => {
           </Grid>
         </div>
         <Container>
-          <VerticalMinimalDesignedBlogCards data={section3} language={language}/>
+          <VerticalMinimalDesignedBlogCards
+            data={section3}
+            language={language}
+          />
         </Container>
       </ColumnContainer>
     </Box>

@@ -77,9 +77,11 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
         {children}
         <Divider />
       </main>
+      <footer>
       <Container paddingY={4}>
         <Footer />
       </Container>
+      </footer>
     </Box>
   );
 };

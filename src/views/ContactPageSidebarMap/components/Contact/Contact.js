@@ -11,9 +11,9 @@ import { Link } from '@mui/material';
 
 const mock = [
   {
-    label: 'Phone',
+    label: 'Telefono',
     value: 'tel:+390384 670602',
-    valueLabel: "Tel. 0384 670602",
+    valueLabel: 'Tel. 0384 670602',
     icon: (
       <svg
         width={20}
@@ -26,27 +26,27 @@ const mock = [
       </svg>
     ),
   },
-  {
-    label: 'Email',
-    value: 'mailto:info@microel.it',
-    valueLabel: "info@microel.it",
-    icon: (
-      <svg
-        width={20}
-        height={20}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-      </svg>
-    ),
-  },
+  // {
+  //   label: 'Email',
+  //   value: 'mailto:info@microel.it',
+  //   valueLabel: "info@microel.it",
+  //   icon: (
+  //     <svg
+  //       width={20}
+  //       height={20}
+  //       xmlns="http://www.w3.org/2000/svg"
+  //       viewBox="0 0 20 20"
+  //       fill="currentColor"
+  //     >
+  //       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+  //       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+  //     </svg>
+  //   ),
+  // },
   {
     label: 'Indirizzo',
     value: 'Via Mortara 192/194 ROBBIO (PV)',
-    valueLabel: "Via Mortara 192/194 ROBBIO (PV)",
+    valueLabel: 'Via Mortara 192/194 ROBBIO (PV)',
     icon: (
       <svg
         width={20}
@@ -73,8 +73,9 @@ const Contact = () => {
       <Box
         display={'flex'}
         flexDirection={{ xs: 'column', md: 'row' }}
-        justifyContent={'space-between'}
+        justifyContent={'flex-start'}
         marginBottom={4}
+        gap={8}
       >
         {mock.map((item, i) => (
           <Box
@@ -99,7 +100,16 @@ const Contact = () => {
               </Box>
             </Box>
             <ListItemText
-              primary={item.label}
+              primary={
+                <Typography
+                  variant={'h2'}
+                  fontSize="16px !important"
+                  fontWeight={700}
+                  marginBottom={1.5}
+                >
+                  {item.label}
+                </Typography>
+              }
               secondary={
                 item.label !== 'Indirizzo' ? (
                   <Link underline="hover" color="inherit" href={item.value}>
