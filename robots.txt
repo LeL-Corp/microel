@@ -1,0 +1,15 @@
+User-agent: *
+
+Allow: /$
+Allow: /about/
+Allow: /areas/
+Allow: /roadmap/
+Allow: /contacts/
+Allow: /cookies-policy/
+Allow: /privacy-policy/
+Allow: /not-found/
+
+Allow: /static/
+Allow: /images/
+
+Sitemap: https://www.microel.it/sitemap.xml
