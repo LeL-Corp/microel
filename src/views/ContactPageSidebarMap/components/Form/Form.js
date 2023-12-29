@@ -82,6 +82,33 @@ const Contact = () => {
       onSubmit: sendEmail,
     });
 
+    // Controlla il consenso tramite Cookiebot API
+
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('DOM fully loaded and parsed');
+
+      if (typeof CookieConsent !== 'undefined') {
+        console.log('cookiebot consense', CookieConsent.consented);
+        console.log('cookiebot object', CookieConsent);
+        // Bottone di submit del form Contattaci
+        let submitButton = document.getElementById('submitButton');
+
+        // Disabilita il bottone di submit se non c'è il consenso
+        submitButton.disabled = !CookieConsent.consented;
+
+        // controlla di nuovo il consenso
+        document.addEventListener('CookieConsentDeclaration', function () {
+          // aggiorna il bottone di submit
+          submitButton.disabled = !CookieConsent.consented;
+        });
+
+        // Se non c'è il consenso, mostra il banner
+        if (!CookieConsent.consented) {
+          CookieConsent.show();
+        }
+      }
+    });
+
     return (
       <Box>
         <Box marginBottom={4}>
@@ -194,11 +221,13 @@ const Contact = () => {
               <Grid item xs={12}>
                 <RowContainer>
                   <Button
+                    id="submitButton"
                     sx={{ height: 54, minWidth: 150 }}
                     variant="contained"
                     color={'primary'}
                     size="medium"
                     type="submit"
+                    disabled={CookieConsent.consented ? false : true}
                   >
                     {loading ? (
                       <CircularProgress color="secondary" />

@@ -14,6 +14,7 @@ import translations from 'translations/Translations';
 import { useLanguage } from 'context/LanguageContext';
 import ItalianFlagIcon from 'components/icon/italianFlag.icon';
 import UsaFlagIcon from 'components/icon/usaFlag.icon';
+import ColumnContainer from 'components/ColumnContainer';
 
 const Footer = () => {
   const theme = useTheme();
@@ -118,96 +119,129 @@ const Footer = () => {
           </RowContainer>
         </Button>
       </Box>
-
-      <Box
-        display={'flex'}
-        justifyContent={'center'}
-        alignItems={'center'}
-        width={1}
-        flexDirection={'row'}
-        flexWrap={'wrap'}
-        padding={'20px'}
-        paddingTop={'30px'}
-        gap={'12px'}
-        component={'nav'}
-      >
-        <Box display="flex" flexDirection={'column'} width={'fit-content'}>
-          <Typography
-            color={'primary.main'}
-            fontSize={'14px'}
-            variant={'h6'}
-            component={Link}
-            to="/"
-          >
-            {translations.navigation.home[language]}
-          </Typography>
-        </Box>
-
-        <Box display="flex" flexDirection={'column'} width={'fit-content'}>
-          <Typography
-            color={'primary.main'}
-            fontSize={'14px'}
-            variant={'h6'}
-            component={Link}
-            to="/about"
-          >
-            {translations.navigation.about[language]}
-          </Typography>
-        </Box>
-        <Box display="flex" flexDirection={'column'} width={'fit-content'}>
-          <Typography
-            color={'primary.main'}
-            fontSize={'14px'}
-            variant={'h6'}
-            component={Link}
-            to="/areas"
-          >
-            {translations.navigation.areas[language]}
-          </Typography>
-        </Box>
-
-        <Box display="flex" flexDirection={'column'} width={'fit-content'}>
-          <Typography
-            color={'primary.main'}
-            fontSize={'14px'}
-            variant={'h6'}
-            component={Link}
-            to="/roadmap"
-          >
-            {translations.navigation.roadmap[language]}
-          </Typography>
-        </Box>
-
-        <Box display="flex" flexDirection={'column'} width={'fit-content'}>
-          <Typography
-            color={'primary.main'}
-            fontSize={'14px'}
-            variant={'h6'}
-            component={Link}
-            to="/contacts"
-          >
-            {translations.navigation.contacts[language]}
-          </Typography>
-        </Box>
-      </Box>
-
-      <Box
-        display="flex"
-        flexDirection={'column'}
-        justifyContent={'center'}
-        alignItems={'center'}
-        width={'100%'}
-      >
-        <Typography
-          align={'center'}
-          variant={'subtitle2'}
-          color="text.secondary"
-          gutterBottom
-          paddingTop={'0'}
+      <ColumnContainer>
+        <Box
+          display={'flex'}
+          justifyContent={'center'}
+          alignItems={'center'}
+          width={1}
+          flexDirection={'row'}
+          flexWrap={'wrap'}
+          padding={'20px'}
+          paddingTop={'30px'}
+          paddingBottom={'0'}
+          gap={'12px'}
+          component={'nav'}
         >
-          &copy; Microel srl, 2023. All rights reserved
-        </Typography>
-      </Box>
+          <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+            <Typography
+              color={'primary.main'}
+              fontSize={'14px'}
+              variant={'h6'}
+              component={Link}
+              to="/"
+            >
+              {translations.navigation.home[language]}
+            </Typography>
+          </Box>
+
+          <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+            <Typography
+              color={'primary.main'}
+              fontSize={'14px'}
+              variant={'h6'}
+              component={Link}
+              to="/about"
+            >
+              {translations.navigation.about[language]}
+            </Typography>
+          </Box>
+          <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+            <Typography
+              color={'primary.main'}
+              fontSize={'14px'}
+              variant={'h6'}
+              component={Link}
+              to="/areas"
+            >
+              {translations.navigation.areas[language]}
+            </Typography>
+          </Box>
+
+          <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+            <Typography
+              color={'primary.main'}
+              fontSize={'14px'}
+              variant={'h6'}
+              component={Link}
+              to="/roadmap"
+            >
+              {translations.navigation.roadmap[language]}
+            </Typography>
+          </Box>
+
+          <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+            <Typography
+              color={'primary.main'}
+              fontSize={'14px'}
+              variant={'h6'}
+              component={Link}
+              to="/contacts"
+            >
+              {translations.navigation.contacts[language]}
+            </Typography>
+          </Box>
+        </Box>
+        <Box
+          display="flex"
+          flexDirection={'row'}
+          alignItems={'center'}
+          justifyContent={'center'}
+          width={'100%'}
+          gap={'12px'}
+        >
+          <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+            <Typography
+              color={'text.secondary'}
+              fontSize={'13px !important'}
+              variant={'h6'}
+              component={Link}
+              to="/cookies-policy"
+            >
+              Cookie Policy
+            </Typography>
+          </Box>
+          <Box display="flex" flexDirection={'column'} width={'fit-content'}>
+            <Typography
+              color={'text.secondary'}
+              fontSize={'13px !important'}
+              variant={'h6'}
+              component={Link}
+              to="/privacy-policy"
+            >
+              Privacy Policy
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box
+          display="flex"
+          flexDirection={'column'}
+          justifyContent={'center'}
+          alignItems={'center'}
+          width={'100%'}
+        >
+          <Typography
+            align={'center'}
+            variant={'subtitle2'}
+            color="text.secondary"
+            gutterBottom
+            paddingTop={'0'}
+          >
+            &copy; Microel srl, 2023. All rights reserved
+          </Typography>
+        </Box>
+      </ColumnContainer>
     </Grid>
   );
 };
