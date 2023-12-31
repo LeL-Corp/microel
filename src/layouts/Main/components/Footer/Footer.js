@@ -51,25 +51,41 @@ const Footer = () => {
 
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
             <RowContainer>
+              <Typography variant="body1" color={'#fff'}>
+                Scopri di più su Flybox Avionics, un marchio registrato Microel
+                srl:{' '}
+              </Typography>{' '}
               <Box
-                component={Avatar}
-                width={44}
-                height={44}
-                bgcolor={alpha(theme.palette.primary.main, 0.1)}
-                color={theme.palette.primary.main}
-                sx={{ cursor: 'pointer' }}
+                component={'a'}
+                href={'https://it.linkedin.com/company/flybox-avionics'}
+                target="_blank"
               >
-                <LinkedInIcon fontSize="large" />
+                <Box
+                  component={Avatar}
+                  width={44}
+                  height={44}
+                  bgcolor={alpha(theme.palette.primary.main, 0.1)}
+                  color={theme.palette.primary.main}
+                  sx={{ cursor: 'pointer' }}
+                >
+                  <LinkedInIcon fontSize="large" />
+                </Box>
               </Box>
               <Box
-                component={Avatar}
-                width={44}
-                height={44}
-                bgcolor={alpha(theme.palette.primary.main, 0.1)}
-                color={theme.palette.primary.main}
-                sx={{ cursor: 'pointer', marginRight: '20px' }}
+                component={'a'}
+                href={'https://www.youtube.com/@flyboxavionics2801'}
+                target={'_blank'}
               >
-                <YouTubeIcon fontSize="large" />
+                <Box
+                  component={Avatar}
+                  width={44}
+                  height={44}
+                  bgcolor={alpha(theme.palette.primary.main, 0.1)}
+                  color={theme.palette.primary.main}
+                  sx={{ cursor: 'pointer', marginRight: '20px' }}
+                >
+                  <YouTubeIcon fontSize="large" />
+                </Box>
               </Box>
             </RowContainer>
           </Box>
@@ -219,7 +235,7 @@ const Footer = () => {
               component={Link}
               to="/privacy-policy"
             >
-              Privacy Policy
+              ˆ Privacy Policy
             </Typography>
           </Box>
         </Box>
