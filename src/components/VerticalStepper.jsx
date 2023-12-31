@@ -12,29 +12,8 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import RowContainer from './RowContainer';
 import ColumnContainer from './ColumnContainer';
-
-const steps = [
-  {
-    label: 'Analizziamo a fondo le tue specificità',
-    description:
-      'Crediamo che il punto di partenza per un progetto di successo sia la conoscenza approfondita delle esigenze e specificità di ogni nostro cliente',
-  },
-  {
-    label: 'Progettazione',
-    description:
-      'Studiamo insieme da vicino ogni fase di progettazione, sia hardware sia software',
-  },
-  {
-    label: 'Realizzazione',
-    description:
-      'Grazie alla nostra esperienza pluriennale, siamo in grado di consegnarti un prodotto creato su misura per te',
-  },
-  {
-    label: "What's next?",
-    description:
-      "Il tuo successo è il nostro obiettivo: non vediamo l'ora di scoprire quale sarà la sfida che tu ci proporrai. ",
-  },
-];
+import translations from 'translations/Translations';
+import { useLanguage } from 'context/LanguageContext';
 
 const CustomDescription = styled(RowContainer)(({ index }) => ({
   borderRadius: '9px',
@@ -61,6 +40,7 @@ const CustomDescription = styled(RowContainer)(({ index }) => ({
 
 export default function VerticalLinearStepper() {
   const [activeStep, setActiveStep] = useState(0);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -71,6 +51,9 @@ export default function VerticalLinearStepper() {
 
     return () => clearInterval(timer);
   }, [activeStep]);
+
+  const { roadmapPage } = translations;
+  const steps = language === 'it' ? roadmapPage.stepsIt : roadmapPage.stepsEn;
 
   return (
     <Box sx={{ maxWidth: 400 }}>
@@ -107,7 +90,7 @@ export default function VerticalLinearStepper() {
                       sx={{ fontWeight: '700 !important' }}
                     >
                       {' '}
-                      Contattaci
+                      {translations.buttons.contact[language]}
                     </Button>
                   ) : null}
                 </motion.div>

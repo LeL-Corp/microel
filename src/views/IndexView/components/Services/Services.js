@@ -19,7 +19,7 @@ import translations from 'translations/Translations';
 const Services = () => {
   const theme = useTheme();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
   const { language } = useLanguage();
 
   const section2 = [
@@ -110,7 +110,7 @@ const Services = () => {
                       transform: isInView ? 'none' : 'translateX(-150px)',
                       opacity: isInView ? 1 : 0,
                       transition:
-                        'all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 1s',
+                        'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                     }}
                   >
                     <Box

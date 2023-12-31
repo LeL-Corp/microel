@@ -16,6 +16,8 @@ import { Aperture, Gift, Star, CheckCircle } from 'react-feather';
 import VerticalLinearStepper from 'components/VerticalStepper';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { useLanguage } from 'context/LanguageContext';
+import translations from 'translations/Translations';
 
 const mock = [
   {
@@ -44,17 +46,15 @@ const Partners = () => {
   const isMobile = useMediaQuery('(max-width: 800px)');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
+  const { language } = useLanguage();
+  const { roadmapPage } = translations;
 
   return (
     <div
       ref={ref}
       style={{
         backgroundSize: 'cover',
-
         backgroundRepeat: 'no-repeat',
-        // backgroundImage: isMobile
-        //   ? 'url(https://res.cloudinary.com/dslne9y2j/image/upload/v1699634339/Assets/Roadmap/spor6tm0tbelwsnnyuer.png)'
-        //   : 'none',
       }}
     >
       <Box>
@@ -90,7 +90,7 @@ const Partners = () => {
                   textAlign: 'right',
                 }}
               >
-                La nostra Roadmap
+                {roadmapPage.heading[language]}
               </Typography>
               {/* <Typography
                 variant="h2"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-
+import { useMediaQuery } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -20,6 +20,7 @@ const Footer = () => {
   const theme = useTheme();
   const { mode } = theme.palette;
   const { language, changeLanguage } = useLanguage();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Grid container spacing={2}>
@@ -52,8 +53,9 @@ const Footer = () => {
           <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
             <RowContainer>
               <Typography variant="body1" color={'#fff'}>
-                Scopri di più su Flybox Avionics, un marchio registrato Microel
-                srl:{' '}
+                {isMobile
+                  ? translations.navigation.discoverMoreMobile[language]
+                  : translations.navigation.discoverMore[language]}
               </Typography>{' '}
               <Box
                 component={'a'}
@@ -99,10 +101,11 @@ const Footer = () => {
         padding={'20px'}
         paddingBottom={'0'}
         gap={'12px'}
+        marginTop={'50px'}
       >
         <Typography
           align={'left'}
-          variant={'subtitle2'}
+          variant={'body1'}
           component={'address'}
           sx={{ fontStyle: 'normal' }}
           color="text.secondary"
@@ -113,11 +116,10 @@ const Footer = () => {
           <br></br>
           27038 ROBBIO (PV)
           <br></br>
-          <a
-            style={{ color: '#AEB0B4', textDecoration: 'none' }}
-            href={'tel:+390384 670602'}
-          >
-            <Typography variant={'p'}>Tel: 0384 670602</Typography>
+          <a style={{ textDecoration: 'none' }} href={'tel:+390384 670602'}>
+            <Typography variant="body1" color={'#fff'}>
+              Tel: 0384 670602
+            </Typography>
           </a>
         </Typography>
         <Button
@@ -235,7 +237,7 @@ const Footer = () => {
               component={Link}
               to="/privacy-policy"
             >
-              ˆ Privacy Policy
+              Privacy Policy
             </Typography>
           </Box>
         </Box>

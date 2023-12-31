@@ -26,45 +26,17 @@ import { Dvr } from '@mui/icons-material';
 
 import { motion } from 'framer-motion';
 
-export const mock = [
-  {
-    logo: (
-      <PrecisionManufacturingIcon
-        color="secondary"
-        style={{ fontSize: '48px' }}
-      />
-    ),
-    name: 'Automazione industriale',
-  },
-  {
-    logo: <Dvr color="secondary" style={{ fontSize: '48px' }} />,
-    name: 'Macchine per i test',
-  },
-  {
-    logo: <WidgetsIcon color="secondary" style={{ fontSize: '48px' }} />,
-    name: 'Macchinari per realizzazione Packaging',
-  },
-  {
-    logo: (
-      <SettingsSuggestIcon color="secondary" style={{ fontSize: '48px' }} />
-    ),
-    name: 'Macchinari per lavorazione materiali',
-  },
-  {
-    logo: <ElectricCarIcon color="secondary" style={{ fontSize: '48px' }} />,
-    name: 'Automotive',
-  },
-  {
-    logo: <FlightIcon color="secondary" style={{ fontSize: '48px' }} />,
-    name: 'Strumentazione Avionica',
-  },
-];
-
 const Sectors = () => {
   const theme = useTheme();
   const ref = useRef();
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
   const { language } = useLanguage();
+
+  const experiences =
+    language === 'it'
+      ? translations.home.section4.experiencesIt
+      : translations.home.section4.experiencesEn;
+
   return (
     <div>
       <Container>
@@ -76,7 +48,7 @@ const Sectors = () => {
                 style={{
                   transform: isInView ? 'none' : 'translateX(-150px)',
                   opacity: isInView ? 1 : 0,
-                  transition: 'all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+                  transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
                 }}
               >
                 <Typography
@@ -129,7 +101,7 @@ const Sectors = () => {
             </Box>
           </Grid>
           <Grid item container md={6} xs={12} spacing={2}>
-            {mock.map((item, i) => (
+            {experiences.map((item, i) => (
               <Grid item xs={6} sm={6} md={4} key={i}>
                 <Box display={'block'} width={1} height={1}>
                   <motion.div

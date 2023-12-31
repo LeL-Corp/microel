@@ -27,6 +27,7 @@ import { useRef } from 'react';
 const Solutions = () => {
   const theme = useTheme();
   const { language } = useLanguage();
+  const { roadmapPage } = translations;
   const ref = useRef(null);
   const solutions = [
     {
@@ -66,8 +67,7 @@ const Solutions = () => {
               marginBottom: '30px',
             }}
           >
-            Alcune delle soluzioni che offriamo per venire incontro alle
-            esigenze di un mercato in continua evoluzione:
+            {roadmapPage.solutionsSection.heading[language]}
           </Typography>
         </Box>
         <Grid container spacing={2}>
@@ -130,7 +130,12 @@ const Solutions = () => {
                         <ListItemText
                           sx={{ margin: 0 }}
                           primary={
-                            <Typography variant={'h3'}>{item.title}</Typography>
+                            <Typography
+                              variant={'h3'}
+                              fontSize={'18px !important'}
+                            >
+                              {item.title}
+                            </Typography>
                           }
                         />
                       </ListItem>

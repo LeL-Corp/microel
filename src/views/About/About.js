@@ -24,27 +24,15 @@ import translations from 'translations/Translations';
 import { useLanguage } from 'context/LanguageContext';
 
 const About = () => {
-  const aboutUs1 = {
-    title: 'La nostra storia',
-    text: "Le nostre radici affondano nel 1982, quando la genuina passione per l'elettronica si trasforma in attività imprenditoriale: l'azienda diventeraà punto di riferimento nella realizzazione di schede elettroniche nel settore dell'automazione industriale e non solo. Microel sviluppa infatti anche una specializzazione per l'elettronica applicata alla strumentazione aeronautica, fondando il brand",
-    link: 'Flybox Avionics',
-    // image:
-    //   'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/pnrbxz4t19emktnqdb9v',
-    image:
-      'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmzge04qi3fodiopd21c',
-
-    imageAlt: 'La nostra storia',
-    direction: 'row',
-  };
-  const aboutUs2 = {
-    title: 'I princípi che ci guidano: operosità, ricerca, innovazione',
-    text: 'I nostri valori illuminano il nostro modo di lavorare e ci guidano nella scelta dei nostri partner e dei nostri clienti. Collaborazione e ascolto sono alla base del nostro impegno, per garantire un servizio di qualità e un prodotto che soddisfi le esigenze del cliente.',
-    image:
-      'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/f3wruutortwisbthzeck',
-    imageAlt: 'I princípi che ci guidano: operosità, ricerca, innovazione',
-    direction: 'row-reverse',
-  };
   const { language } = useLanguage();
+  const aboutUs1 =
+    language === 'it'
+      ? translations.aboutUsPage.storySection.aboutUs1It
+      : translations.aboutUsPage.storySection.aboutUs1En;
+  const aboutUs2 =
+    language === 'it'
+      ? translations.aboutUsPage.storySection.aboutUs2It
+      : translations.aboutUsPage.storySection.aboutUs2En;
 
   return (
     <Main colorInvert={true}>

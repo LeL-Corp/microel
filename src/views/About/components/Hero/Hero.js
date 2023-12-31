@@ -3,11 +3,13 @@ import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
-
 import Container from 'components/Container';
+import { useLanguage } from 'context/LanguageContext';
+import translations from 'translations/Translations';
 
 const Hero = () => {
   const theme = useTheme();
+  const { language } = useLanguage();
   useEffect(() => {
     const jarallaxInit = async () => {
       const jarallaxElems = document.querySelectorAll('.jarallax');
@@ -86,7 +88,7 @@ const Hero = () => {
               fontWeight: 900,
             }}
           >
-            Benvenuti nel cuore della nostra azienda
+            {translations.aboutUsPage.hero.heading[language]}
           </Typography>
           <Typography
             data-aos="fade-up"
@@ -98,9 +100,7 @@ const Hero = () => {
               fontWeight: 700,
               fontSize: '22px',
             }}
-          >
-            {/* dove passione e innovazione si fondono per creare soluzioni uniche. */}
-          </Typography>
+          ></Typography>
         </Box>
       </Container>
     </Box>

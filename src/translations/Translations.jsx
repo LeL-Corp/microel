@@ -1,3 +1,10 @@
+import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
+import WidgetsIcon from '@mui/icons-material/Widgets';
+import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
+import ElectricCarIcon from '@mui/icons-material/ElectricCar';
+import FlightIcon from '@mui/icons-material/Flight';
+import { Dvr, RocketLaunchRounded } from '@mui/icons-material';
+
 const translations = {
   metaTags: {
     title: {
@@ -15,7 +22,7 @@ const translations = {
     openGraphTitle: {
       it: `Microel - Progettazione e produzione schede elettroniche dedicate`,
       en: 'Microel - Custom electronic boards design and production',
-      },
+    },
     openGraphDescription: {
       it: `Schede e apparecchiature elettroniche personalizzate`,
       en: 'Design, production and sale of custom electronic boards for industrial automation.',
@@ -34,7 +41,7 @@ const translations = {
         en: 'About us, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
       },
     },
-    areas: {
+    areasPage: {
       title: {
         it: 'Settori - Microel | Soluzioni su misura',
         en: 'Areas - Microel | Custom Industrial Automation Solutions',
@@ -48,7 +55,7 @@ const translations = {
         en: 'Areas, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
       },
     },
-    roadmap: {
+    roadmapPage: {
       title: {
         it: 'Roadmap - Microel | Studio, progettazione, realizzazione, obiettivi',
         en: 'Roadmap - Microel | Study, design, realization, objectives',
@@ -62,7 +69,7 @@ const translations = {
         en: 'Roadmap, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
       },
     },
-    contacts: {
+    contactsPage: {
       title: {
         it: 'Contatti - Microel | Contattaci per schede elettroniche su misura',
         en: 'Contacts - Microel | Contact us for custom electronic boards solutions',
@@ -77,7 +84,6 @@ const translations = {
       },
     },
   },
-
   buttons: {
     discover: {
       it: 'Scopri',
@@ -100,8 +106,11 @@ const translations = {
       it: 'Scopri la Roadmap',
       en: 'View our Roadmap',
     },
+    goToFlybox: {
+      it: 'Scopri Flybox Avionics',
+      en: 'Discover Flybox Avionics',
+    },
   },
-
   navigation: {
     home: {
       it: 'Home',
@@ -123,6 +132,24 @@ const translations = {
       it: 'Contatti',
       en: 'Contacts',
     },
+    info: {
+      phone: {
+        it: 'Telefono',
+        en: 'Phone',
+      },
+      address: {
+        it: 'Indirizzo',
+        en: 'Address',
+      },
+    },
+    discoverMore: {
+      it: 'Scopri di più su Flybox Avionics, un marchio registrato Microel srl:',
+      en: 'Discover more about Flybox Avionics, a registered trademark of Microel srl:',
+    },
+    discoverMoreMobile: {
+      it: 'Flybox Avionics:',
+      en: 'Flybox Avionics:',
+    }
   },
   home: {
     hero: {
@@ -222,11 +249,439 @@ const translations = {
         it: 'Il nostro team ha sviluppato un ampio know-how collaborando con aziende di ogni dimensione e ambito di operatività. Per ognuno di questi, sviluppiamo un percorso di ricerca su misura.',
         en: 'Our team has developed extensive know-how by collaborating with companies of all sizes and fields of operation. For each of these, we develop a tailor-made research path.',
       },
+      experiencesIt: [
+        {
+          logo: (
+            <PrecisionManufacturingIcon
+              color="secondary"
+              style={{ fontSize: '48px' }}
+            />
+          ),
+          name: 'Automazione industriale',
+        },
+        {
+          logo: <Dvr color="secondary" style={{ fontSize: '48px' }} />,
+          name: 'Macchine per i test',
+        },
+        {
+          logo: <WidgetsIcon color="secondary" style={{ fontSize: '48px' }} />,
+          name: 'Macchinari per realizzazione Packaging',
+        },
+        {
+          logo: (
+            <RocketLaunchRounded
+              color="secondary"
+              style={{ fontSize: '48px' }}
+            />
+          ),
+          name: 'Azionamenti per motori',
+        },
+        {
+          logo: (
+            <SettingsSuggestIcon
+              color="secondary"
+              style={{ fontSize: '48px' }}
+            />
+          ),
+          name: 'Macchinari per lavorazione metalli',
+        },
+
+        {
+          logo: <FlightIcon color="secondary" style={{ fontSize: '48px' }} />,
+          name: 'Strumentazione Avionica',
+        },
+      ],
+      experiencesEn: [
+        {
+          logo: (
+            <PrecisionManufacturingIcon
+              color="secondary"
+              style={{ fontSize: '48px' }}
+            />
+          ),
+          name: 'Industrial Automation',
+        },
+        {
+          logo: <Dvr color="secondary" style={{ fontSize: '48px' }} />,
+          name: 'Test Machines',
+        },
+        {
+          logo: <WidgetsIcon color="secondary" style={{ fontSize: '48px' }} />,
+          name: 'Packaging Machines',
+        },
+        {
+          logo: (
+            <RocketLaunchRounded
+              color="secondary"
+              style={{ fontSize: '48px' }}
+            />
+          ),
+          name: 'Motor Drives',
+        },
+        {
+          logo: (
+            <SettingsSuggestIcon
+              color="secondary"
+              style={{ fontSize: '48px' }}
+            />
+          ),
+          name: 'Metalworking machinery',
+        },
+
+        {
+          logo: <FlightIcon color="secondary" style={{ fontSize: '48px' }} />,
+          name: 'Avionics Instruments',
+        },
+      ],
     },
     section5: {
       heading: {
         it: "Hai un'idea? Contattaci per una consulenza.",
         en: 'Any idea? Contact us for a consultation.',
+      },
+    },
+  },
+  aboutUsPage: {
+    hero: {
+      heading: {
+        it: 'Benvenuti nel cuore della nostra azienda',
+        en: 'Step inside the heartbeat of our company',
+      },
+    },
+    storySection: {
+      aboutUs1It: {
+        title: 'La nostra storia',
+        text: "Le nostre radici affondano nel 1982, quando la genuina passione per l'elettronica si trasforma in attività imprenditoriale: l'azienda diventeraà punto di riferimento nella realizzazione di schede elettroniche nel settore dell'automazione industriale e non solo. Microel sviluppa infatti anche una specializzazione per l'elettronica applicata alla strumentazione aeronautica, fondando il brand",
+        link: 'Flybox Avionics',
+        image:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmzge04qi3fodiopd21c',
+
+        imageAlt: 'La nostra storia',
+        direction: 'row',
+      },
+      aboutUs2It: {
+        title: 'I princípi che ci guidano: operosità, ricerca, innovazione',
+        text: 'I nostri valori illuminano il nostro modo di lavorare e ci guidano nella scelta dei nostri partner e dei nostri clienti. Collaborazione e ascolto sono alla base del nostro impegno, per garantire un servizio di qualità e un prodotto che soddisfi le esigenze del cliente.',
+        image:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/f3wruutortwisbthzeck',
+        imageAlt: 'I princípi che ci guidano: operosità, ricerca, innovazione',
+        direction: 'row-reverse',
+      },
+      aboutUs1En: {
+        title: 'Our story',
+        text: 'Our roots date back to 1982, when the genuine passion for electronics turns into entrepreneurial activity: the company will become a reference point in the production of electronic boards in the industrial automation sector and beyond. Microel also develops a specialization for electronics applied to aeronautical instruments, founding the brand',
+        image:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmzge04qi3fodiopd21c',
+
+        imageAlt: 'Microel history',
+        direction: 'row',
+      },
+      aboutUs2En: {
+        title: 'The principles that guide us: diligence, research, innovation',
+        text: 'Our values enlighten our way of working and guide us in choosing our partners and our customers. Collaboration and listening are the basis of our commitment, to guarantee a quality service and a product that meets the needs of the customer.',
+        image:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/f3wruutortwisbthzeck',
+        imageAlt:
+          'The principles that guide us: diligence, research, innovation',
+        direction: 'row-reverse',
+      },
+    },
+    gallerySection: {
+      heading: {
+        it: 'Uno sguardo al nostro lavoro',
+        en: 'An overview of our work',
+      },
+      subheading: {
+        it: 'I nostri team curano tutti i dettagli: dal design, alla produzione, alla manutenzione.',
+        en: 'Our teams take care of every detail: from design, to production, to maintenance.',
+      },
+    },
+    contactSection: {
+      heading: {
+        it: 'Puoi trovarci qui:',
+        en: 'You can find us here:',
+      },
+    },
+    tagCloudSection: {
+      it: [
+        'Schede elettroniche',
+        'PCB',
+        'Assemblaggio',
+        'Saldatura',
+        'Sbroglio',
+        'Progettazione',
+        'Elettronica industriale',
+        'Automazione',
+        'Personalizzazione',
+      ],
+      en: [
+        'Electronic boards',
+        'PCB',
+        'Assembly',
+        'Welding',
+        'Layout',
+        'Design',
+        'Industrial electronics',
+        'Automation',
+        'Customization',
+      ],
+    },
+  },
+  areasPage: {
+    hero: {
+      heading: {
+        it: 'Le soluzioni dedicate sono il nostro prodotto standard',
+        en: 'Dedicated solutions are our standard product',
+      },
+      subheading: {
+        it: 'Condividi le tue idee e i tuoi tempi con noi e ti connetteremo con le soluzioni che soddisfano le tue esigenze specifiche.',
+        en: 'Share your ideas and your time with us and we will connect you with solutions that meet your specific needs.',
+      },
+    },
+    parallaxDataIt: [
+      {
+        sector: 'Automazione industriale',
+        description:
+          'Realizziamo schede elettroniche ottimizzate che garantiscono elevate prestazioni, basso consumo energetico e robustezza, per affrontare gli ambienti industriali più impegnativi.',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/w4oxmbodeyvpcktji2tg',
+      },
+      {
+        sector: 'Strumentazione Avionica',
+        description:
+          'La linea dedicata Flybox Avionics offre strumentazione di bordo integrata con sensori di alta precisione che offrono un controllo avanzato.',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/irut8he5jyewbptbwna4',
+      },
+      {
+        sector: 'Azionamenti per motori',
+        description:
+          'Miglioriamo le prestazioni dinamiche dei motori grazie a schede elettroniche ottimizzate per gestire una vasta gamma di motori, dai tradizionali motori a induzione a quelli ad alta efficienza.',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/q00toy3fzpe0h5uokqjz',
+      },
+
+      {
+        sector: 'Macchine per test',
+        description:
+          'Progettiamo Schede elettroniche che permettono integrazioni con una vasta gamma di macchine per test, protocolli di misurazione e analisi',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/big9koda5yzwskxidimt',
+      },
+
+      {
+        sector: 'Macchine per Packaging',
+        description:
+          'Le Schede elettroniche Microel sono progettate per integrarsi con una vasta gamma di macchine per il packaging, quali incartatrici, sigillatrici e sistemi di etichettatura, per una maggiore precisione di confezionamento e flessibilità',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/qg0dmohn78xj3apljesl',
+      },
+
+      {
+        sector: 'Macchine per Cleaning',
+        description:
+          'Le nostre schede elettroniche sono integrate in apparecchiature di pulizia quali lavasciuga, aspirapolvere industriali e sistemi di pulizia automatizzati',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+      },
+      {
+        sector: 'Macchine per settore Calzaturiero',
+        description:
+          'Ci concentriamo sulla flessibilità delle soluzioni: le nostre schede elettroniche sono integrate in macchinari specializzati utilizzati in ogni fase della produzione, adattandosi alle varie esigenze del settore calzaturiero',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/ybccvvrpu1j4s39zcydx',
+      },
+      {
+        sector: 'Elettrodomestici per il Bianco',
+        description:
+          'Le nostre schede elettroniche sono integrate in elettrodomestici quali lavatrici, asciugatrici, lavastoviglie e apparecchi per la cura del bucato, permettendo un controllo preciso dei cicli di lavaggio, asciugatura e altri processi',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/v1701809565/Assets/Sectors/ho3dj1osyr8wvebv1v66.jpg',
+      },
+      {
+        sector: 'Macchine per la lavorazione dei metalli',
+        description:
+          'Le schede elettroniche da noi sviluppate sono integrate in macchinari come torni, frese, laser, per una gestione sofisticata dei parametri di lavorazione',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/zdvtn1pjubxygvl9pxtw',
+      },
+    ],
+    parallaxDataEn: [
+      {
+        sector: 'Industrial Automation',
+        description:
+          'We create optimized electronic boards that guarantee high performance, low energy consumption and robustness, to face the most challenging industrial environments.',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/w4oxmbodeyvpcktji2tg',
+      },
+      {
+        sector: 'Avionics Instruments',
+        description:
+          'Flybox Avionics, a trade mark from Microel srl, offers integrated onboard flight instruments with high precision sensors that provide advanced control.',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/irut8he5jyewbptbwna4',
+      },
+      {
+        sector: 'Motor Drives',
+        description:
+          'We improve the dynamic performance of engines thanks to optimized electronic boards to manage a wide range of engines, from traditional induction motors to high efficiency ones.',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/q00toy3fzpe0h5uokqjz',
+      },
+      {
+        sector: 'Test Machines',
+        description:
+          'We design Electronic boards that allow integrations with a broad spectrum of test machines, measurement and analysis protocols',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/big9koda5yzwskxidimt',
+      },
+      {
+        sector: 'Packaging Machines',
+        description:
+          'Microel electronic boards are designed to integrate with an extensive variety of packaging machines, such as wrappers, sealers and labeling systems, for greater packaging precision and flexibility',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/qg0dmohn78xj3apljesl',
+      },
+      {
+        sector: 'Cleaning Machines',
+        description:
+          'Our electronic boards are integrated into cleaning equipment such as scrubber dryers, industrial vacuum cleaners and automated cleaning systems',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+      },
+      {
+        sector: 'Machines for the Footwear Sector',
+        description:
+          'We focus on the flexibility of solutions: our electronic boards are integrated into specialized machinery used in every phase of production, adapting to the various needs of the footwear sector',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/ybccvvrpu1j4s39zcydx',
+      },
+      {
+        sector: 'Laundry Appliances',
+        description:
+          'Our electronic boards are integrated into appliances such as washing machines, dryers, dishwashers and laundry care appliances, allowing precise control of washing, drying and other processes',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/v1701809565/Assets/Sectors/ho3dj1osyr8wvebv1v66.jpg',
+      },
+      {
+        sector: 'Metalworking machinery',
+        description:
+          'The electronic boards we develop are integrated into machinery such as lathes, milling machines, lasers, for a sophisticated management of processing parameters',
+        imageUrl:
+          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/zdvtn1pjubxygvl9pxtw',
+      },
+    ],
+    callToAction: {
+      header: {
+        it: 'E tu in quale settore operi?',
+        en: 'And you, Which is your area of expertise?',
+      },
+      paragraph: {
+        it: 'Mettiamo a disposizione la nostra esperienza per trovare la soluzione più adatta alle tue esigenze',
+        en: 'Our experience is at your disposal, we will help you to find the solution that best suits your needs',
+      },
+    },
+  },
+  roadmapPage: {
+    heading: {
+      it: 'La nostra Roadmap',
+      en: 'Our Roadmap',
+    },
+    stepsIt: [
+      {
+        label: 'Analizziamo a fondo le tue specificità',
+        description:
+          'Crediamo che il punto di partenza per un progetto di successo sia la conoscenza approfondita delle esigenze e specificità di ogni nostro cliente',
+      },
+      {
+        label: 'Progettazione',
+        description:
+          'Studiamo insieme da vicino ogni fase di progettazione, sia hardware sia software',
+      },
+      {
+        label: 'Realizzazione',
+        description:
+          'Grazie alla nostra esperienza pluriennale, siamo in grado di consegnarti un prodotto creato su misura per te',
+      },
+      {
+        label: "What's next?",
+        description:
+          "Il tuo successo è il nostro obiettivo: non vediamo l'ora di scoprire quale sarà la sfida che tu ci proporrai. ",
+      },
+    ],
+    stepsEn: [
+      {
+        label: 'We thoroughly analyze your specifics',
+        description:
+          'We believe that the starting point for a successful project is a deep understanding of the needs and specifics of each of our clients',
+      },
+      {
+        label: 'Design',
+        description:
+          'We closely study each phase of design, both hardware and software',
+      },
+      {
+        label: 'Execution',
+        description:
+          'Thanks to our many years of experience, we are able to deliver a product tailored to you',
+      },
+      {
+        label: "What's next?",
+        description:
+          "Your success is our goal: we can't wait to find out the challenge you have in mind for us.",
+      },
+    ],
+    solutionsSection: {
+      heading: {
+        it: 'Alcune delle soluzioni che offriamo per venire incontro alle esigenze di un mercato in continua evoluzione:',
+        en: 'Some of the solutions we offer to meet the needs of an ever-changing market:',
+      },
+    },
+  },
+  contactsPage: {
+    heading: {
+      it: 'Contattaci',
+      en: 'Contact us',
+    },
+    paragraph: {
+      it: 'Siamo a tua disposizione! Ti risponderemo il prima possibile',
+      en: 'We are at your disposal! We will reply back as soon as possible',
+    },
+    form: {
+      firstName: {
+        it: 'Nome',
+        en: 'Name',
+      },
+      surname: {
+        it: 'Cognome',
+        en: 'Surname',
+      },
+
+      message: {
+        it: 'Scrivi il tuo messaggio',
+        en: 'Type your Message',
+      },
+      submit: {
+        it: 'Invia',
+        en: 'Submit',
+      },
+      policySentence: {
+        it: "Cliccando 'Invia' sottoscrivi le nostre",
+        en: "By clicking 'Submit' you agree to our",
+      },
+      button: {
+        basic: {
+          it: 'Invia',
+          en: 'Submit',
+        },
+        sent: {
+          it: 'Inviato!',
+          en: 'Submitted!',
+        },
+      },
+      thankYou: {
+        it: 'Grazie, a presto!',
+        en: 'Thank you for contacting us!',
       },
     },
   },

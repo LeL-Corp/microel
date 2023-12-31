@@ -6,23 +6,18 @@ import { useMediaQuery } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import translations from 'translations/Translations';
+import { useLanguage } from 'context/LanguageContext';
 
 const AboutTags = () => {
-  const italianTags = [
-    'Schede elettroniche',
-    'PCB',
-    'Assemblaggio',
-    'Saldatura',
-    'Sbroglio',
-    'Progettazione',
-    'Elettronica industriale',
-    'Automazione',
-    'Personalizzazione',
-  ];
   const theme = useTheme();
+  const { language } = useLanguage();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
+  console.log('language', language);
+  const tags = translations.aboutUsPage.tagCloudSection[language];
+  console.log('tags', tags);
 
   return (
     <Container>
@@ -50,7 +45,7 @@ const AboutTags = () => {
           maxWidth={isMobile ? '90%' : '50%'}
           alignItems={'center'}
         >
-          {italianTags.map((item, i) => (
+          {tags.map((item, i) => (
             <motion.div
               key={i}
               ref={ref}

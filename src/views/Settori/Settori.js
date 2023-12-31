@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet';
 import { useInView } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -15,6 +16,8 @@ import { useLanguage } from 'context/LanguageContext';
 
 const Settori = () => {
   const { language, changeLanguage } = useLanguage();
+  const { areasPage } = translations;
+
   useEffect(() => {
     const jarallaxInit = async () => {
       const jarallaxElems = document.querySelectorAll('.jarallax');
@@ -44,6 +47,7 @@ const Settori = () => {
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const styles = (bgImage) => ({
     position: 'absolute',
@@ -63,83 +67,55 @@ const Settori = () => {
   });
   const ref = useRef();
   const isInView = useInView(ref, { once: false });
-  const parallaxData = [
-    {
-      sector: 'Automazione industriale',
-      description:
-        'Realizziamo schede elettroniche ottimizzate che garantiscono elevate prestazioni, basso consumo energetico e una robustezza straordinaria per affrontare gli ambienti industriali più impegnativi.',
-      // imageUrl:
-      //   'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/jj1g1o6hqkex2guwjucq',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/w4oxmbodeyvpcktji2tg',
-    },
-    {
-      sector: 'Strumentazione Avionica',
-      description:
-        'La linea Flybox Avionics offre strumentazione di bordo integrata con sensori di alta precisione che offrono un controllo avanzato.',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/irut8he5jyewbptbwna4',
-    },
-    {
-      sector: 'Azionamenti per motori',
-      description:
-        'Miglioriamo le prestazioni dinamiche dei motori grazie a schede elettroniche ottimizzate per gestire una vasta gamma di motori, dai tradizionali motori a induzione a quelli ad alta efficienza e a controllo avanzato.',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/q00toy3fzpe0h5uokqjz',
-    },
-
-    {
-      sector: 'Macchine per test',
-      description:
-        'Schede elettroniche progettate per integrarsi con una vasta gamma di macchine per test, consentendo una varietà di protocolli di misurazione e analisi',
-      // imageUrl:
-      //   'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/mmkhfhfbtqbwpdennoct',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/big9koda5yzwskxidimt',
-    },
-
-    {
-      sector: 'Macchine per Packaging',
-      description:
-        'Schede elettroniche progettate per integrarsi senza problemi con una vasta gamma di macchine per il packaging, quali incartatrici, sigillatrici e sistemi di etichettatura, per una maggiore precisione di confezionamento e flessibilità',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/qg0dmohn78xj3apljesl',
-    },
-
-    {
-      sector: 'Macchine per Cleaning',
-      description:
-        'Le nostre schede elettroniche sono integrate in apparecchiature di pulizia quali lavasciuga, aspirapolvere industriali e sistemi di pulizia automatizzati',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
-    },
-    {
-      sector: 'Macchine per settore Calzaturiero',
-      description:
-        'Ci concentriamo sulla flessibilità delle soluzioni, adattabili alle varie esigenze del settore calzaturiero, le nostre schede elettroniche sono integrate in macchinari specializzati utilizzati in ogni fase della produzione',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/ybccvvrpu1j4s39zcydx',
-    },
-    {
-      sector: 'Elettrodomestici per il Bianco',
-      description:
-        'Le nostre schede elettroniche sono integrate in elettrodomestici quali lavatrici, asciugatrici, lavastoviglie e apparecchi per la cura del bucato. La nostra tecnologia avanzata consente un controllo preciso dei cicli di lavaggio, asciugatura e altri processi',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1701809565/Assets/Sectors/ho3dj1osyr8wvebv1v66.jpg',
-    },
-    {
-      sector: 'Macchine per la lavorazione dei metalli',
-      description:
-        'Le schede elettroniche sviluppate da noi sono integrate in macchinari come torni, frese, laser, per una gestione sofisticata dei parametri di lavorazione',
-      imageUrl:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/zdvtn1pjubxygvl9pxtw',
-    },
-  ];
+  const parallaxData =
+    language === 'it' ? areasPage.parallaxDataIt : areasPage.parallaxDataEn;
 
   return (
     <Main>
+      <Helmet
+        title={translations.metaTags.areasPage.title[language]}
+        meta={[
+          {
+            name: 'description',
+            content: translations.metaTags.areasPage.description[language],
+          },
+          {
+            name: 'keywords',
+            content: translations.metaTags.areasPage.keywords[language],
+          },
+          {
+            name: 'robots',
+            content: 'index, follow',
+          },
+          {
+            property: 'og:title',
+            content: translations.metaTags.openGraphTitle[language],
+          },
+          { property: 'og:type', content: 'website' },
+          {
+            property: 'og:description',
+            content: translations.metaTags.openGraphDescription[language],
+          },
+          {
+            property: 'og:image',
+            content:
+              'https://res.cloudinary.com/dslne9y2j/image/upload/v1697838605/Assets/Transpared-bg/logoonly_spfzrg.png',
+          },
+        ]}
+        link={[
+          {
+            rel: 'canonical',
+            href: 'https://www.microel.it/areas/',
+          },
+          {
+            rel: 'alternate',
+            href: 'https://www.microel.it/areas/',
+            hreflang: 'x-default',
+          },
+        ]}
+      ></Helmet>
       <Box
-        minHeight={'90vh'}
+        minHeight={isMobile ? '40vh' : '90vh'}
         display={'flex'}
         alignItems={'center'}
         bgcolor={'main'}
@@ -149,7 +125,6 @@ const Settori = () => {
         <Container>
           <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
             <Welcome />
-
             <Box marginTop={4} id="agency__portfolio-item--js-scroll">
               <NoSsr>
                 <Box
@@ -190,7 +165,7 @@ const Settori = () => {
             transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
           }}
         >
-          E tu in quale settore operi?
+          {areasPage.callToAction.header[language]}
         </Typography>
         <Typography
           // variant="h6"
@@ -211,8 +186,7 @@ const Settori = () => {
             transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
           }}
         >
-          Mettiamo a disposizione la nostra esperienza per trovare la soluzione
-          più adatta alle tue esigenze
+          {areasPage.callToAction.paragraph[language]}
         </Typography>
       </Box>
 

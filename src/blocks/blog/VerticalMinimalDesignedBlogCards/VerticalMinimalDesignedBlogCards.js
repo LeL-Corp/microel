@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom';
 const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
   const theme = useTheme();
   const ref = useRef();
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
@@ -41,8 +41,6 @@ const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
                 }}
               >
                 <Box
-                  component={'a'}
-                  href={''}
                   display={'block'}
                   width={1}
                   height={1}
@@ -87,7 +85,7 @@ const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
                         color="text.primary"
                         variant={'h4'}
                         gutterBottom
-                        sx={{ fontWeight: 700 }}
+                        sx={{ fontWeight: 700, marginBottom: 4 }}
                       >
                         {item.title}
                       </Typography>

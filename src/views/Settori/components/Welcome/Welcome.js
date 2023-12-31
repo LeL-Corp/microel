@@ -6,13 +6,16 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { useInView } from 'framer-motion';
+import { useLanguage } from 'context/LanguageContext';
+import translations from 'translations/Translations';
 
 const Welcome = () => {
   const ref = useRef();
   const isInView = useInView(ref, { once: false });
-
   const theme = useTheme();
-  const language = 'it';
+  const { language, changeLanguage } = useLanguage();
+  const { areasPage } = translations;
+
   console.log('isinview', isInView);
 
   const GridItemHeadlineBlock = () => (
@@ -32,9 +35,7 @@ const Welcome = () => {
             fontWeight: 900,
           }}
         >
-          {language === 'it'
-            ? 'Le soluzioni dedicate sono il nostro prodotto standard'
-            : 'Dedicated solutions are our standard product'}
+          {areasPage.hero.heading[language]}
         </Typography>
         <Typography
           component="p"
@@ -42,15 +43,11 @@ const Welcome = () => {
           align={'center'}
           sx={{
             fontWeight: 400,
+            maxWidth: '100%',
+            textAlign: 'center',
           }}
         >
-          {language === 'it'
-            ? 'Condividi le tue idee, il tuo budget e i tuoi tempi con noi'
-            : 'Share your ideas, budget, and timeline with us,'}
-          <br />
-          {language === 'it'
-            ? 'e ti connetteremo con le soluzioni che soddisfano le tue esigenze specifiche.'
-            : 'and we’ll connect you solutions that match your specific needs.'}
+          {areasPage.hero.subheading[language]}
         </Typography>
       </div>
     </Box>

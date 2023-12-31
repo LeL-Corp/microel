@@ -5,10 +5,12 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import RowContainer from 'components/RowContainer';
+import translations from 'translations/Translations';
+import { useLanguage } from 'context/LanguageContext';
 
 const SingleSector = ({ data }) => {
   const theme = useTheme();
-  const language = 'it';
+  const { language } = useLanguage();
 
   return (
     <Box>
@@ -20,8 +22,6 @@ const SingleSector = ({ data }) => {
           fontWeight: 900,
           color: theme.palette.common.white,
           textTransform: 'uppercase',
-
-          
         }}
       >
         {data.sector}
@@ -43,7 +43,8 @@ const SingleSector = ({ data }) => {
         {data.description}
       </Typography>
 
-      {data.sector === 'Strumentazione Avionica' ? (
+      {data.sector === 'Strumentazione Avionica' ||
+      data.sector === 'Avionics Instruments' ? (
         <RowContainer center style={{ marginTop: '30px' }}>
           <Button
             component={'a'}
@@ -54,8 +55,7 @@ const SingleSector = ({ data }) => {
             fullWidth={false}
             sx={{ fontWeight: 700 }}
           >
-            {' '}
-            Scopri Flybox Avionics
+            {translations.buttons.goToFlybox[language]}
           </Button>
         </RowContainer>
       ) : null}

@@ -89,7 +89,7 @@ const Hero = () => {
     defaultMatches: true,
   });
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
 
   return (
     <Box

@@ -1,10 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useTheme } from '@mui/material/styles';
+import { useLanguage } from 'context/LanguageContext';
 import Box from '@mui/material/Box';
 
 import Main from 'layouts/Main';
 import Container from 'components/Container';
 import { Form, Contact } from './components';
+import translations from 'translations/Translations';
 
 const ContactPageSidebarMap = () => {
   const theme = useTheme();
@@ -13,11 +16,52 @@ const ContactPageSidebarMap = () => {
   } else {
     console.log('No cookies are being gathered');
   }
-
-  
+  const { language } = useLanguage();
 
   return (
     <Main>
+      <Helmet
+        title={translations.metaTags.contactsPage.title[language]}
+        meta={[
+          {
+            name: 'description',
+            content: translations.metaTags.contactsPage.description[language],
+          },
+          {
+            name: 'keywords',
+            content: translations.metaTags.contactsPage.keywords[language],
+          },
+          {
+            name: 'robots',
+            content: 'index, follow',
+          },
+          {
+            property: 'og:title',
+            content: translations.metaTags.openGraphTitle[language],
+          },
+          { property: 'og:type', content: 'website' },
+          {
+            property: 'og:description',
+            content: translations.metaTags.openGraphDescription[language],
+          },
+          {
+            property: 'og:image',
+            content:
+              'https://res.cloudinary.com/dslne9y2j/image/upload/v1697838605/Assets/Transpared-bg/logoonly_spfzrg.png',
+          },
+        ]}
+        link={[
+          {
+            rel: 'canonical',
+            href: 'https://www.microel.it/areas/',
+          },
+          {
+            rel: 'alternate',
+            href: 'https://www.microel.it/areas/',
+            hreflang: 'x-default',
+          },
+        ]}
+      ></Helmet>
       <Form />
       <Box position={'relative'}>
         <Container>

@@ -9,9 +9,12 @@ import Slider from 'react-slick';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import { Container } from '@mui/material';
+import translations from 'translations/Translations';
+import { useLanguage } from 'context/LanguageContext';
 
 const Gallery = () => {
   const theme = useTheme();
+  const { language } = useLanguage();
 
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -88,7 +91,7 @@ const Gallery = () => {
             marginTop: theme.spacing(1),
           }}
         >
-          Uno sguardo al nostro lavoro
+          {translations.aboutUsPage.gallerySection.heading[language]}
         </Typography>
         <Typography
           component="p"
@@ -96,8 +99,7 @@ const Gallery = () => {
           color={'text.secondary'}
           sx={{ textAlign: 'center' }}
         >
-          I nostri team curano tutti i dettagli: dal design, alla produzione,
-          alla manutenzione.
+          {translations.aboutUsPage.gallerySection.subheading[language]}
         </Typography>
       </Box>
       {/* <Box>

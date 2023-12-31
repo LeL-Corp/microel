@@ -16,6 +16,8 @@ import { useTheme } from '@mui/material/styles';
 import Container from 'components/Container';
 import RowContainer from 'components/RowContainer';
 import { CircularProgress } from '@mui/material';
+import { useLanguage } from 'context/LanguageContext';
+import translations from 'translations/Translations';
 
 const validationSchema = yup.object({
   firstName: yup
@@ -40,6 +42,8 @@ const validationSchema = yup.object({
 
 const Contact = () => {
   const theme = useTheme();
+  const { language } = useLanguage();
+  const { contactsPage } = translations;
 
   const LeftSide = () => {
     const [emailSent, setEmailSent] = useState(false);
@@ -113,11 +117,10 @@ const Contact = () => {
       <Box>
         <Box marginBottom={4}>
           <Typography variant={'h1'} sx={{ fontWeight: 700 }} gutterBottom>
-            Contattaci
+            {contactsPage.heading[language]}
           </Typography>
           <Typography color="text.secondary" variant={'p'} fontSize="18px">
-            Siamo a tua disposizione! <br></br>
-            Ti risponderemo il prima possibile.
+            {contactsPage.paragraph[language]}
           </Typography>
         </Box>
         <Box>
@@ -126,7 +129,7 @@ const Contact = () => {
               <Grid item xs={12} sm={6}>
                 <TextField
                   sx={{ height: 54 }}
-                  label="Nome"
+                  label={contactsPage.form.firstName[language]}
                   variant="outlined"
                   color="primary"
                   size="medium"
@@ -145,7 +148,7 @@ const Contact = () => {
               <Grid item xs={12} sm={6}>
                 <TextField
                   sx={{ height: 54 }}
-                  label="Cognome"
+                  label={contactsPage.form.surname[language]}
                   variant="outlined"
                   color="primary"
                   size="medium"
@@ -177,7 +180,7 @@ const Contact = () => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  label="Scrivi il tuo messaggio"
+                  label={contactsPage.form.message[language]}
                   multiline
                   rows={6}
                   variant="outlined"
@@ -196,7 +199,7 @@ const Contact = () => {
               <Grid item xs={12}>
                 <Box>
                   <Typography component="p" variant="body2" align="left">
-                    Cliccando "invia" sottoscrivi le nostre{' '}
+                    {contactsPage.form.policySentence[language]}{' '}
                     <Box
                       component={Link}
                       to="/privacy-policy"
@@ -205,7 +208,7 @@ const Contact = () => {
                     >
                       Privacy Policy
                     </Box>{' '}
-                    e{' '}
+                    {language === 'it' ? 'e' : 'and'}{' '}
                     <Box
                       component={Link}
                       to="/cookies-policy"
@@ -227,14 +230,14 @@ const Contact = () => {
                     color={'primary'}
                     size="medium"
                     type="submit"
-                    disabled={CookieConsent.consented ? false : true}
+                    // disabled={CookieConsent.consented ? false : true}
                   >
                     {loading ? (
                       <CircularProgress color="secondary" />
                     ) : emailSent ? (
-                      'Inviato!'
+                      contactsPage.form.button.sent[language]
                     ) : (
-                      'Invia'
+                      contactsPage.form.button.basic[language]
                     )}
                   </Button>
                   {emailSent ? (
@@ -243,7 +246,7 @@ const Contact = () => {
                       sx={{ fontWeight: 700 }}
                       gutterBottom
                     >
-                      Grazie, a presto!
+                      {contactsPage.form.thankYou[language]}
                     </Typography>
                   ) : null}
                 </RowContainer>
