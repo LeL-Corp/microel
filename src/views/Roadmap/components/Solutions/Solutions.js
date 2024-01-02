@@ -14,6 +14,8 @@ import translations from 'translations/Translations';
 import { useLanguage } from 'context/LanguageContext';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { Container, ImageList, ImageListItem } from '@mui/material';
 
 //   {
 //     feedback:
@@ -50,6 +52,60 @@ const Solutions = () => {
     },
   ];
   const isInView = useInView(ref, { once: false });
+
+  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
+    defaultMatches: true,
+  });
+
+  const photos = [
+    {
+      src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/xnl5p9qyrtfftwpzeqc8',
+      source:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/xnl5p9qyrtfftwpzeqc8',
+      title: 'Titolo',
+      description: 'Descrizione',
+      rows: 1,
+      cols: 2,
+    },
+    {
+      src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmp6kijybwlkibzxnnhv',
+      source:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmp6kijybwlkibzxnnhv',
+      title: 'Titolo',
+      description: 'Descrizione',
+      rows: 1,
+      cols: 1,
+    },
+    {
+      src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/h8jklckpuqlqrx1ouixl',
+      source:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/h8jklckpuqlqrx1ouixl',
+      title: 'Titolo',
+      description: 'Descrizione',
+      rows: 1,
+      cols: 1,
+    },
+    {
+      src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/jysxe6lnnperioec42xm',
+      source:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/jysxe6lnnperioec42xm',
+      title: 'Titolo',
+      description: 'Descrizione',
+      rows: 1,
+      cols: 2,
+    },
+    {
+      src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/t5chpxzf8pbm19k8535k',
+      source:
+        'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/t5chpxzf8pbm19k8535k',
+      title: 'Titolo',
+      description: 'Descrizione',
+      rows: 1,
+      cols: 2,
+    },
+  ];
+
+  const photosToShow = isMd ? photos : photos.slice(0, photos.length - 1);
 
   return (
     <Box>
@@ -150,6 +206,46 @@ const Solutions = () => {
           ))}
         </Grid>
       </div>
+      <Box>
+        <Container sx={{ marginTop: '100px' }}>
+          <ImageList
+            variant="quilted"
+            cols={4}
+            rowHeight={isMd ? 300 : 220}
+            gap={isMd ? 45 : 8}
+            sx={{ overflow: 'visible !important' }}
+          >
+            {photosToShow.map((item, i) => (
+              <ImageListItem
+                key={i}
+                cols={isMd ? item.cols || 1 : 2}
+                rows={isMd ? item.rows || 1 : 1}
+                sx={{
+                  overflow: 'visible',
+                  transition: 'all .2s ease-in-out',
+                  '&:hover': {
+                    transform: 'scale(1.2)',
+                    zIndex: 2000,
+                  },
+                }}
+              >
+                <img
+                  height={'100%'}
+                  width={'100%'}
+                  src={item.src}
+                  alt="..."
+                  loading="lazy"
+                  style={{
+                    objectFit: 'cover',
+                    cursor: 'poiner',
+                    borderRadius: 8,
+                  }}
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </Container>
+      </Box>
     </Box>
   );
 };

@@ -27,6 +27,7 @@ const Gallery = () => {
         'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/xnl5p9qyrtfftwpzeqc8',
       title: 'Titolo',
       description: 'Descrizione',
+      
     },
     {
       src: 'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmp6kijybwlkibzxnnhv',

@@ -22,6 +22,7 @@ import { GetStarted } from 'views/IndexView/components';
 import AboutTags from './components/Tags/AboutTags';
 import translations from 'translations/Translations';
 import { useLanguage } from 'context/LanguageContext';
+import VideoFrame from 'components/VideFreame';
 
 const About = () => {
   const { language } = useLanguage();
@@ -92,6 +93,11 @@ const About = () => {
       <Box bgcolor={'secondary.main'}>
         <Container>
           <Gallery />
+        </Container>
+      </Box>
+      <Box bgcolor={'secondary.main'}>
+        <Container>
+          <VideoFrame urlVideo="https://res.cloudinary.com/dslne9y2j/video/upload/f_auto:video,q_auto/v1/Assets/Video/shotq6o7irlxffpu8eji" bgColor="primary.main"/>
         </Container>
       </Box>
 
