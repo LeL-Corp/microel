@@ -6,6 +6,9 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
+import { AdvancedImage, responsive } from '@cloudinary/react';
+import { lazyload } from '@cloudinary/react';
+
 const Story2 = ({ data }) => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
@@ -52,16 +55,17 @@ const Story2 = ({ data }) => {
           xs={12}
           md={6}
         >
-          <Box maxWidth={350} width={1}>
+          <Box width={1} sx={{ display: 'flex', justifyContent: 'center' }}>
             {data.image ? (
-              <Box
-                component={'img'}
-                src={data.image}
-                width={1}
-                height={1}
-                sx={{
+              <AdvancedImage
+                alt={data.imageAlt}
+                style={{
                   borderRadius: '8px',
+                  maxWidth: '250px',
+                  maxHeight: '250px',
                 }}
+                cldImg={data.image}
+                plugins={[lazyload(), responsive()]}
               />
             ) : null}
           </Box>

@@ -1,4 +1,10 @@
 import React from 'react';
+
+//cloudinary images optimization
+import { cld } from 'helpers/cloudinary/CloudinaryInstance';
+import { AdvancedImage, responsive } from '@cloudinary/react';
+import { lazyload } from '@cloudinary/react';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -13,75 +19,6 @@ import translations from 'translations/Translations';
 import Container from 'components/Container';
 import { textFieldClasses } from '@mui/material';
 
-const images = [
-  {
-    group: [
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img1.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img1--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img4.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img4--dark.png',
-      },
-    ],
-  },
-  {
-    group: [
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img13.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img13--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img10.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img10--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img7.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img7--dark.png',
-      },
-    ],
-  },
-  {
-    group: [
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img6.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img6--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img24.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img24--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img17.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img17--dark.png',
-      },
-      {
-        cover:
-          'https://assets.maccarianagency.com/screenshots/the-front/img12.png',
-        coverDark:
-          'https://assets.maccarianagency.com/screenshots/the-front/img12--dark.png',
-      },
-    ],
-  },
-];
-
 const Hero = () => {
   const { language } = useLanguage();
   const theme = useTheme();
@@ -90,6 +27,9 @@ const Hero = () => {
   });
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  // Create a CloudinaryImage instance
+  const heroImage = cld.image('Assets/Homepage/hero-banner-circuito-elettrico');
 
   return (
     <Box
@@ -102,9 +42,11 @@ const Hero = () => {
         position: 'relative',
       }}
     >
-      <img
-        src={
-          'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410231/Assets/Homepage/tkd5azizmnc7x1nnqd7d.jpg'
+      <AdvancedImage
+        alt={
+          language === 'it'
+            ? 'Immagine di sfondo della sezione Hero che rappresenta un grande circuito elettrico '
+            : 'Hero section background image representing a big electric circuit'
         }
         style={{
           position: 'absolute',
@@ -116,7 +58,10 @@ const Hero = () => {
           opacity: 0.4,
           filter: 'hue-rotate(-37deg)',
         }}
+        cldImg={heroImage}
+        plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload()]}
       />
+
       <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
         <div
           ref={ref}

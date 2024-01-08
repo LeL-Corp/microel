@@ -43,8 +43,9 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           <Box
             component={'img'}
             src={
-              'https://res.cloudinary.com/dlj7vy34l/image/upload/v1697837157/Progetto_senza_titolo__2_-removebg-preview_vtmhn8.png'
+              'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Logo/microel-logo'
             }
+            alt="Microel srl logo"
             height={1}
             width={1}
           />

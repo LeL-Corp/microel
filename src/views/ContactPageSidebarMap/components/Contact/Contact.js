@@ -114,7 +114,7 @@ const Contact = () => {
                 </Typography>
               }
               secondary={
-                item.label !== 'Indirizzo' ? (
+                item.label !== 'Indirizzo' || item.label === 'Address' ? (
                   <Link underline="hover" color="inherit" href={item.value}>
                     <Typography variant={'p'}>{item.valueLabel}</Typography>
                   </Link>

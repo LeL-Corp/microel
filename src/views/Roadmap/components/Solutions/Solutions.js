@@ -225,7 +225,6 @@ const Solutions = () => {
                   transition: 'all .2s ease-in-out',
                   '&:hover': {
                     transform: 'scale(1.2)',
-                    zIndex: 2000,
                   },
                 }}
               >

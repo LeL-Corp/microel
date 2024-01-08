@@ -7,6 +7,11 @@ import Container from 'components/Container';
 import { useLanguage } from 'context/LanguageContext';
 import translations from 'translations/Translations';
 
+// cloudinary image optimization
+import { cld } from 'helpers/cloudinary/CloudinaryInstance';
+import { AdvancedImage, responsive } from '@cloudinary/react';
+import { lazyload } from '@cloudinary/react';
+
 const Hero = () => {
   const theme = useTheme();
   const { language } = useLanguage();
@@ -24,37 +29,44 @@ const Hero = () => {
     jarallaxInit();
   });
 
+  const aboutUsImage = cld.image('Assets/About_us/chi-siamo');
+
   return (
     <Box
       className={'jarallax'}
       data-jarallax
       data-speed="0.2"
       position={'relative'}
-      minHeight={{ xs: 400, sm: 500, md: 600 }}
+      height={{ xs: 400, sm: 500, md: 600 }}
+      maxHeight="60vh"
       display={'flex'}
       alignItems={'center'}
       marginTop={-13}
       paddingTop={13}
       id="agency__portfolio-item--js-scroll"
     >
-      <Box
+      <AdvancedImage
+        height={{ xs: 400, sm: 500, md: 600 }}
         className={'jarallax-img'}
-        sx={{
+        alt={
+          language === 'it'
+            ? 'Microel chi siamo - il nostro team'
+            : 'Microel about us - our team'
+        }
+        style={{
           position: 'absolute',
-          objectFit: 'cover',
-          fontFamily: 'object-fit: cover;',
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
-          zIndex: -1,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundImage:
-            'url(https://res.cloudinary.com/dslne9y2j/image/upload/v1701453856/Assets/About_us/ek5qyis66hlqw1thiyyj.jpg)',
+          maxHeight: '60vh',
+          objectFit: 'cover',
+          opacity: 0.7,
         }}
+        cldImg={aboutUsImage}
+        plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload()]}
       />
+
       <Box
         sx={{
           position: 'absolute',
@@ -64,7 +76,7 @@ const Hero = () => {
           bottom: 0,
           width: 1,
           height: 1,
-          background: alpha('#161c2d', 0.6),
+          background: alpha('#161c2d', 0.4),
           zIndex: 1,
         }}
       />

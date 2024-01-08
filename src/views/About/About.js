@@ -24,6 +24,7 @@ import translations from 'translations/Translations';
 import { useLanguage } from 'context/LanguageContext';
 import VideoFrame from 'components/VideFreame';
 
+
 const About = () => {
   const { language } = useLanguage();
   const aboutUs1 =
@@ -64,7 +65,7 @@ const About = () => {
           {
             property: 'og:image',
             content:
-              'https://res.cloudinary.com/dslne9y2j/image/upload/v1697838605/Assets/Transpared-bg/logoonly_spfzrg.png',
+              'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Logo/microel-logo',
           },
         ]}
         link={[

@@ -19,12 +19,16 @@ import { useInView } from 'framer-motion';
 import translations from 'translations/Translations';
 import { Link } from 'react-router-dom';
 
+import { AdvancedImage, responsive } from '@cloudinary/react';
+import { lazyload } from '@cloudinary/react';
+import ColumnContainer from 'components/ColumnContainer';
+
 const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
   const theme = useTheme();
   const ref = useRef();
   const isInView = useInView(ref, { once: true });
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
+  console.log('cards image', data);
   return (
     <Container>
       <div ref={ref}>
@@ -60,6 +64,8 @@ const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
                     display={'flex'}
                     flexDirection={'column'}
                     sx={{
+                      height: { xs: '450px', sm: '400px', md: '500px' },
+                      position: 'relative',
                       backgroundColor: theme.palette.primary.light,
                       backgroundImage: 'none',
                       transition: 'all .2s ease-in-out',
@@ -68,14 +74,21 @@ const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
                       },
                     }}
                   >
-                    <CardMedia
-                      image={item.image}
-                      title={item.title}
-                      sx={{
-                        height: { xs: '200px', md: '260px' },
-                        position: 'relative',
-                      }}
-                    />
+                    <ColumnContainer style={{ height: '270px' }}>
+                      <AdvancedImage
+                        style={{ objectFit: 'cover', height: '100%' }}
+                        alt={
+                          language === 'it'
+                            ? item.altIt
+                            : item.altEn
+                        }
+                        cldImg={item.image}
+                        plugins={[
+                          responsive({ steps: [800, 1000, 1400] }),
+                          lazyload(),
+                        ]}
+                      />
+                    </ColumnContainer>
                     <Box
                       component={CardContent}
                       sx={{ minHeight: isMobile ? 'none' : '240px' }}

@@ -10,6 +10,11 @@ import { useRef } from 'react';
 import { useLanguage } from 'context/LanguageContext';
 import translations from 'translations/Translations';
 
+//cloudinary images optimaization
+import { cld } from 'helpers/cloudinary/CloudinaryInstance';
+import { AdvancedImage, responsive } from '@cloudinary/react';
+import { lazyload } from '@cloudinary/react';
+
 const GetStarted = ({ withImage = true }) => {
   const { language } = useLanguage();
   const theme = useTheme();
@@ -19,11 +24,17 @@ const GetStarted = ({ withImage = true }) => {
   const ref = useRef();
   const isInView = useInView(ref, { once: false });
 
+  const ideaImage = cld.image('Assets/Homepage/idea-lampadina');
+
   return (
     <Box>
       {withImage ? (
-        <img
-          anchor="anchor"
+        <AdvancedImage
+          alt={
+            language === 'it'
+              ? "Lampadina che rappresenta un'idea"
+              : 'Light bulb representing an idea'
+          }
           style={{
             opacity: '0.4',
             filter: 'hue-rotate(131deg)',
@@ -31,8 +42,9 @@ const GetStarted = ({ withImage = true }) => {
             height: 'auto',
             maxHeight: '150px',
           }}
-          src="https://res.cloudinary.com/dslne9y2j/image/upload/v1698184765/Assets/Homepage/pa6ro1vkeih0jehy5hqz.png"
-        ></img>
+          cldImg={ideaImage}
+          plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload()]}
+        />
       ) : null}
 
       <div
@@ -90,9 +102,8 @@ const GetStarted = ({ withImage = true }) => {
           width={{ xs: '100%', md: 'auto' }}
         >
           <Button
-             component={Link}
-             to={'/contacts'}
-            
+            component={Link}
+            to={'/contacts'}
             variant="outlined"
             color="primary"
             size="large"

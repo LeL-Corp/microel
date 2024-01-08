@@ -5,6 +5,29 @@ import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 import FlightIcon from '@mui/icons-material/Flight';
 import { Dvr, RocketLaunchRounded } from '@mui/icons-material';
 
+//cloudinary images optimization
+import { cld } from 'helpers/cloudinary/CloudinaryInstance';
+const ourStoryImage = cld.image('Assets/About_us/la-nostra-storia');
+const ourValuesImage = cld.image('Assets/About_us/i-nostri-valori');
+
+const industrialAutomationImage = cld.image(
+  'Assets/Areas/settore-automazione-industriale',
+);
+const avionicsInstrumentsImage = cld.image(
+  'Assets/Areas/settore-strumentazione-avionica',
+);
+const motorDrivesImage = cld.image('Assets/Areas/settore-azionamento-motori');
+const testMachinesImage = cld.image('Assets/Areas/settore-macchine-test');
+const packagingMachinesImage = cld.image('Assets/Areas/settore-packaging');
+const cleaningMachinesImage = cld.image('Assets/Areas/settore-cleaning');
+const footwearSectorImage = cld.image('Assets/Areas/settore-calzaturiero');
+const laundryAppliancesImage = cld.image(
+  'Assets/Areas/settore-elettrodomestici-per-il-bianco',
+);
+const metalworkingMachineryImage = cld.image(
+  'Assets/Areas/settore-lavorazione-metalli',
+);
+
 const translations = {
   metaTags: {
     title: {
@@ -149,7 +172,7 @@ const translations = {
     discoverMoreMobile: {
       it: 'Flybox Avionics:',
       en: 'Flybox Avionics:',
-    }
+    },
   },
   home: {
     hero: {
@@ -353,36 +376,32 @@ const translations = {
         title: 'La nostra storia',
         text: "Le nostre radici affondano nel 1982, quando la genuina passione per l'elettronica si trasforma in attività imprenditoriale: l'azienda diventeraà punto di riferimento nella realizzazione di schede elettroniche nel settore dell'automazione industriale e non solo. Microel sviluppa infatti anche una specializzazione per l'elettronica applicata alla strumentazione aeronautica, fondando il brand",
         link: 'Flybox Avionics',
-        image:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmzge04qi3fodiopd21c',
-
-        imageAlt: 'La nostra storia',
+        image: ourStoryImage,
+        imageAlt: 'Microel: La nostra storia',
         direction: 'row',
       },
       aboutUs2It: {
         title: 'I princípi che ci guidano: operosità, ricerca, innovazione',
         text: 'I nostri valori illuminano il nostro modo di lavorare e ci guidano nella scelta dei nostri partner e dei nostri clienti. Collaborazione e ascolto sono alla base del nostro impegno, per garantire un servizio di qualità e un prodotto che soddisfi le esigenze del cliente.',
-        image:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/f3wruutortwisbthzeck',
-        imageAlt: 'I princípi che ci guidano: operosità, ricerca, innovazione',
+        image: ourValuesImage,
+        imageAlt:
+          'Microel: I princípi e valori che ci guidano: operosità, ricerca, innovazione',
         direction: 'row-reverse',
       },
       aboutUs1En: {
         title: 'Our story',
         text: 'Our roots date back to 1982, when the genuine passion for electronics turns into entrepreneurial activity: the company will become a reference point in the production of electronic boards in the industrial automation sector and beyond. Microel also develops a specialization for electronics applied to aeronautical instruments, founding the brand',
-        image:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/qmzge04qi3fodiopd21c',
+        image: ourStoryImage,
 
-        imageAlt: 'Microel history',
+        imageAlt: 'Microel: our story',
         direction: 'row',
       },
       aboutUs2En: {
         title: 'The principles that guide us: diligence, research, innovation',
         text: 'Our values enlighten our way of working and guide us in choosing our partners and our customers. Collaboration and listening are the basis of our commitment, to guarantee a quality service and a product that meets the needs of the customer.',
-        image:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/About_us/f3wruutortwisbthzeck',
+        image: ourValuesImage,
         imageAlt:
-          'The principles that guide us: diligence, research, innovation',
+          'Microel: The principles and values that guide us: diligence, research, innovation',
         direction: 'row-reverse',
       },
     },
@@ -405,25 +424,25 @@ const translations = {
     tagCloudSection: {
       it: [
         'Schede elettroniche',
-        'PCB',
+        'Ingegneria elettronica',
+        'Personalizzazione',
         'Assemblaggio',
         'Saldatura',
         'Sbroglio',
         'Progettazione',
         'Elettronica industriale',
         'Automazione',
-        'Personalizzazione',
       ],
       en: [
         'Electronic boards',
-        'PCB',
+        'Electronic Engineering',
+        'Customization',
         'Assembly',
         'Welding',
         'Layout',
         'Design',
         'Industrial electronics',
         'Automation',
-        'Customization',
       ],
     },
   },
@@ -443,67 +462,69 @@ const translations = {
         sector: 'Automazione industriale',
         description:
           'Realizziamo schede elettroniche ottimizzate che garantiscono elevate prestazioni, basso consumo energetico e robustezza, per affrontare gli ambienti industriali più impegnativi.',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/w4oxmbodeyvpcktji2tg',
+        imageUrl: industrialAutomationImage,
+        imageAlt: 'Macchinario utilizzato in ambito di automazione industriale',
       },
       {
         sector: 'Strumentazione Avionica',
         description:
           'La linea dedicata Flybox Avionics offre strumentazione di bordo integrata con sensori di alta precisione che offrono un controllo avanzato.',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/irut8he5jyewbptbwna4',
+        imageUrl: avionicsInstrumentsImage,
+        imageAlt: 'Strumentazione Avionica montata su un aereo',
       },
       {
         sector: 'Azionamenti per motori',
         description:
           'Miglioriamo le prestazioni dinamiche dei motori grazie a schede elettroniche ottimizzate per gestire una vasta gamma di motori, dai tradizionali motori a induzione a quelli ad alta efficienza.',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/q00toy3fzpe0h5uokqjz',
+        imageUrl: motorDrivesImage,
+        imageAlt: 'Motore elettrico utilizzato in ambito industriale',
       },
 
       {
         sector: 'Macchine per test',
         description:
           'Progettiamo Schede elettroniche che permettono integrazioni con una vasta gamma di macchine per test, protocolli di misurazione e analisi',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/big9koda5yzwskxidimt',
+        imageUrl: testMachinesImage,
+        imageAlt: 'Macchinario utilizzato in ambito di test',
       },
 
       {
         sector: 'Macchine per Packaging',
         description:
           'Le Schede elettroniche Microel sono progettate per integrarsi con una vasta gamma di macchine per il packaging, quali incartatrici, sigillatrici e sistemi di etichettatura, per una maggiore precisione di confezionamento e flessibilità',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/qg0dmohn78xj3apljesl',
+        imageUrl: packagingMachinesImage,
+        imageAlt:
+          'Macchinario utilizzato per la produzione e il trasporto di packaging',
       },
 
       {
         sector: 'Macchine per Cleaning',
         description:
           'Le nostre schede elettroniche sono integrate in apparecchiature di pulizia quali lavasciuga, aspirapolvere industriali e sistemi di pulizia automatizzati',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+        imageUrl: cleaningMachinesImage,
+        imageAlt: 'Macchinario utilizzato per le pulizie',
       },
       {
         sector: 'Macchine per settore Calzaturiero',
         description:
           'Ci concentriamo sulla flessibilità delle soluzioni: le nostre schede elettroniche sono integrate in macchinari specializzati utilizzati in ogni fase della produzione, adattandosi alle varie esigenze del settore calzaturiero',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/ybccvvrpu1j4s39zcydx',
+        imageUrl: footwearSectorImage,
+        imageAlt:
+          'Macchinario utilizzato per la produzione di scarpe con rappresentazione di un paio calzature',
       },
       {
         sector: 'Elettrodomestici per il Bianco',
         description:
           'Le nostre schede elettroniche sono integrate in elettrodomestici quali lavatrici, asciugatrici, lavastoviglie e apparecchi per la cura del bucato, permettendo un controllo preciso dei cicli di lavaggio, asciugatura e altri processi',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/v1701809565/Assets/Sectors/ho3dj1osyr8wvebv1v66.jpg',
+        imageUrl: laundryAppliancesImage,
+        imageAlt: 'Elettrodomesticp per il bianco',
       },
       {
         sector: 'Macchine per la lavorazione dei metalli',
         description:
           'Le schede elettroniche da noi sviluppate sono integrate in macchinari come torni, frese, laser, per una gestione sofisticata dei parametri di lavorazione',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/zdvtn1pjubxygvl9pxtw',
+        imageUrl: metalworkingMachineryImage,
+        imageAlt: 'Rappresentazione della lavorazione dei metalli',
       },
     ],
     parallaxDataEn: [
@@ -511,64 +532,66 @@ const translations = {
         sector: 'Industrial Automation',
         description:
           'We create optimized electronic boards that guarantee high performance, low energy consumption and robustness, to face the most challenging industrial environments.',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/w4oxmbodeyvpcktji2tg',
+        imageUrl: industrialAutomationImage,
+        imageAlt: 'Machinery used in the field of industrial automation',
       },
       {
         sector: 'Avionics Instruments',
         description:
           'Flybox Avionics, a trade mark from Microel srl, offers integrated onboard flight instruments with high precision sensors that provide advanced control.',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/irut8he5jyewbptbwna4',
+        imageUrl: avionicsInstrumentsImage,
+        imageAlt: 'Avionics Instruments mounted on an airplane',
       },
+
       {
         sector: 'Motor Drives',
         description:
           'We improve the dynamic performance of engines thanks to optimized electronic boards to manage a wide range of engines, from traditional induction motors to high efficiency ones.',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/q00toy3fzpe0h5uokqjz',
+        imageUrl: motorDrivesImage,
+        imageAlt: 'Electric motor used in industrial automation',
       },
       {
         sector: 'Test Machines',
         description:
           'We design Electronic boards that allow integrations with a broad spectrum of test machines, measurement and analysis protocols',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/big9koda5yzwskxidimt',
+        imageUrl: testMachinesImage,
+        imageAlt: 'Machinery used in the field of test',
       },
       {
         sector: 'Packaging Machines',
         description:
           'Microel electronic boards are designed to integrate with an extensive variety of packaging machines, such as wrappers, sealers and labeling systems, for greater packaging precision and flexibility',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/qg0dmohn78xj3apljesl',
+        imageUrl: packagingMachinesImage,
+        imageAlt: 'Machinery used for packaging production and transport',
       },
       {
         sector: 'Cleaning Machines',
         description:
           'Our electronic boards are integrated into cleaning equipment such as scrubber dryers, industrial vacuum cleaners and automated cleaning systems',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/v1700857168/clean_img_3_hrspii.jpg',
+        imageUrl: cleaningMachinesImage,
+        imageAlt: 'Machinery used for cleaning',
       },
       {
         sector: 'Machines for the Footwear Sector',
         description:
           'We focus on the flexibility of solutions: our electronic boards are integrated into specialized machinery used in every phase of production, adapting to the various needs of the footwear sector',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/ybccvvrpu1j4s39zcydx',
+        imageUrl: footwearSectorImage,
+        imageAlt:
+          'Machinery used for the production of shoes with representation of a pair of footwear',
       },
       {
         sector: 'Laundry Appliances',
         description:
           'Our electronic boards are integrated into appliances such as washing machines, dryers, dishwashers and laundry care appliances, allowing precise control of washing, drying and other processes',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/v1701809565/Assets/Sectors/ho3dj1osyr8wvebv1v66.jpg',
+        imageUrl: laundryAppliancesImage,
+        imageAlt: 'Laundry Appliances',
       },
       {
         sector: 'Metalworking machinery',
         description:
           'The electronic boards we develop are integrated into machinery such as lathes, milling machines, lasers, for a sophisticated management of processing parameters',
-        imageUrl:
-          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Sectors/zdvtn1pjubxygvl9pxtw',
+        imageUrl: metalworkingMachineryImage,
+        imageAlt: 'Representation of metalworking',
       },
     ],
     callToAction: {

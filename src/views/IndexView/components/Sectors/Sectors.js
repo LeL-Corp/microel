@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTheme } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -31,6 +33,7 @@ const Sectors = () => {
   const ref = useRef();
   const isInView = useInView(ref, { once: true });
   const { language } = useLanguage();
+  const navigate = useNavigate();
 
   const experiences =
     language === 'it'
@@ -105,6 +108,9 @@ const Sectors = () => {
               <Grid item xs={6} sm={6} md={4} key={i}>
                 <Box display={'block'} width={1} height={1}>
                   <motion.div
+                    onClick={() => {
+                      navigate('/areas');
+                    }}
                     key={i}
                     ref={ref}
                     initial={{ opacity: 0, y: 20 }}
@@ -114,7 +120,7 @@ const Sectors = () => {
                       duration: 1,
                       ease: 'easeInOut',
                     }}
-                    style={{ margin: 0.5 }}
+                    style={{ margin: 0.5, cursor: 'pointer' }}
                   >
                     <Card
                       sx={{

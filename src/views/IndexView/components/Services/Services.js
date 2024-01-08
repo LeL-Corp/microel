@@ -15,12 +15,17 @@ import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import { useLanguage } from 'context/LanguageContext';
 import translations from 'translations/Translations';
+import { cld } from 'helpers/cloudinary/CloudinaryInstance';
 
 const Services = () => {
   const theme = useTheme();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const { language } = useLanguage();
+
+  const solution1 = cld.image('Assets/Homepage/assemblaggio-schede-elettroniche-soluzione');
+  const solution2 = cld.image('Assets/Homepage/pcb-design-soluzione');
+  const solution3 = cld.image('Assets/Homepage/test-compatibilita-soluzione');
 
   const section2 = [
     {
@@ -54,19 +59,25 @@ const Services = () => {
   const section3 = [
     {
       image:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410282/Assets/Homepage/uyjrbuat9euvtq4epuhz.jpg',
+      solution1,
+      altIt: "Rappresentazione del processo di assemblaggio di schede elettroniche",
+      altEn: "Representation of the process of assembling electronic boards",
       description: translations?.home?.section3?.box1?.subHeading[language],
       title: translations?.home?.section3?.box1?.heading[language],
     },
     {
       image:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410290/Assets/Homepage/azrjakab6byjv8vhxitd.jpg',
+        solution2,
+      altIt: "Scheda elettronica assemblata e saldata",
+      altEn: "Assembled and soldered electronic board",
       description: translations?.home?.section3?.box2?.subHeading[language],
       title: translations?.home?.section3?.box2?.heading[language],
     },
     {
       image:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410299/Assets/Homepage/vyj1sipbfeyo8twaxh6k.jpg',
+        solution3,
+      altIt: "Esecuzione di un test di compatibilità elettrica",
+      altEn: "Execution of an electrical compatibility test",
       description: translations?.home?.section3?.box3?.subHeading[language],
       title: translations?.home?.section3?.box3?.heading[language],
     },

@@ -99,7 +99,7 @@ const Settori = () => {
           {
             property: 'og:image',
             content:
-              'https://res.cloudinary.com/dslne9y2j/image/upload/v1697838605/Assets/Transpared-bg/logoonly_spfzrg.png',
+              'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Logo/microel-logo',
           },
         ]}
         link={[
@@ -159,7 +159,6 @@ const Settori = () => {
             color: theme.palette.common.white,
             textTransform: 'uppercase',
             paddingTop: '100px',
-
             transform: isInView ? 'none' : 'translateY(50px)',
             opacity: isInView ? 1 : 0,
             transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
@@ -180,7 +179,6 @@ const Settori = () => {
             paddingTop: '20px',
             textAlign: 'center',
             paddingBottom: '60px',
-
             transform: isInView ? 'none' : 'translateY(50px)',
             opacity: isInView ? 1 : 0,
             transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
