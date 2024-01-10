@@ -1,5 +1,5 @@
 import { useTheme } from '@mui/material';
-
+import { Helmet } from 'react-helmet';
 import { Main } from 'layouts';
 import { Box } from '@mui/material';
 import { alpha } from '@mui/material';
@@ -21,6 +21,48 @@ const CookiesPolicy = () => {
   const { language } = useLanguage();
   return (
     <Main>
+      <Helmet
+        title={translations.metaTags.cookiesPage.title[language]}
+        meta={[
+          {
+            name: 'description',
+            content: translations.metaTags.cookiesPage.description[language],
+          },
+          {
+            name: 'keywords',
+            content: translations.metaTags.cookiesPage.keywords[language],
+          },
+          {
+            name: 'robots',
+            content: 'index, follow',
+          },
+          {
+            property: 'og:title',
+            content: translations.metaTags.openGraphTitle[language],
+          },
+          { property: 'og:type', content: 'website' },
+          {
+            property: 'og:description',
+            content: translations.metaTags.openGraphDescription[language],
+          },
+          {
+            property: 'og:image',
+            content:
+              'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Logo/microel-logo',
+          },
+        ]}
+        link={[
+          {
+            rel: 'canonical',
+            href: 'https://www.microel.it/cookies-policy/',
+          },
+          {
+            rel: 'alternate',
+            href: 'https://www.microel.it/cookies-policy/',
+            hreflang: 'x-default',
+          },
+        ]}
+      ></Helmet>
       <Box
         sx={{
           backgroundImage: `linear-gradient(to bottom, ${alpha(
@@ -166,14 +208,15 @@ const CookiesPolicy = () => {
                       </li>
                       <li>
                         <Typography>
-                          <strong>Descrizione:</strong> Il cookie PHPSESSID è un cookie
-                          nativo di PHP e consente ai siti Web di memorizzare
-                          dati sullo stato della sessione. Nel sito Web viene
-                          utilizzato per stabilire una sessione utente e per
-                          comunicare i dati sullo stato attraverso un cookie
-                          temporaneo, comunemente denominato cookie di sessione.
-                          Poiché il cookie PHPSESSID non ha una scadenza temporale,
-                          scompare quando si chiude il client.
+                          <strong>Descrizione:</strong> Il cookie PHPSESSID è un
+                          cookie nativo di PHP e consente ai siti Web di
+                          memorizzare dati sullo stato della sessione. Nel sito
+                          Web viene utilizzato per stabilire una sessione utente
+                          e per comunicare i dati sullo stato attraverso un
+                          cookie temporaneo, comunemente denominato cookie di
+                          sessione. Poiché il cookie PHPSESSID non ha una
+                          scadenza temporale, scompare quando si chiude il
+                          client.
                         </Typography>
                       </li>
                     </ul>
@@ -233,7 +276,10 @@ const CookiesPolicy = () => {
                           <strong>
                             Link all’informativa privacy della terza parte:
                           </strong>{' '}
-                          <a style={{ color: "#fff"}}href="http://www.adobe.com/products/flashplayer/security">
+                          <a
+                            style={{ color: '#fff' }}
+                            href="http://www.adobe.com/products/flashplayer/security"
+                          >
                             http://www.adobe.com/products/flashplayer/security
                           </a>
                         </Typography>
@@ -263,36 +309,52 @@ const CookiesPolicy = () => {
                   </Typography>
                 </li>
                 <ul
-                style={{
-                  listStyle: 'none',
-                  padding: '0px',
-                  
-                }}
-              >
-                <li>
-                  <a style={{color: "#fff"}} href="https://support.mozilla.org/it/kb/Gestione%20dei%20cookie">
-                    Mozzilla Firefox
-                  </a>
-                </li>
-                <li>
-                <a style={{color: "#fff"}} href="https://support.google.com/chrome/answer/95647?hl=it">
-                    Google Chrome
-                  </a>
-                </li>
-                <li>
-                <a style={{color: "#fff"}}href="https://support.microsoft.com/it-it/windows/eliminare-e-gestire-i-cookie-168dab11-0753-043d-7c16-ede5947fc64d">
-                    Internet Explorer
-                  </a>
-                </li>
-                <li>
-                <a style={{color: "#fff"}} href="https://support.apple.com/it-it/HT201265">Safari</a>
-                </li>
-                <li>
-                <a style={{color: "#fff"}} href="https://help.opera.com/en/latest/web-preferences/#cookies">
-                    Opera
-                  </a>
-                </li>
-              </ul>
+                  style={{
+                    listStyle: 'none',
+                    padding: '0px',
+                  }}
+                >
+                  <li>
+                    <a
+                      style={{ color: '#fff' }}
+                      href="https://support.mozilla.org/it/kb/Gestione%20dei%20cookie"
+                    >
+                      Mozzilla Firefox
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      style={{ color: '#fff' }}
+                      href="https://support.google.com/chrome/answer/95647?hl=it"
+                    >
+                      Google Chrome
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      style={{ color: '#fff' }}
+                      href="https://support.microsoft.com/it-it/windows/eliminare-e-gestire-i-cookie-168dab11-0753-043d-7c16-ede5947fc64d"
+                    >
+                      Internet Explorer
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      style={{ color: '#fff' }}
+                      href="https://support.apple.com/it-it/HT201265"
+                    >
+                      Safari
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      style={{ color: '#fff' }}
+                      href="https://help.opera.com/en/latest/web-preferences/#cookies"
+                    >
+                      Opera
+                    </a>
+                  </li>
+                </ul>
               </ul>
             </Box>
           </Container>

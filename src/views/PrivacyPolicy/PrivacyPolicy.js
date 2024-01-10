@@ -1,5 +1,5 @@
 import { useTheme } from '@mui/material';
-
+import { Helmet } from 'react-helmet';
 import { Main } from 'layouts';
 import { Box } from '@mui/material';
 import { alpha } from '@mui/material';
@@ -20,6 +20,48 @@ const PrivacyPolicy = () => {
   const { language } = useLanguage();
   return (
     <Main>
+      <Helmet
+        title={translations.metaTags.privacyPage.title[language]}
+        meta={[
+          {
+            name: 'description',
+            content: translations.metaTags.privacyPage.description[language],
+          },
+          {
+            name: 'keywords',
+            content: translations.metaTags.privacyPage.keywords[language],
+          },
+          {
+            name: 'robots',
+            content: 'index, follow',
+          },
+          {
+            property: 'og:title',
+            content: translations.metaTags.openGraphTitle[language],
+          },
+          { property: 'og:type', content: 'website' },
+          {
+            property: 'og:description',
+            content: translations.metaTags.openGraphDescription[language],
+          },
+          {
+            property: 'og:image',
+            content:
+              'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Logo/microel-logo',
+          },
+        ]}
+        link={[
+          {
+            rel: 'canonical',
+            href: 'https://www.microel.it/privacy-policy/',
+          },
+          {
+            rel: 'alternate',
+            href: 'https://www.microel.it/privacy-policy/',
+            hreflang: 'x-default',
+          },
+        ]}
+      ></Helmet>
       <Box
         sx={{
           marginTop: '1rem',

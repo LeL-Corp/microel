@@ -106,6 +106,48 @@ const translations = {
         en: 'Contacts, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
       },
     },
+    cookiesPage: {
+      title: {
+        it: 'Cookies policy - Microel | Progettazione e produzione di schede elettroniche su misura',
+        en: 'Cookies policy - Microel | Custom electronic boards design and production',
+      },
+      description: {
+        it: 'Informativa sui cookie ',
+        en: 'Cookies policy',
+      },
+      keywords: {
+        it: 'Cookies policy, progettazione, produzione, schede elettroniche su misura, automazione industriale, elettronica, ingegneria elettronica',
+        en: 'Cookies policy, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
+      },
+    },
+    privacyPage: {
+      title: {
+        it: 'Privacy policy - Microel | Progettazione e produzione di schede elettroniche su misura',
+        en: 'Privacy policy - Microel | Custom electronic boards design and production',
+      },
+      description: {
+        it: 'Informativa sulle normative sulla privacy e gdpr ',
+        en: 'Privacy policy',
+      },
+      keywords: {
+        it: 'Privacy policy, gdpr, progettazione, produzione, schede elettroniche su misura, automazione industriale, elettronica, ingegneria elettronica',
+        en: 'Privacy policy, gdpr, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
+      },
+    },
+    notFoundPage: {
+      title: {
+        it: 'Pagina non trovata - Microel | Progettazione e produzione di schede elettroniche su misura',
+        en: 'Not found page - Microel | Custom electronic boards design and production',
+      },
+      description: {
+        it: 'Pagina non trovata',
+        en: 'Not found page',
+      },
+      keywords: {
+        it: 'Pagina non trovata, progettazione, produzione, schede elettroniche su misura, automazione industriale, elettronica, ingegneria elettronica',
+        en: 'Not found page, design, production, custom electronic boards, industrial automation, electronics, electronic engineering',
+      },
+    },
   },
   buttons: {
     discover: {
@@ -132,6 +174,10 @@ const translations = {
     goToFlybox: {
       it: 'Scopri Flybox Avionics',
       en: 'Discover Flybox Avionics',
+    },
+    backHome: {
+      it: 'Torna alla Home',
+      en: 'Go to Home',
     },
   },
   navigation: {
@@ -707,6 +753,10 @@ const translations = {
         en: 'Thank you for contacting us!',
       },
     },
+  },
+  notFoundPage: {
+    it: ' Oops! Pagina non trovata.',
+    en: ' Oops! Page not found.',
   },
 };
 

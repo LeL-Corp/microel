@@ -5,18 +5,63 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
-
+import { Helmet } from 'react-helmet';
 import Main from 'layouts/Main';
 import Container from 'components/Container';
+import translations from 'translations/Translations';
+import { useLanguage } from 'context/LanguageContext';
 
 const NotFoundCover = () => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
+  const { language } = useLanguage();
 
   return (
     <Main>
+      <Helmet
+        title={translations.metaTags.notFoundPage.title[language]}
+        meta={[
+          {
+            name: 'description',
+            content: translations.metaTags.notFoundPage.description[language],
+          },
+          {
+            name: 'keywords',
+            content: translations.metaTags.notFoundPage.keywords[language],
+          },
+          {
+            name: 'robots',
+            content: 'index, follow',
+          },
+          {
+            property: 'og:title',
+            content: translations.metaTags.openGraphTitle[language],
+          },
+          { property: 'og:type', content: 'website' },
+          {
+            property: 'og:description',
+            content: translations.metaTags.openGraphDescription[language],
+          },
+          {
+            property: 'og:image',
+            content:
+              'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Logo/microel-logo',
+          },
+        ]}
+        link={[
+          {
+            rel: 'canonical',
+            href: 'https://www.microel.it/not-found/',
+          },
+          {
+            rel: 'alternate',
+            href: 'https://www.microel.it/not-found/',
+            hreflang: 'x-default',
+          },
+        ]}
+      ></Helmet>
       <Box
         sx={{
           width: 1,
@@ -57,7 +102,7 @@ const NotFoundCover = () => {
                     align={isMd ? 'left' : 'center'}
                     paddingTop={2}
                   >
-                    Oops! Pagina non trovata.
+                    {translations.notFoundPage[language]}
                   </Typography>
                   <Box
                     marginTop={4}
@@ -71,7 +116,7 @@ const NotFoundCover = () => {
                       size="large"
                       to={'/'}
                     >
-                      Torna alla home
+                      {translations.buttons.backHome[language]}
                     </Button>
                   </Box>
                 </Box>
@@ -129,7 +174,7 @@ const NotFoundCover = () => {
                         component={'img'}
                         loading="lazy"
                         src={
-                          'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410231/Assets/Homepage/tkd5azizmnc7x1nnqd7d.jpg'
+                          'https://res.cloudinary.com/dslne9y2j/image/upload/f_auto,q_auto/v1/Assets/Homepage/hero-banner-circuito-elettrico'
                         }
                         display={{
                           sm: 'none',

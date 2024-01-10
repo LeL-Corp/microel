@@ -19,31 +19,72 @@ import { CircularProgress } from '@mui/material';
 import { useLanguage } from 'context/LanguageContext';
 import translations from 'translations/Translations';
 
-const validationSchema = yup.object({
-  firstName: yup
-    .string()
-    .trim()
-    .min(2, 'Please enter a valid name')
-    .max(50, 'Please enter a valid name')
-    .required('Please specify your first name'),
-  lastName: yup
-    .string()
-    .trim()
-    .min(2, 'Please enter a valid name')
-    .max(50, 'Please enter a valid name')
-    .required('Please specify your last name'),
-  email: yup
-    .string()
-    .trim()
-    .email('Please enter a valid email address')
-    .required('Email is required.'),
-  message: yup.string().trim().required('Please specify your message'),
-});
-
 const Contact = () => {
   const theme = useTheme();
   const { language } = useLanguage();
   const { contactsPage } = translations;
+
+  const validationSchema = yup.object({
+    firstName: yup
+      .string()
+      .trim()
+      .min(
+        2,
+        language === 'it'
+          ? 'Inserisci almeno 2 caratteri'
+          : 'Insert at least 2 characters',
+      )
+      .max(
+        50,
+        language === 'it'
+          ? 'Inserisci massimo 50 caratteri'
+          : 'Insert maximum 50 characters',
+      )
+      .required(
+        language === 'it'
+          ? 'Inserisci il tuo nome'
+          : 'Please specify your first name',
+      ),
+    lastName: yup
+      .string()
+      .trim()
+      .min(
+        2,
+        language === 'it'
+          ? 'Inserisci almeno 2 caratteri'
+          : 'Insert at least 2 characters',
+      )
+      .max(
+        50,
+        language === 'it'
+          ? 'Inserisci massimo 50 caratteri'
+          : 'Insert maximum 50 characters',
+      )
+      .required(
+        language === 'it'
+          ? 'Inserisci il tuo cognome'
+          : 'Please specify your last name',
+      ),
+    email: yup
+      .string()
+      .trim()
+      .email(
+        language === 'it'
+          ? 'Inserisci un indirizzo email valido'
+          : 'Please enter a valid email address',
+      )
+      .required(
+        language === 'it'
+          ? 'Inserisci il tuo indirizzo email'
+          : 'Please specify your email address',
+      ),
+    message: yup
+      .string()
+      .trim()
+      .required(
+        language === 'it' ? 'Inserisci un messaggio' : 'Please enter a message',
+      ),
+  });
 
   const LeftSide = () => {
     const [emailSent, setEmailSent] = useState(false);
