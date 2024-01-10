@@ -14,9 +14,16 @@ import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
 import { useLanguage } from 'context/LanguageContext';
 
+//cloudinary images optimization
+import { cld } from 'helpers/cloudinary/CloudinaryInstance';
+import { AdvancedImage, responsive } from '@cloudinary/react';
+import { lazyload } from '@cloudinary/react';
+
 const Settori = () => {
   const { language, changeLanguage } = useLanguage();
   const { areasPage } = translations;
+
+  
 
   useEffect(() => {
     const jarallaxInit = async () => {

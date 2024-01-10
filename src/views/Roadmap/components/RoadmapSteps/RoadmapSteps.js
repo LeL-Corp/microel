@@ -19,27 +19,12 @@ import { useInView } from 'framer-motion';
 import { useLanguage } from 'context/LanguageContext';
 import translations from 'translations/Translations';
 
-const mock = [
-  {
-    description: 'Ascoltiamo le tue esigenze, analizziamo le tue specificità',
-    icon: <Aperture />,
-  },
-  {
-    description:
-      'Studiamo insieme ogni fase di progettazione hardware e software',
-    icon: <CheckCircle style={{ fontSize: '3rem' }} />,
-  },
-  {
-    description: 'Ti consegnamo un prodotto creato su misura per te',
-    icon: <Gift style={{ fontSize: '3rem' }} />,
-  },
-  {
-    description: "Non vediamo l'ora di scoprire la sfida che ci proporrai ",
-    icon: <Star style={{ fontSize: '3rem' }} />,
-  },
-];
+//cloudinary images optimization
+import { cld } from 'helpers/cloudinary/CloudinaryInstance';
+import { AdvancedImage, responsive } from '@cloudinary/react';
+import { lazyload } from '@cloudinary/react';
 
-const Partners = () => {
+const RoadmapSteps = () => {
   const theme = useTheme();
   const isDesktop = useMediaQuery('(min-width: 1200px)');
   const isTablet = useMediaQuery('(min-width: 667px) and (max-width: 1199px)');
@@ -48,6 +33,10 @@ const Partners = () => {
   const isInView = useInView(ref, { once: false });
   const { language } = useLanguage();
   const { roadmapPage } = translations;
+
+  // Create a CloudinaryImage instance
+  const roadmapImage = cld.image('Assets/Roadmap/roadmap-esagoni-desktop');
+  const roadmapImageMobile = cld.image('Assets/Roadmap/roadmap-esagoni-mobile');
 
   return (
     <div
@@ -63,21 +52,26 @@ const Partners = () => {
             position: 'relative',
           }}
         >
-          <img
-            src={
-              'https://res.cloudinary.com/dslne9y2j/image/upload/v1699633073/Assets/Roadmap/dm9vphopfgwmas7uisox.png'
+          <AdvancedImage
+            alt={
+              language === 'it'
+                ? 'Immagine di sfondo della sezione Roadmap che rappresenta esagoni in sequenza simbolo di un percorso progressivo'
+                : 'Roadmap section background image representing hexagons in sequence symbol of a progressive path'
             }
             style={{
               position: 'absolute',
               top: 0,
               right: '0%',
               width: '75%',
+              maxWidth: '80vw',
               height: '86%',
               objectFit: 'cover',
               opacity: 0.2,
               filter: 'hue-rotate(32deg)',
-              transform: 'rotate(-90deg)',
+              // transform: isMobile || isTablet ? 'unset' : 'rotate(-90deg)',
             }}
+            cldImg={roadmapImage}
+            plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload()]}
           />
           <RowContainer end>
             <div>
@@ -115,4 +109,4 @@ const Partners = () => {
   );
 };
 
-export default Partners;
+export default RoadmapSteps;
