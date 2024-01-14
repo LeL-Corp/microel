@@ -16,6 +16,10 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Container, ImageList, ImageListItem } from '@mui/material';
+import { cld } from 'helpers/cloudinary/CloudinaryInstance';
+import { AdvancedImage } from '@cloudinary/react';
+import { lazyload } from '@cloudinary/react';
+import { responsive } from '@cloudinary/react';
 
 //   {
 //     feedback:
@@ -31,22 +35,25 @@ const Solutions = () => {
   const { language } = useLanguage();
   const { roadmapPage } = translations;
   const ref = useRef(null);
+  const solution1 = cld.image(
+    'Assets/Homepage/assemblaggio-schede-elettroniche-soluzione',
+  );
+  const solution2 = cld.image('Assets/Homepage/pcb-design-soluzione');
+  const solution3 = cld.image('Assets/Homepage/test-compatibilita-soluzione');
+
   const solutions = [
     {
-      image:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410282/Assets/Homepage/uyjrbuat9euvtq4epuhz.jpg',
+      image: solution1,
       description: translations?.home?.section3?.box1?.subHeading[language],
       title: translations?.home?.section3?.box1?.heading[language],
     },
     {
-      image:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410290/Assets/Homepage/azrjakab6byjv8vhxitd.jpg',
+      image: solution2,
       description: translations?.home?.section3?.box2?.subHeading[language],
       title: translations?.home?.section3?.box2?.heading[language],
     },
     {
-      image:
-        'https://res.cloudinary.com/dslne9y2j/image/upload/v1698410299/Assets/Homepage/vyj1sipbfeyo8twaxh6k.jpg',
+      image: solution3,
       description: translations?.home?.section3?.box3?.subHeading[language],
       title: translations?.home?.section3?.box3?.heading[language],
     },
@@ -174,14 +181,23 @@ const Solutions = () => {
                       >
                         <ListItemAvatar sx={{ marginRight: 3 }}>
                           <Avatar
-                            src={item.image}
                             variant={'rounded'}
                             sx={{
                               width: 100,
                               height: 100,
                               borderRadius: '50%',
                             }}
-                          />
+                          >
+                            <AdvancedImage
+                              cldImg={item.image}
+                              style={{ width: '100%', height: '100%' }}
+                              alt={''}
+                              plugins={[
+                                responsive({ steps: [800, 1000, 1400] }),
+                                lazyload(),
+                              ]}
+                            />
+                          </Avatar>
                         </ListItemAvatar>
                         <ListItemText
                           sx={{ margin: 0 }}

@@ -256,7 +256,7 @@ const Footer = () => {
             gutterBottom
             paddingTop={'0'}
           >
-            &copy; Microel srl, 2023. All rights reserved
+            &copy; Microel srl, 2024. All rights reserved
           </Typography>
         </Box>
       </ColumnContainer>
