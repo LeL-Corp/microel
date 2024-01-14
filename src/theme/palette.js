@@ -12,12 +12,10 @@ export const palette = {
   primary: { // verde chiaro
     main: '#25b0a2', //primary chiaro
     light: '#134D56', //primary intermedio
-    // dark: '#516894', //indaco
     contrastText: '#fff',
   },
   secondary: { // verde scuro
     main: '#06262b',
-    // dark: '#5385e6',
     contrastText: 'rgba(0, 0, 0, 0.87)',
   },
   tertiary: {
