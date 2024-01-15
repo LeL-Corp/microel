@@ -1,16 +1,17 @@
 import React from 'react';
+import Slider from 'react-slick';
+import { useLanguage } from 'context/LanguageContext';
+
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import Slider from 'react-slick';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import { Container } from '@mui/material';
+
 import translations from 'translations/Translations';
-import { useLanguage } from 'context/LanguageContext';
+
 
 const Gallery = () => {
   const theme = useTheme();
@@ -92,7 +93,7 @@ const Gallery = () => {
             marginTop: theme.spacing(1),
           }}
         >
-          {translations.aboutUsPage.gallerySection.heading[language]}
+          {translations?.aboutUsPage?.gallerySection?.heading[language]}
         </Typography>
         <Typography
           component="p"
@@ -100,7 +101,7 @@ const Gallery = () => {
           color={'text.secondary'}
           sx={{ textAlign: 'center' }}
         >
-          {translations.aboutUsPage.gallerySection.subheading[language]}
+          {translations?.aboutUsPage?.gallerySection?.subheading[language]}
         </Typography>
       </Box>
       {/* <Box>

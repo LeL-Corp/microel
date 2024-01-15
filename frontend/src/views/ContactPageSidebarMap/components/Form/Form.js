@@ -1,9 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import emailjs, { send } from '@emailjs/browser';
 import { Link } from 'react-router-dom';
-
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Box from '@mui/material/Box';
@@ -18,6 +17,9 @@ import RowContainer from 'components/RowContainer';
 import { CircularProgress } from '@mui/material';
 import { useLanguage } from 'context/LanguageContext';
 import translations from 'translations/Translations';
+
+import { devConfig, prodConfig } from 'configurations';
+import axios from 'axios';
 
 const Contact = () => {
   const theme = useTheme();
@@ -90,26 +92,42 @@ const Contact = () => {
     const [emailSent, setEmailSent] = useState(false);
     const [loading, setLoading] = useState(false);
     const [emailError, setEmailError] = useState(false);
+    const [envVariables, setEnvVariables] = useState({});
+    console.log("envVariables", envVariables)
     const initialValues = {
       firstName: '',
       lastName: '',
       email: '',
       message: '',
     };
-    const {
-      REACT_APP_EMAILJS_SERVICE_ID,
-      REACT_APP_EMAILJS_TEMPLATE_ID,
-      REACT_APP_EMAILJS_PUBLIC_KEY,
-    } = process.env;
+ 
+    const apiBaseUrl = process.env.REACT_APP_NODE_ENV_NODE_ENV === 'production' ? prodConfig.apiBaseUrl : devConfig.apiBaseUrl;
+
+
+useEffect(() => {
+  const fetchEnvVariables = async () => {
+    try {
+      const response = await axios.get(`${apiBaseUrl}/env`);
+      const data = response.data;
+      setEnvVariables(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+    fetchEnvVariables()
+    
+  }, []);
+
+
 
     const sendEmail = async (values, { resetForm }) => {
       try {
         setLoading(true);
         await emailjs.send(
-          `${REACT_APP_EMAILJS_SERVICE_ID}`,
-          `${REACT_APP_EMAILJS_TEMPLATE_ID}`,
+          `${envVariables?.emailJsServiceId}`,
+          `${envVariables?.emailJsTemplateId}`,
           values,
-          `${REACT_APP_EMAILJS_PUBLIC_KEY}`,
+          `${envVariables?.emailJsPublicKey}`,
         );
 
         resetForm();
@@ -128,31 +146,31 @@ const Contact = () => {
     });
 
     // Controlla il consenso tramite Cookiebot API
+    // Per il momentoil banner non è necessario, in quanto il sito colleziona solo cookies tecnici.
+    // document.addEventListener('DOMContentLoaded', function () {
+    //   console.log('DOM fully loaded and parsed');
 
-    document.addEventListener('DOMContentLoaded', function () {
-      console.log('DOM fully loaded and parsed');
+    //   if (typeof CookieConsent !== 'undefined') {
+    //     console.log('cookiebot consense', CookieConsent.consented);
+    //     console.log('cookiebot object', CookieConsent);
+    //     // Bottone di submit del form Contattaci
+    //     let submitButton = document.getElementById('submitButton');
 
-      if (typeof CookieConsent !== 'undefined') {
-        console.log('cookiebot consense', CookieConsent.consented);
-        console.log('cookiebot object', CookieConsent);
-        // Bottone di submit del form Contattaci
-        let submitButton = document.getElementById('submitButton');
+    //     // Disabilita il bottone di submit se non c'è il consenso
+    //     submitButton.disabled = !CookieConsent.consented;
 
-        // Disabilita il bottone di submit se non c'è il consenso
-        submitButton.disabled = !CookieConsent.consented;
+    //     // controlla di nuovo il consenso
+    //     document.addEventListener('CookieConsentDeclaration', function () {
+    //       // aggiorna il bottone di submit
+    //       submitButton.disabled = !CookieConsent.consented;
+    //     });
 
-        // controlla di nuovo il consenso
-        document.addEventListener('CookieConsentDeclaration', function () {
-          // aggiorna il bottone di submit
-          submitButton.disabled = !CookieConsent.consented;
-        });
-
-        // Se non c'è il consenso, mostra il banner
-        if (!CookieConsent.consented) {
-          CookieConsent.show();
-        }
-      }
-    });
+    //     // Se non c'è il consenso, mostra il banner
+    //     if (!CookieConsent.consented) {
+    //       CookieConsent.show();
+    //     }
+    //   }
+    // });
 
     return (
       <Box>

@@ -55,7 +55,7 @@ const SingleSector = ({ data }) => {
             fullWidth={false}
             sx={{ fontWeight: 700 }}
           >
-            {translations.buttons.goToFlybox[language]}
+            {translations?.buttons?.goToFlybox[language]}
           </Button>
         </RowContainer>
       ) : null}

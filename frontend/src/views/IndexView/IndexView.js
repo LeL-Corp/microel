@@ -20,15 +20,15 @@ const IndexView = () => {
     <Box sx={{ overflowX: 'hidden' }}>
       <Main bgcolor={'background.paper'}>
         <Helmet
-          title={translations.metaTags.title[language]}
+          title={translations?.metaTags?.title[language]}
           meta={[
             {
               name: 'description',
-              content: translations.metaTags.description[language],
+              content: translations?.metaTags?.description[language],
             },
             {
               name: 'keywords',
-              content: translations.metaTags.keywords[language],
+              content: translations?.metaTags?.keywords[language],
             },
             {
               name: 'robots',
@@ -36,12 +36,12 @@ const IndexView = () => {
             },
             {
               property: 'og:title',
-              content: translations.metaTags.openGraphTitle[language],
+              content: translations?.metaTags?.openGraphTitle[language],
             },
             { property: 'og:type', content: 'website' },
             {
               property: 'og:description',
-              content: translations.metaTags.openGraphDescription[language],
+              content: translations?.metaTags?.openGraphDescription[language],
             },
             {
               property: 'og:image',
@@ -75,7 +75,7 @@ const IndexView = () => {
           </Box>
           <Container sx={{ position: 'relative' }}>
             <GetStarted />
-          </Container>
+          </Container> 
         </ColumnContainer>
       </Main>
     </Box>

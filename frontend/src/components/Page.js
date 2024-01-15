@@ -6,6 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import getTheme from 'theme';
 import AOS from 'aos';
 import { useLanguage } from 'context/LanguageContext';
+
 // export const useDarkMode = () => {
 //   const [themeMode, setTheme] = useState('dark');
 //   const [mountedComponent, setMountedComponent] = useState(false);
@@ -57,6 +58,7 @@ export default function Page({ children }) {
 
   // const [themeMode, themeToggler, mountedComponent] = useDarkMode();
   const { language, changeLanguage } = useLanguage();
+  
 
   useEffect(() => {
     AOS.refresh();
@@ -66,12 +68,12 @@ export default function Page({ children }) {
     <ThemeProvider theme={getTheme()}>
       <CssBaseline />
       <Paper elevation={0}>
-        {React.cloneElement(children, { language, changeLanguage })}
+      {React.isValidElement(children) ? React.cloneElement(children, { language, changeLanguage }) : null}
       </Paper>
     </ThemeProvider>
   );
 }
 
-Page.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+// Page.propTypes = {
+//   children: PropTypes.node.isRequired,
+// };

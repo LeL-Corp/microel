@@ -1,18 +1,22 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes';
 import Page from './components/Page';
 import { LanguageProvider } from 'context/LanguageContext';
 import { useLanguage } from 'context/LanguageContext';
-
+// import { initializeCloudinary } from 'helpers/cloudinary/CloudinaryInstance';
+import axios from 'axios';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'aos/dist/aos.css';
 
+
 const App = () => {
- 
+
   return (
+   
     <LanguageProvider>
       <HelmetTags />
       <Page>
@@ -21,6 +25,7 @@ const App = () => {
         </BrowserRouter>
       </Page>
     </LanguageProvider>
+   
   );
 };
 

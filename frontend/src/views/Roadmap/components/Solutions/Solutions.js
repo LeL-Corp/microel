@@ -1,7 +1,12 @@
 import React from 'react';
+import { useLanguage } from 'context/LanguageContext';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { cld } from 'helpers/CloudinaryInstance';
+
 import { useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -10,36 +15,27 @@ import Grid from '@mui/material/Grid';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import translations from 'translations/Translations';
-import { useLanguage } from 'context/LanguageContext';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import { Container, ImageList, ImageListItem } from '@mui/material';
-import { cld } from 'helpers/cloudinary/CloudinaryInstance';
+
+import translations from 'translations/Translations';
+
 import { AdvancedImage } from '@cloudinary/react';
 import { lazyload } from '@cloudinary/react';
 import { responsive } from '@cloudinary/react';
 
-//   {
-//     feedback:
-//       'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-//     name: 'Chary Smith',
-//     title: 'SEO at Comoti',
-//     avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
-//   },
-// ];
 
 const Solutions = () => {
   const theme = useTheme();
   const { language } = useLanguage();
   const { roadmapPage } = translations;
   const ref = useRef(null);
-  const solution1 = cld.image(
+
+
+  const solution1 = cld?.image(
     'Assets/Homepage/assemblaggio-schede-elettroniche-soluzione',
   );
-  const solution2 = cld.image('Assets/Homepage/pcb-design-soluzione');
-  const solution3 = cld.image('Assets/Homepage/test-compatibilita-soluzione');
+  const solution2 = cld?.image('Assets/Homepage/pcb-design-soluzione');
+  const solution3 = cld?.image('Assets/Homepage/test-compatibilita-soluzione');
 
   const solutions = [
     {
@@ -58,6 +54,8 @@ const Solutions = () => {
       title: translations?.home?.section3?.box3?.heading[language],
     },
   ];
+  const notLoaded = solutions.some((item) => !item.image);
+
   const isInView = useInView(ref, { once: false });
 
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
@@ -134,7 +132,7 @@ const Solutions = () => {
           </Typography>
         </Box>
         <Grid container spacing={2}>
-          {solutions.map((item, i) => (
+          {solutions?.map((item, i) => (
             <Grid item xs={12} md={4} key={i}>
               <div
                 style={{
@@ -188,15 +186,19 @@ const Solutions = () => {
                               borderRadius: '50%',
                             }}
                           >
-                            <AdvancedImage
-                              cldImg={item.image}
-                              style={{ width: '100%', height: '100%' }}
-                              alt={''}
-                              plugins={[
-                                responsive({ steps: [800, 1000, 1400] }),
-                                lazyload(),
-                              ]}
-                            />
+                            {notLoaded ? <img src="/placeholder/placeholder.png" alt="Placeholder" /> : (
+                                <AdvancedImage
+                                cldImg={item.image}
+                                style={{ width: '100%', height: '100%' }}
+                                alt={''}
+                                plugins={[
+                                  responsive({ steps: [800, 1000, 1400] }),
+                                  lazyload(),
+                                ]}
+                              />
+                            )
+                            }
+                          
                           </Avatar>
                         </ListItemAvatar>
                         <ListItemText

@@ -1,26 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
+import { useLanguage } from 'context/LanguageContext';
+import { cld } from 'helpers/CloudinaryInstance';
 
-//cloudinary images optimization
-import { cld } from 'helpers/cloudinary/CloudinaryInstance';
 import { AdvancedImage, responsive } from '@cloudinary/react';
-import { lazyload } from '@cloudinary/react';
+import { lazyload, placeholder } from '@cloudinary/react';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
-import { useRef } from 'react';
-import { useInView } from 'framer-motion';
-import { useLanguage } from 'context/LanguageContext';
+import Container from 'components/Container';
+
 import translations from 'translations/Translations';
 
-import Container from 'components/Container';
-import { textFieldClasses } from '@mui/material';
+
+
 
 const Hero = () => {
   const { language } = useLanguage();
+ 
+  const heroImage = cld?.image('Assets/Homepage/hero-banner-circuito-elettrico');
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -28,8 +31,6 @@ const Hero = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  // Create a CloudinaryImage instance
-  const heroImage = cld.image('Assets/Homepage/hero-banner-circuito-elettrico');
 
   return (
     <Box
@@ -42,7 +43,8 @@ const Hero = () => {
         position: 'relative',
       }}
     >
-      <AdvancedImage
+      {heroImage ? (
+        <AdvancedImage
         alt={
           language === 'it'
             ? 'Immagine di sfondo della sezione Hero che rappresenta un grande circuito elettrico '
@@ -59,8 +61,12 @@ const Hero = () => {
           filter: 'hue-rotate(-37deg)',
         }}
         cldImg={heroImage}
-        plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload()]}
+        plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload(),  placeholder({mode: 'predominant-color'})]}
       />
+
+      ) :  null
+}
+      
 
       <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
         <div
@@ -97,7 +103,7 @@ const Hero = () => {
                   },
                 }}
               >
-                {translations.home.hero.heading[language]}
+                {translations?.home?.hero?.heading[language]}
                 <br></br>
                 <span
                   style={{
@@ -106,7 +112,7 @@ const Hero = () => {
                     lineHeight: '0.8 !important',
                   }}
                 >
-                  {translations.home.hero.subHeading[language]}
+                  {translations?.home?.hero?.subHeading[language]}
                 </span>
               </Typography>
 
@@ -124,7 +130,7 @@ const Hero = () => {
                   fullWidth={isMd ? false : true}
                   to={'/about'}
                 >
-                  {translations.buttons.discover[language]}
+                  {translations?.buttons?.discover[language]}
                 </Button>
                 <Box
                   marginTop={{ xs: 2, sm: 0 }}
@@ -139,7 +145,7 @@ const Hero = () => {
                     component={Link}
                     to={'/contacts'}
                   >
-                    {translations.buttons.contact[language]}
+                    {translations?.buttons?.contact[language]}
                   </Button>
                 </Box>
               </Box>

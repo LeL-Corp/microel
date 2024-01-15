@@ -57,27 +57,27 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           >
             <Box>
               <NavigationLink dark to="/">
-                {translations.navigation.home[language]}
+                {translations?.navigation?.home[language]}
               </NavigationLink>
             </Box>
             <Box marginLeft={4}>
               <NavigationLink dark to="/about">
-                {translations.navigation.about[language]}
+                {translations?.navigation?.about[language]}
               </NavigationLink>
             </Box>
             <Box marginLeft={4}>
               <NavigationLink dark to="/areas">
-                {translations.navigation.areas[language]}
+                {translations?.navigation?.areas[language]}
               </NavigationLink>
             </Box>
             <Box marginLeft={4}>
               <NavigationLink dark to="/roadmap">
-                {translations.navigation.roadmap[language]}
+                {translations?.navigation?.roadmap[language]}
               </NavigationLink>
             </Box>
             <Box marginLeft={4}>
               <NavigationLink dark to="/contacts">
-                {translations.navigation.contacts[language]}
+                {translations?.navigation?.contacts[language]}
               </NavigationLink>
             </Box>
             <Box marginLeft={2}>

@@ -1,19 +1,21 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useLanguage } from 'context/LanguageContext';
+import { cld } from 'helpers/CloudinaryInstance';
+
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
 import translations from 'translations/Translations';
 
-//cloudinary images optimaization
-import { cld } from 'helpers/cloudinary/CloudinaryInstance';
 import { AdvancedImage, responsive } from '@cloudinary/react';
 import { lazyload } from '@cloudinary/react';
+
 
 const GetStarted = ({ withImage = true }) => {
   const { language } = useLanguage();
@@ -24,11 +26,13 @@ const GetStarted = ({ withImage = true }) => {
   const ref = useRef();
   const isInView = useInView(ref, { once: false });
 
-  const ideaImage = cld.image('Assets/Homepage/idea-lampadina');
+
+  const ideaImage = cld?.image('Assets/Homepage/idea-lampadina');
 
   return (
     <Box>
-      {withImage ? (
+      {withImage && ideaImage ? (
+
         <AdvancedImage
           alt={
             language === 'it'
@@ -68,17 +72,9 @@ const GetStarted = ({ withImage = true }) => {
             fontSize: '26px !important',
           }}
         >
-          {translations.home.section5.heading[language]}
+          {translations?.home?.section5?.heading[language]}
         </Typography>
       </div>
-      {/* <Typography
-        variant="h6"
-        component="p"
-        color="text.secondary"
-        sx={{ fontWeight: 400 }}
-        align={'center'}
-      >
-      </Typography> */}
       <Box
         display="flex"
         flexDirection={{ xs: 'column', sm: 'row' }}
@@ -94,7 +90,7 @@ const GetStarted = ({ withImage = true }) => {
           size="large"
           fullWidth={isMd ? false : true}
         >
-          {translations.buttons.contact[language]}
+          {translations?.buttons?.contact[language]}
         </Button>
         <Box
           marginTop={{ xs: 2, sm: 0 }}
@@ -109,7 +105,7 @@ const GetStarted = ({ withImage = true }) => {
             size="large"
             fullWidth={isMd ? false : true}
           >
-            {translations.buttons.where[language]}
+            {translations?.buttons?.where[language]}
           </Button>
         </Box>
       </Box>

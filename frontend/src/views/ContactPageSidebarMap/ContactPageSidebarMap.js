@@ -21,15 +21,15 @@ const ContactPageSidebarMap = () => {
   return (
     <Main>
       <Helmet
-        title={translations.metaTags.contactsPage.title[language]}
+        title={translations?.metaTags?.contactsPage?.title[language]}
         meta={[
           {
             name: 'description',
-            content: translations.metaTags.contactsPage.description[language],
+            content: translations?.metaTags?.contactsPage?.description[language],
           },
           {
             name: 'keywords',
-            content: translations.metaTags.contactsPage.keywords[language],
+            content: translations?.metaTags?.contactsPage?.keywords[language],
           },
           {
             name: 'robots',
@@ -37,12 +37,12 @@ const ContactPageSidebarMap = () => {
           },
           {
             property: 'og:title',
-            content: translations.metaTags.openGraphTitle[language],
+            content: translations?.metaTags?.openGraphTitle[language],
           },
           { property: 'og:type', content: 'website' },
           {
             property: 'og:description',
-            content: translations.metaTags.openGraphDescription[language],
+            content: translations?.metaTags?.openGraphDescription[language],
           },
           {
             property: 'og:image',

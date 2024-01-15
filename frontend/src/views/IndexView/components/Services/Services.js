@@ -11,26 +11,28 @@ import { VerticalMinimalDesignedBlogCards } from 'blocks/blog';
 import ColumnContainer from 'components/ColumnContainer';
 import Container from 'components/Container';
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useInView } from 'framer-motion';
 import { useLanguage } from 'context/LanguageContext';
 import translations from 'translations/Translations';
-import { cld } from 'helpers/cloudinary/CloudinaryInstance';
+import { CircularProgress } from '@mui/material';
+import { cld } from 'helpers/CloudinaryInstance';
+
 
 const Services = () => {
   const theme = useTheme();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const { language } = useLanguage();
-
-  const solution1 = cld.image('Assets/Homepage/assemblaggio-schede-elettroniche-soluzione');
-  const solution2 = cld.image('Assets/Homepage/pcb-design-soluzione');
-  const solution3 = cld.image('Assets/Homepage/test-compatibilita-soluzione');
+ 
+  const solution1 = cld?.image('Assets/Homepage/assemblaggio-schede-elettroniche-soluzione');
+  const solution2 = cld?.image('Assets/Homepage/pcb-design-soluzione');
+  const solution3 = cld?.image('Assets/Homepage/test-compatibilita-soluzione');
 
   const section2 = [
     {
       title: translations?.home?.section2?.box1?.heading[language],
-      subtitle: translations.home.section2.box1.subHeading[language],
+      subtitle: translations?.home?.section2?.box1?.subHeading[language],
       icon: (
         <ArchitectureIcon
           sx={{ '& path': { color: theme.palette.tertiary.main } }}
@@ -39,7 +41,7 @@ const Services = () => {
     },
     {
       title: translations?.home?.section2?.box2?.heading[language],
-      subtitle: translations.home.section2.box2.subHeading[language],
+      subtitle: translations.home.section2?.box2?.subHeading[language],
       icon: (
         <PolylineIcon
           sx={{ '& path': { color: theme.palette.tertiary.main } }}
@@ -48,7 +50,7 @@ const Services = () => {
     },
     {
       title: translations?.home?.section2?.box3?.heading[language],
-      subtitle: translations.home.section2.box3.subHeading[language],
+      subtitle: translations?.home?.section2?.box3?.subHeading[language],
       icon: (
         <RocketLaunchIcon
           sx={{ '& path': { color: theme.palette.tertiary.main } }}
@@ -83,6 +85,9 @@ const Services = () => {
     },
   ];
 
+  const notLoaded = section3.some((item, i) => (
+    !item.image));
+
   return (
     <Box>
       <ColumnContainer style={{ gap: '1rem' }}>
@@ -98,7 +103,7 @@ const Services = () => {
                 fontSize: '32px',
               }}
             >
-              {translations.home.section1.heading[language]}
+              {translations?.home?.section1?.heading[language]}
             </Typography>
             <Typography
               variant="h6"
@@ -107,7 +112,7 @@ const Services = () => {
               sx={{ fontWeight: 400, fontSize: '22px !important' }}
               align={'center'}
             >
-              {translations.home.section1.subHeading[language]}
+              {translations?.home?.section1?.subHeading[language]}
             </Typography>
           </Box>
         </Box>
@@ -166,10 +171,16 @@ const Services = () => {
           </Grid>
         </div>
         <Container>
-          <VerticalMinimalDesignedBlogCards
-            data={section3}
-            language={language}
-          />
+          {notLoaded ? <CircularProgress color="secondary" /> 
+          :
+             (
+                <VerticalMinimalDesignedBlogCards
+                data={section3}
+                language={language}
+              />
+             )
+          }
+         
         </Container>
       </ColumnContainer>
     </Box>

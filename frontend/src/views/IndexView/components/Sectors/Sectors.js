@@ -1,6 +1,11 @@
 import React from 'react';
 import { useTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
+import { useLanguage } from 'context/LanguageContext';
+import { motion } from 'framer-motion';
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -8,25 +13,10 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-
 import Container from 'components/Container';
 import ColumnContainer from 'components/ColumnContainer';
 
-import SmartToyIcon from '@mui/icons-material/SmartToy';
-import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
-import WidgetsIcon from '@mui/icons-material/Widgets';
-import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
-import ElectricCarIcon from '@mui/icons-material/ElectricCar';
-import FlightIcon from '@mui/icons-material/Flight';
 import translations from 'translations/Translations';
-
-import { useRef } from 'react';
-import { useInView } from 'framer-motion';
-import { useLanguage } from 'context/LanguageContext';
-import { Link } from 'react-router-dom';
-import { Dvr } from '@mui/icons-material';
-
-import { motion } from 'framer-motion';
 
 const Sectors = () => {
   const theme = useTheme();
@@ -34,11 +24,12 @@ const Sectors = () => {
   const isInView = useInView(ref, { once: true });
   const { language } = useLanguage();
   const navigate = useNavigate();
+ 
 
   const experiences =
     language === 'it'
-      ? translations.home.section4.experiencesIt
-      : translations.home.section4.experiencesEn;
+      ? translations?.home?.section4?.experiencesIt
+      : translations?.home?.section4?.experiencesEn;
 
   return (
     <div>
@@ -64,13 +55,13 @@ const Sectors = () => {
                   gutterBottom
                   color={'#6096fc'}
                 >
-                  {translations.home.section4.heading[language]}
+                  {translations?.home?.section4?.heading[language]}
                 </Typography>
                 <Typography variant="p" gutterBottom sx={{ fontWeight: 700 }}>
-                  {translations.home.section4.subHeading[language]}
+                  {translations?.home?.section4?.subHeading[language]}
                 </Typography>
                 <Typography variant="h6" component="p" color="text.secondary">
-                  {translations.home.section4.paragraph[language]}
+                  {translations?.home?.section4?.paragraph[language]}
                 </Typography>
                 <Box marginTop={2}>
                   <Button
@@ -97,7 +88,7 @@ const Sectors = () => {
                       </Box>
                     }
                   >
-                    {translations.buttons.solutions[language]}
+                    {translations?.buttons?.solutions[language]}
                   </Button>
                 </Box>
               </div>

@@ -8,7 +8,6 @@ const Routes = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     // Scroll to the top when the pathname changes
-
     document.documentElement.scrollTop = 0;
   }, [pathname]);
 

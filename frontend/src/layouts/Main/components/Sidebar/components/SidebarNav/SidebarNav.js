@@ -52,22 +52,22 @@ const SidebarNav = ({ pages }) => {
           <ColumnContainer halfGap>
             <Box paddingBottom={'20px'}>
               <NavigationLink to="/">
-                {translations.navigation.home[language]}
+                {translations?.navigation?.home[language]}
               </NavigationLink>
             </Box>
             <Box paddingBottom={'20px'}>
               <NavigationLink to="/about">
-                {translations.navigation.about[language]}
+                {translations?.navigation?.about[language]}
               </NavigationLink>
             </Box>
             <Box paddingBottom={'20px'}>
               <NavigationLink to="/areas">
-                {translations.navigation.areas[language]}
+                {translations?.navigation?.areas[language]}
               </NavigationLink>
             </Box>
             <Box paddingBottom={'20px'}>
               <NavigationLink to="/roadmap">
-                {translations.navigation.roadmap[language]}
+                {translations?.navigation?.roadmap[language]}
               </NavigationLink>
             </Box>
           </ColumnContainer>
@@ -96,7 +96,7 @@ const SidebarNav = ({ pages }) => {
           component={Link}
           to="/contacts"
         >
-          {translations.buttons.contact[language]}
+          {translations?.buttons?.contact[language]}
         </Button>
       </Box>
     </Box>

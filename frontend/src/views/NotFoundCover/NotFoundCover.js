@@ -1,15 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { useLanguage } from 'context/LanguageContext';
+
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { Helmet } from 'react-helmet';
 import Main from 'layouts/Main';
 import Container from 'components/Container';
+
 import translations from 'translations/Translations';
-import { useLanguage } from 'context/LanguageContext';
+
 
 const NotFoundCover = () => {
   const theme = useTheme();
@@ -21,15 +24,15 @@ const NotFoundCover = () => {
   return (
     <Main>
       <Helmet
-        title={translations.metaTags.notFoundPage.title[language]}
+        title={translations?.metaTags?.notFoundPage.title[language]}
         meta={[
           {
             name: 'description',
-            content: translations.metaTags.notFoundPage.description[language],
+            content: translations?.metaTags?.notFoundPage.description[language],
           },
           {
             name: 'keywords',
-            content: translations.metaTags.notFoundPage.keywords[language],
+            content: translations?.metaTags?.notFoundPage.keywords[language],
           },
           {
             name: 'robots',
@@ -37,12 +40,12 @@ const NotFoundCover = () => {
           },
           {
             property: 'og:title',
-            content: translations.metaTags.openGraphTitle[language],
+            content: translations?.metaTags?.openGraphTitle[language],
           },
           { property: 'og:type', content: 'website' },
           {
             property: 'og:description',
-            content: translations.metaTags.openGraphDescription[language],
+            content: translations?.metaTags?.openGraphDescription[language],
           },
           {
             property: 'og:image',
@@ -102,7 +105,7 @@ const NotFoundCover = () => {
                     align={isMd ? 'left' : 'center'}
                     paddingTop={2}
                   >
-                    {translations.notFoundPage[language]}
+                    {translations?.notFoundPage[language]}
                   </Typography>
                   <Box
                     marginTop={4}
@@ -116,7 +119,7 @@ const NotFoundCover = () => {
                       size="large"
                       to={'/'}
                     >
-                      {translations.buttons.backHome[language]}
+                      {translations?.buttons?.backHome[language]}
                     </Button>
                   </Box>
                 </Box>

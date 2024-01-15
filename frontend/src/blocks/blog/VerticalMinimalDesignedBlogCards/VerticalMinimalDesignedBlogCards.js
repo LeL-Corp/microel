@@ -75,19 +75,24 @@ const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
                     }}
                   >
                     <ColumnContainer style={{ height: '270px' }}>
-                      <AdvancedImage
-                        style={{ objectFit: 'cover', height: '100%' }}
-                        alt={
-                          language === 'it'
-                            ? item.altIt
-                            : item.altEn
-                        }
-                        cldImg={item.image}
-                        plugins={[
-                          responsive({ steps: [800, 1000, 1400] }),
-                          lazyload(),
-                        ]}
-                      />
+                      {item.image ? (
+                          <AdvancedImage
+                          style={{ objectFit: 'cover', height: '100%' }}
+                          alt={
+                            language === 'it'
+                              ? item.altIt
+                              : item.altEn
+                          }
+                          cldImg={item.image}
+                          plugins={[
+                            responsive({ steps: [800, 1000, 1400] }),
+                            lazyload(),
+                          ]}
+                        />
+                      ) : (
+                       <img src="/placeholder/placeholder.png" alt="Placeholder" />
+                       )} 
+                    
                     </ColumnContainer>
                     <Box
                       component={CardContent}
@@ -143,7 +148,7 @@ const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
                 </Box>
               }
             >
-              {translations.buttons.roadmap[language]}
+              {translations?.buttons?.roadmap[language]}
             </Button>
           </Grid>
         </Grid>

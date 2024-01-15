@@ -1,20 +1,23 @@
 import React, { useEffect } from 'react';
+import { useLanguage } from 'context/LanguageContext';
+import { cld } from 'helpers/CloudinaryInstance';
+
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 import Container from 'components/Container';
-import { useLanguage } from 'context/LanguageContext';
+
 import translations from 'translations/Translations';
 
-// cloudinary image optimization
-import { cld } from 'helpers/cloudinary/CloudinaryInstance';
+
 import { AdvancedImage, responsive } from '@cloudinary/react';
 import { lazyload } from '@cloudinary/react';
 
 const Hero = () => {
   const theme = useTheme();
   const { language } = useLanguage();
+  
   useEffect(() => {
     const jarallaxInit = async () => {
       const jarallaxElems = document.querySelectorAll('.jarallax');
@@ -29,7 +32,7 @@ const Hero = () => {
     jarallaxInit();
   });
 
-  const aboutUsImage = cld.image('Assets/About_us/chi-siamo');
+  const aboutUsImage = cld?.image('Assets/About_us/chi-siamo');
 
   return (
     <Box
@@ -45,7 +48,8 @@ const Hero = () => {
       paddingTop={13}
       id="agency__portfolio-item--js-scroll"
     >
-      <AdvancedImage
+      {aboutUsImage ? (
+        <AdvancedImage
         height={{ xs: 400, sm: 500, md: 600 }}
         className={'jarallax-img'}
         alt={
@@ -64,8 +68,10 @@ const Hero = () => {
           opacity: 0.7,
         }}
         cldImg={aboutUsImage}
-        plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload()]}
+        plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload(), ]}
       />
+      ) : null}
+      
 
       <Box
         sx={{
@@ -100,7 +106,7 @@ const Hero = () => {
               fontWeight: 900,
             }}
           >
-            {translations.aboutUsPage.hero.heading[language]}
+            {translations?.aboutUsPage?.hero?.heading[language]}
           </Typography>
           <Typography
             data-aos="fade-up"

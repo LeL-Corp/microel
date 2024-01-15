@@ -1,53 +1,62 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { useLanguage } from 'context/LanguageContext';
+import { cld } from 'helpers/CloudinaryInstance';
+
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-
 import Main from 'layouts/Main';
 import Container from 'components/Container';
 import {
   Contact,
   Gallery,
   Hero,
-  Partners,
   Story1,
   Story2,
-  Team,
-  WhoWeAre,
-  Application,
 } from './components';
-import RowContainer from 'components/RowContainer';
-import ColumnContainer from 'components/ColumnContainer';
-import { GetStarted } from 'views/IndexView/components';
 import AboutTags from './components/Tags/AboutTags';
-import translations from 'translations/Translations';
-import { useLanguage } from 'context/LanguageContext';
 import VideoFrame from 'components/VideFreame';
+
+import translations from 'translations/Translations';
 
 
 const About = () => {
   const { language } = useLanguage();
-  const aboutUs1 =
-    language === 'it'
-      ? translations.aboutUsPage.storySection.aboutUs1It
-      : translations.aboutUsPage.storySection.aboutUs1En;
-  const aboutUs2 =
-    language === 'it'
-      ? translations.aboutUsPage.storySection.aboutUs2It
-      : translations.aboutUsPage.storySection.aboutUs2En;
+  const ourStoryImage = cld?.image('Assets/About_us/la-nostra-storia');
+  const ourValuesImage = cld?.image('Assets/About_us/i-nostri-valori');
+ 
+  const aboutUs1 = {
+    title: language === 'it'  ? translations?.aboutUsPage?.storySection?.aboutUs1It?.title : translations?.aboutUsPage?.storySection?.aboutUs1En?.title,
+    text: language === 'it'  ? translations?.aboutUsPage?.storySection?.aboutUs1It?.text : translations?.aboutUsPage?.storySection?.aboutUs1En?.text,
+    link:  "Flybox Avionics",
+    image: ourStoryImage,
+    imageAlt: language === 'it'  ? translations?.aboutUsPage?.storySection?.aboutUs1It?.imageAlt : translations?.aboutUsPage?.storySection?.aboutUs1En?.imageAlt,
+    direction: 'row',
+
+  };
+  const aboutUs2 = {
+    title: language === 'it'  ? translations?.aboutUsPage?.storySection?.aboutUs2It?.title : translations?.aboutUsPage?.storySection?.aboutUs2En?.title,
+    text: language === 'it'  ? translations?.aboutUsPage?.storySection?.aboutUs2It?.text : translations?.aboutUsPage?.storySection?.aboutUs2En?.text,
+    link:  "Flybox Avionics",
+    image: ourValuesImage,
+    imageAlt: language === 'it'  ? translations?.aboutUsPage?.storySection?.aboutUs2It?.imageAlt : translations?.aboutUsPage?.storySection?.aboutUs2En?.imageAlt,
+    direction: 'row-reverse',
+
+  };
+  
 
   return (
     <Main colorInvert={true}>
       <Helmet
-        title={translations.metaTags.about.title[language]}
+        title={translations?.metaTags?.about?.title[language]}
         meta={[
           {
             name: 'description',
-            content: translations.metaTags.about.description[language],
+            content: translations?.metaTags?.about?.description[language],
           },
           {
             name: 'keywords',
-            content: translations.metaTags.about.keywords[language],
+            content: translations?.metaTags?.about?.keywords[language],
           },
           {
             name: 'robots',
@@ -55,12 +64,12 @@ const About = () => {
           },
           {
             property: 'og:title',
-            content: translations.metaTags.openGraphTitle[language],
+            content: translations?.metaTags?.openGraphTitle[language],
           },
           { property: 'og:type', content: 'website' },
           {
             property: 'og:description',
-            content: translations.metaTags.openGraphDescription[language],
+            content: translations?.metaTags?.openGraphDescription[language],
           },
           {
             property: 'og:image',
@@ -82,7 +91,9 @@ const About = () => {
       ></Helmet>
       <Hero />
       <Container>
-        <Story1 data={aboutUs1} />
+        <Container>
+          <Story1 data={aboutUs1} />
+        </Container>
         <Container>
           <Story2 data={aboutUs2} />
         </Container>
@@ -90,7 +101,6 @@ const About = () => {
       <Container maxWidth={800} paddingY={'0 !important'}>
         <Divider />
       </Container>
-
       <Box bgcolor={'secondary.main'}>
         <Container>
           <Gallery />
@@ -101,7 +111,6 @@ const About = () => {
           <VideoFrame urlVideo="https://res.cloudinary.com/dslne9y2j/video/upload/f_auto:video,q_auto/v1/Assets/Video/shotq6o7irlxffpu8eji" bgColor="primary.main"/>
         </Container>
       </Box>
-
       <Contact />
       <Box
         bgcolor={'secondary.main'}
@@ -111,9 +120,6 @@ const About = () => {
           <AboutTags />
         </Container>
       </Box>
-      {/* <Container maxWidth={800}>
-        <GetStarted withImage={false} />
-      </Container> */}
     </Main>
   );
 };

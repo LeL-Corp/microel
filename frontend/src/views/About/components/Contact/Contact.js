@@ -20,7 +20,7 @@ const Contact = () => {
 
   const mock = [
     {
-      label: translations.navigation.info.phone[language],
+      label: translations?.navigation?.info?.phone[language],
       value: 'tel:+390384 670602',
       valueLabel: 'Tel. 0384 670602',
       icon: (
@@ -53,7 +53,7 @@ const Contact = () => {
     //   ),
     // },
     {
-      label: translations.navigation.info.address[language],
+      label: translations?.navigation.info.address[language],
       value: 'Via Mortara 192/194 ROBBIO (PV)',
       valueLabel: 'Via Mortara 192/194 ROBBIO (PV)',
       icon: (
@@ -79,7 +79,7 @@ const Contact = () => {
       <Box>
         <Box marginBottom={2}>
           <Typography variant={'h4'} sx={{ fontWeight: 700 }} gutterBottom>
-            {translations.aboutUsPage.contactSection.heading[language]}
+            {translations?.aboutUsPage?.contactSection?.heading[language]}
           </Typography>
         </Box>
         <Box

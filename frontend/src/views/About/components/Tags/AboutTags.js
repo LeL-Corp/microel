@@ -1,13 +1,15 @@
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
+import { useLanguage } from 'context/LanguageContext';
+
 import { Chip, Container } from '@mui/material';
 import { Box } from '@mui/material';
 import { Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
-import { motion } from 'framer-motion';
-import { useRef } from 'react';
-import { useInView } from 'framer-motion';
+
 import translations from 'translations/Translations';
-import { useLanguage } from 'context/LanguageContext';
 
 const AboutTags = () => {
   const theme = useTheme();

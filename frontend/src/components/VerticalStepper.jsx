@@ -90,7 +90,7 @@ export default function VerticalLinearStepper() {
                       sx={{ fontWeight: '700 !important' }}
                     >
                       {' '}
-                      {translations.buttons.contact[language]}
+                      {translations?.buttons?.contact[language]}
                     </Button>
                   ) : null}
                 </motion.div>

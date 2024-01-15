@@ -29,7 +29,7 @@ const Parallax = ({ parallaxData }) => {
           >
             <AdvancedImage
               className={'jarallax-img'}
-              cldImg={item.imageUrl}
+              cldImg={item?.imageUrl}
               alt={item.imageAlt}
               style={{
                 position: 'absolute',

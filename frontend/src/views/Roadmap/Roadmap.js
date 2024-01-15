@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 
 import Main from 'layouts/Main';
 import Container from 'components/Container';
-import { Partners, Solutions } from './components';
+import { RoadmapSteps, Solutions } from './components';
 import translations from 'translations/Translations';
 import { useLanguage } from 'context/LanguageContext';
 
@@ -17,15 +17,15 @@ const Roadmap = () => {
   return (
     <Main>
       <Helmet
-        title={translations.metaTags.roadmapPage.title[language]}
+        title={translations?.metaTags?.roadmapPage?.title[language]}
         meta={[
           {
             name: 'description',
-            content: translations.metaTags.roadmapPage.description[language],
+            content: translations?.metaTags?.roadmapPage?.description[language],
           },
           {
             name: 'keywords',
-            content: translations.metaTags.roadmapPage.keywords[language],
+            content: translations?.metaTags?.roadmapPage?.keywords[language],
           },
           {
             name: 'robots',
@@ -33,12 +33,12 @@ const Roadmap = () => {
           },
           {
             property: 'og:title',
-            content: translations.metaTags.openGraphTitle[language],
+            content: translations?.metaTags?.openGraphTitle[language],
           },
           { property: 'og:type', content: 'website' },
           {
             property: 'og:description',
-            content: translations.metaTags.openGraphDescription[language],
+            content: translations?.metaTags?.openGraphDescription[language],
           },
           {
             property: 'og:image',
@@ -59,7 +59,7 @@ const Roadmap = () => {
         ]}
       ></Helmet>
       <Container>
-        <Partners />
+        <RoadmapSteps />
         <Container>
           <Solutions />
         </Container>

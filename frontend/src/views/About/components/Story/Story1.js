@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import { Link } from 'react-router-dom';
+
 
 import { AdvancedImage, responsive } from '@cloudinary/react';
 import { lazyload } from '@cloudinary/react';

@@ -22,15 +22,15 @@ const CookiesPolicy = () => {
   return (
     <Main>
       <Helmet
-        title={translations.metaTags.cookiesPage.title[language]}
+        title={translations?.metaTags?.cookiesPage?.title[language]}
         meta={[
           {
             name: 'description',
-            content: translations.metaTags.cookiesPage.description[language],
+            content: translations?.metaTags?.cookiesPage?.description[language],
           },
           {
             name: 'keywords',
-            content: translations.metaTags.cookiesPage.keywords[language],
+            content: translations?.metaTags?.cookiesPage?.keywords[language],
           },
           {
             name: 'robots',
@@ -38,12 +38,12 @@ const CookiesPolicy = () => {
           },
           {
             property: 'og:title',
-            content: translations.metaTags.openGraphTitle[language],
+            content: translations?.metaTags?.openGraphTitle[language],
           },
           { property: 'og:type', content: 'website' },
           {
             property: 'og:description',
-            content: translations.metaTags.openGraphDescription[language],
+            content: translations?.metaTags?.openGraphDescription[language],
           },
           {
             property: 'og:image',

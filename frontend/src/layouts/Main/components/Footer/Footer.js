@@ -54,8 +54,8 @@ const Footer = () => {
             <RowContainer>
               <Typography variant="body1" color={'#fff'}>
                 {isMobile
-                  ? translations.navigation.discoverMoreMobile[language]
-                  : translations.navigation.discoverMore[language]}
+                  ? translations?.navigation?.discoverMoreMobile[language]
+                  : translations?.navigation?.discoverMore[language]}
               </Typography>{' '}
               <Box
                 component={'a'}
@@ -159,7 +159,7 @@ const Footer = () => {
               component={Link}
               to="/"
             >
-              {translations.navigation.home[language]}
+              {translations?.navigation?.home[language]}
             </Typography>
           </Box>
 
@@ -171,7 +171,7 @@ const Footer = () => {
               component={Link}
               to="/about"
             >
-              {translations.navigation.about[language]}
+              {translations?.navigation?.about[language]}
             </Typography>
           </Box>
           <Box display="flex" flexDirection={'column'} width={'fit-content'}>
@@ -182,7 +182,7 @@ const Footer = () => {
               component={Link}
               to="/areas"
             >
-              {translations.navigation.areas[language]}
+              {translations?.navigation?.areas[language]}
             </Typography>
           </Box>
 
@@ -194,7 +194,7 @@ const Footer = () => {
               component={Link}
               to="/roadmap"
             >
-              {translations.navigation.roadmap[language]}
+              {translations?.navigation?.roadmap[language]}
             </Typography>
           </Box>
 
@@ -206,7 +206,7 @@ const Footer = () => {
               component={Link}
               to="/contacts"
             >
-              {translations.navigation.contacts[language]}
+              {translations?.navigation?.contacts[language]}
             </Typography>
           </Box>
         </Box>

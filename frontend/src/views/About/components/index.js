@@ -1,10 +1,6 @@
 export { default as Contact } from './Contact';
 export { default as Gallery } from './Gallery';
 export { default as Hero } from './Hero';
-export { default as Partners } from './Partners';
 export { default as Story1 } from './Story/Story1';
 export { default as Story2 } from './Story/Story2';
-export { default as Team } from './Team';
-export { default as WhoWeAre } from './WhoWeAre';
-export { default as Application } from './Application';
 export { default as AboutTags } from './Tags/AboutTags';

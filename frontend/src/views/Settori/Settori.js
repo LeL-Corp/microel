@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { useLanguage } from 'context/LanguageContext';
+import { cld } from 'helpers/CloudinaryInstance';
+
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import NoSsr from '@mui/material/NoSsr';
@@ -9,22 +13,17 @@ import Container from 'components/Container';
 import { Welcome } from './components';
 import Parallax from './components/Parallax/Parallax';
 import translations from 'translations/Translations';
-import { Button, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Button, CircularProgress, Typography } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
-import { useLanguage } from 'context/LanguageContext';
+import RowContainer from 'components/RowContainer';
+import ColumnContainer from 'components/ColumnContainer';
 
-//cloudinary images optimization
-import { cld } from 'helpers/cloudinary/CloudinaryInstance';
-import { AdvancedImage, responsive } from '@cloudinary/react';
-import { lazyload } from '@cloudinary/react';
 
 const Settori = () => {
   const { language, changeLanguage } = useLanguage();
   const { areasPage } = translations;
 
   
-
   useEffect(() => {
     const jarallaxInit = async () => {
       const jarallaxElems = document.querySelectorAll('.jarallax');
@@ -74,21 +73,100 @@ const Settori = () => {
   });
   const ref = useRef();
   const isInView = useInView(ref, { once: false });
-  const parallaxData =
-    language === 'it' ? areasPage.parallaxDataIt : areasPage.parallaxDataEn;
+  
+
+  const industrialAutomationImage = cld?.image(
+    'Assets/Areas/settore-automazione-industriale',
+  );
+  const avionicsInstrumentsImage = cld?.image(
+    'Assets/Areas/settore-strumentazione-avionica',
+  );
+  const motorDrivesImage = cld?.image('Assets/Areas/settore-azionamento-motori');
+  const testMachinesImage = cld?.image('Assets/Areas/settore-macchine-test');
+  const packagingMachinesImage = cld?.image('Assets/Areas/settore-packaging');
+  const cleaningMachinesImage = cld?.image('Assets/Areas/settore-cleaning');
+  const footwearSectorImage = cld?.image('Assets/Areas/settore-calzaturiero');
+  const laundryAppliancesImage = cld?.image(
+    'Assets/Areas/settore-elettrodomestici-per-il-bianco',
+  );
+  const metalworkingMachineryImage = cld?.image(
+    'Assets/Areas/settore-lavorazione-metalli',
+  );
+  const parallaxData = [
+    {
+      sector: language === 'it' ? areasPage?.parallaxDataIt[0]?.sector : areasPage?.parallaxDataEn[0]?.sector,
+      description: language === 'it' ? areasPage?.parallaxDataIt[0]?.description : areasPage?.parallaxDataEn[0]?.description,
+      imageUrl: industrialAutomationImage,
+      imageAlt: language === 'it' ? areasPage?.parallaxDataIt[0]?.imageAlt : areasPage?.parallaxDataEn[0]?.imageAlt,
+    },
+    {
+      sector: language === 'it' ? areasPage?.parallaxDataIt[1]?.sector : areasPage?.parallaxDataEn[1]?.sector,
+      description: language === 'it' ? areasPage?.parallaxDataIt[1]?.description : areasPage?.parallaxDataEn[1]?.description,
+      imageUrl: avionicsInstrumentsImage,
+      imageAlt: language === 'it' ? areasPage?.parallaxDataIt[1]?.imageAlt : areasPage?.parallaxDataEn[1]?.imageAlt,
+    },
+    {
+      sector: language === 'it' ? areasPage?.parallaxDataIt[2]?.sector : areasPage?.parallaxDataEn[2]?.sector,
+      description: language === 'it' ? areasPage?.parallaxDataIt[2]?.description : areasPage?.parallaxDataEn[2]?.description,
+      imageUrl: motorDrivesImage,
+      imageAlt: language === 'it' ? areasPage?.parallaxDataIt[2]?.imageAlt : areasPage?.parallaxDataEn[2]?.imageAlt,
+    },
+
+    {
+      sector: language === 'it' ? areasPage?.parallaxDataIt[3]?.sector : areasPage?.parallaxDataEn[3]?.sector,
+      description: language === 'it' ? areasPage?.parallaxDataIt[3]?.description : areasPage?.parallaxDataEn[3]?.description,
+      imageUrl: testMachinesImage,
+      imageAlt: language === 'it' ? areasPage?.parallaxDataIt[3]?.imageAlt : areasPage?.parallaxDataEn[3]?.imageAlt,
+    },
+
+    {
+      sector: language === 'it' ? areasPage?.parallaxDataIt[4]?.sector : areasPage?.parallaxDataEn[4]?.sector,
+      description: language === 'it' ? areasPage?.parallaxDataIt[4]?.description : areasPage?.parallaxDataEn[4]?.description,
+      imageUrl: packagingMachinesImage,
+      imageAlt:
+        language === 'it' ? areasPage?.parallaxDataIt[4]?.imageAlt : areasPage?.parallaxDataEn[4]?.imageAlt,
+    },
+
+    {
+      sector: language === 'it' ? areasPage?.parallaxDataIt[5]?.sector : areasPage?.parallaxDataEn[5]?.sector,
+      description: language === 'it' ? areasPage?.parallaxDataIt[5]?.description : areasPage?.parallaxDataEn[5]?.description,
+      imageUrl: cleaningMachinesImage,
+      imageAlt: language === 'it' ? areasPage?.parallaxDataIt[5]?.imageAlt : areasPage?.parallaxDataEn[5]?.imageAlt,
+    },
+    {
+      sector: language === 'it' ? areasPage?.parallaxDataIt[6]?.sector : areasPage?.parallaxDataEn[6]?.sector,
+      description: language === 'it' ? areasPage?.parallaxDataIt[6]?.description : areasPage?.parallaxDataEn[6]?.description,
+      imageUrl: footwearSectorImage,
+      imageAlt: language === 'it' ? areasPage?.parallaxDataIt[6]?.imageAlt : areasPage?.parallaxDataEn[6]?.imageAlt,
+    },
+    {
+      sector: language === 'it' ? areasPage?.parallaxDataIt[7]?.sector : areasPage?.parallaxDataEn[7]?.sector,
+      description: language === 'it' ? areasPage?.parallaxDataIt[7]?.description : areasPage?.parallaxDataEn[7]?.description,
+      imageUrl: laundryAppliancesImage,
+      imageAlt: language === 'it' ? areasPage?.parallaxDataIt[7]?.imageAlt : areasPage?.parallaxDataEn[7]?.imageAlt,
+    },
+    {
+      sector: language === 'it' ? areasPage?.parallaxDataIt[8]?.sector : areasPage?.parallaxDataEn[8]?.sector,
+      description: language === 'it' ? areasPage?.parallaxDataIt[8]?.description : areasPage?.parallaxDataEn[8]?.description,
+      imageUrl: metalworkingMachineryImage,
+      imageAlt: language === 'it' ? areasPage?.parallaxDataIt[8]?.imageAlt : areasPage?.parallaxDataEn[8]?.imageAlt,
+    },
+  ];
+  const notLoaded = parallaxData.some((item) => !item.imageUrl);
+
 
   return (
     <Main>
       <Helmet
-        title={translations.metaTags.areasPage.title[language]}
+        title={translations?.metaTags?.areasPage?.title[language]}
         meta={[
           {
             name: 'description',
-            content: translations.metaTags.areasPage.description[language],
+            content: translations?.metaTags?.areasPage?.description[language],
           },
           {
             name: 'keywords',
-            content: translations.metaTags.areasPage.keywords[language],
+            content: translations?.metaTags?.areasPage?.keywords[language],
           },
           {
             name: 'robots',
@@ -96,12 +174,12 @@ const Settori = () => {
           },
           {
             property: 'og:title',
-            content: translations.metaTags.openGraphTitle[language],
+            content: translations?.metaTags?.openGraphTitle[language],
           },
           { property: 'og:type', content: 'website' },
           {
             property: 'og:description',
-            content: translations.metaTags.openGraphDescription[language],
+            content: translations?.metaTags?.openGraphDescription[language],
           },
           {
             property: 'og:image',
@@ -155,7 +233,15 @@ const Settori = () => {
           </Box>
         </Container>
       </Box>
-      <Parallax parallaxData={parallaxData} />
+      
+     {notLoaded ? (
+      <ColumnContainer alignItems={'center'} justifyContent={'center'}>
+      <CircularProgress />
+      </ColumnContainer>
+      ) : (
+         <Parallax parallaxData={parallaxData} />
+      )} 
+   
       <Box ref={ref} sx={{ paddingTop: '50px' }}>
         <Typography
           variant="h2"
@@ -212,7 +298,7 @@ const Settori = () => {
           size="large"
           fullWidth={isMd ? false : true}
         >
-          {translations.buttons.contact[language]}
+          {translations?.buttons?.contact[language]}
         </Button>
         <Box
           marginTop={{ xs: 2, sm: 0 }}
@@ -228,7 +314,7 @@ const Settori = () => {
             size="large"
             fullWidth={isMd ? false : true}
           >
-            {translations.buttons.where[language]}
+            {translations?.buttons?.where[language]}
           </Button>
         </Box>
       </Box>
