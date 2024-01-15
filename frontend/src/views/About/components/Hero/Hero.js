@@ -12,7 +12,7 @@ import translations from 'translations/Translations';
 
 
 import { AdvancedImage, responsive } from '@cloudinary/react';
-import { lazyload } from '@cloudinary/react';
+import { lazyload, placeholder } from '@cloudinary/react';
 
 const Hero = () => {
   const theme = useTheme();
@@ -68,7 +68,8 @@ const Hero = () => {
           opacity: 0.7,
         }}
         cldImg={aboutUsImage}
-        plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload(), ]}
+        plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload(),
+        placeholder({mode: 'predominant-color'}) ]}
       />
       ) : null}
       

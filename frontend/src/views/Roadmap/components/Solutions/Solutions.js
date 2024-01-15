@@ -20,7 +20,7 @@ import { Container, ImageList, ImageListItem } from '@mui/material';
 import translations from 'translations/Translations';
 
 import { AdvancedImage } from '@cloudinary/react';
-import { lazyload } from '@cloudinary/react';
+import { lazyload, placeholder } from '@cloudinary/react';
 import { responsive } from '@cloudinary/react';
 
 
@@ -194,6 +194,7 @@ const Solutions = () => {
                                 plugins={[
                                   responsive({ steps: [800, 1000, 1400] }),
                                   lazyload(),
+                                  placeholder({mode: 'predominant-color'})
                                 ]}
                               />
                             )

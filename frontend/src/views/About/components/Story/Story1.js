@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
 
 
 import { AdvancedImage, responsive } from '@cloudinary/react';
-import { lazyload } from '@cloudinary/react';
+import { lazyload, placeholder } from '@cloudinary/react';
 
 const Story1 = ({ data }) => {
   const theme = useTheme();
@@ -69,7 +69,7 @@ const Story1 = ({ data }) => {
                   maxWidth: '300px',
                 }}
                 cldImg={data.image}
-                plugins={[lazyload()]}
+                plugins={[lazyload(), placeholder({mode: 'predominant-color'})]}
               />
             ) : null}
           </Box>

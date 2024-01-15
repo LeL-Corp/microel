@@ -20,7 +20,7 @@ import translations from 'translations/Translations';
 import { Link } from 'react-router-dom';
 
 import { AdvancedImage, responsive } from '@cloudinary/react';
-import { lazyload } from '@cloudinary/react';
+import { lazyload, placeholder } from '@cloudinary/react';
 import ColumnContainer from 'components/ColumnContainer';
 
 const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
@@ -87,6 +87,7 @@ const VerticalMinimalDesignedBlogCards = ({ data, language }) => {
                           plugins={[
                             responsive({ steps: [800, 1000, 1400] }),
                             lazyload(),
+                            placeholder({mode: 'predominant-color'})
                           ]}
                         />
                       ) : (

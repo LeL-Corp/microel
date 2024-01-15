@@ -13,7 +13,7 @@ import VerticalLinearStepper from 'components/VerticalStepper';
 import translations from 'translations/Translations';
 
 import { AdvancedImage, responsive } from '@cloudinary/react';
-import { lazyload } from '@cloudinary/react';
+import { lazyload, placeholder } from '@cloudinary/react';
 
 const RoadmapSteps = () => {
   const theme = useTheme();
@@ -64,7 +64,7 @@ const RoadmapSteps = () => {
               // transform: isMobile || isTablet ? 'unset' : 'rotate(-90deg)',
             }}
             cldImg={roadmapImage}
-            plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload()]}
+            plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload(), placeholder({mode: 'predominant-color'})]}
             />
           ) : null}
          

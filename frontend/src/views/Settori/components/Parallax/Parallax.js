@@ -4,7 +4,7 @@ import SingleSector from '../Sector/SingleSector';
 import { useTheme } from '@mui/material/styles';
 
 import { AdvancedImage, responsive } from '@cloudinary/react';
-import { lazyload } from '@cloudinary/react';
+import { lazyload, placeholder } from '@cloudinary/react';
 
 const Parallax = ({ parallaxData }) => {
   return (
@@ -41,7 +41,7 @@ const Parallax = ({ parallaxData }) => {
                 zIndex: -1,
                 filter: 'brightness(0.7)',
               }}
-              plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload()]}
+              plugins={[responsive({ steps: [800, 1000, 1400] }), lazyload(), placeholder({mode: 'predominant-color'})]}
             />
           </Box>
           <Container>
