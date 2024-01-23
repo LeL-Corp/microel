@@ -1,9 +1,10 @@
 import React from 'react';
-import Slider from 'react-slick';
+import { useState } from 'react';
 import { useLanguage } from 'context/LanguageContext';
-
+import Slider from 'react-slick';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
@@ -61,6 +62,7 @@ const Gallery = () => {
   ];
 
   const photosToShow = isMd ? photos : photos.slice(0, photos.length - 1);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const sliderOpts = {
     dots: true,
     arrows: false,
@@ -69,6 +71,22 @@ const Gallery = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    beforeChange: (current, next) => setCurrentSlide(next),
+    customPaging: (i) => (
+      <Box
+        component={'span'}
+        sx={{
+          width: 12,
+          height: 12,
+          borderRadius: '50%',
+          bgcolor: i === currentSlide ? 'primary.main' : 'grey.500',
+          display: 'inline-block',
+          mx: 1,
+        }}
+      />
+    )
+    
+    
   };
   return (
     <Container sx={{ padding: '60px 0px 100px' }}>

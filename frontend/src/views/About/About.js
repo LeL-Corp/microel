@@ -106,10 +106,10 @@ const About = () => {
           <Gallery />
         </Container>
       </Box>
-      <Box bgcolor={'secondary.main'}>
-        <Container>
-          <VideoFrame urlVideo="https://res.cloudinary.com/dslne9y2j/video/upload/f_auto:video,q_auto/v1/Assets/Video/shotq6o7irlxffpu8eji" bgColor="primary.main"/>
-        </Container>
+      <Box bgcolor={'secondary.main'} > 
+      <Container>
+          <VideoFrame urlVideo="https://res.cloudinary.com/dslne9y2j/video/upload/f_auto:video,q_auto/v1/Assets/Video/shotq6o7irlxffpu8eji" bgColor="tertiary"/>
+          </Container>
       </Box>
       <Contact />
       <Box

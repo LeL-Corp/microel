@@ -21,31 +21,36 @@ const VideoFrame = ({urlVideo, bgColor, videoTitle, videoDescription}) => {
           bgcolor: bgColor,
           opacity: 0.7,
           zIndex: 1,
+         
         },
       }}
     >
       <Container position={'relative'} zIndex={3}>
         <Box>
-          <Box marginBottom={4}>
-            <Typography
-              variant={'h4'}
-              gutterBottom
-              align={'center'}
-              sx={{ fontWeight: 700, color: 'common.white' }}
-            >
-              {videoTitle}
-            </Typography>
-            <Typography
-              variant={'h6'}
-              component={'p'}
-              color={'text.secondary'}
-              align={'center'}
-              sx={{ color: 'common.white' }}
-            >
-              {videoDescription}
-            </Typography>
-          </Box>
-          <video
+          {videoTitle || videoDescription ? (
+  <Box marginBottom={4} marginTop={1}>
+  <Typography
+    variant={'h4'}
+    gutterBottom
+    align={'center'}
+    sx={{ fontWeight: 700, color: 'common.white' }}
+  >
+    {videoTitle}
+  </Typography>
+  <Typography
+    variant={'h6'}
+    component={'p'}
+    color={'text.secondary'}
+    align={'center'}
+    sx={{ color: 'common.white' }}
+  >
+    {videoDescription}
+  </Typography>
+</Box>
+          ) : null}
+        
+          <video 
+          style={{borderRadius: '16px'}}
             width="100%"
             height="auto"
             controls
