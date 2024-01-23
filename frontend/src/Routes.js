@@ -1,3 +1,4 @@
+import PopupCookies from 'components/PopupCookies';
 import React from 'react';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -12,12 +13,15 @@ const Routes = () => {
   }, [pathname]);
 
   return (
+    <>
     <ReactRoutes>
       {viewsRoutes.map((item, i) => (
         <Route key={i} path={item.path} element={item.renderer()} />
       ))}
       <Route path="*" element={<Navigate replace to="/not-found" />} />
     </ReactRoutes>
+    <PopupCookies />
+    </>
   );
 };
 
