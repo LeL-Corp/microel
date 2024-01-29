@@ -164,9 +164,11 @@ const Gallery = () => {
                 position: 'relative',
                 overflow: 'hidden',
                 borderRadius: 2,
+                zIndex: 99,
                 '&:hover': {
                   '& img': {
-                    transform: 'scale(1.2)',
+                    // transform: 'scale(1.2)',
+                    zIndex: 100,
                   },
                   '& .portfolio-main-item': {
                     bottom: 0,

@@ -242,8 +242,10 @@ const Solutions = () => {
                 sx={{
                   overflow: 'visible',
                   transition: 'all .2s ease-in-out',
+                  zIndex: 99,
                   '&:hover': {
                     transform: 'scale(1.2)',
+                    zIndex: 100,
                   },
                 }}
               >
