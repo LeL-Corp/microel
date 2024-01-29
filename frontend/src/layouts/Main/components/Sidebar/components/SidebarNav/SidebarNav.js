@@ -51,22 +51,22 @@ const SidebarNav = ({ pages }) => {
         >
           <ColumnContainer halfGap>
             <Box paddingBottom={'20px'}>
-              <NavigationLink to="/">
+              <NavigationLink dark to="/">
                 {translations?.navigation?.home[language]}
               </NavigationLink>
             </Box>
             <Box paddingBottom={'20px'}>
-              <NavigationLink to="/about">
+              <NavigationLink dark to="/about">
                 {translations?.navigation?.about[language]}
               </NavigationLink>
             </Box>
             <Box paddingBottom={'20px'}>
-              <NavigationLink to="/areas">
+              <NavigationLink dark to="/areas">
                 {translations?.navigation?.areas[language]}
               </NavigationLink>
             </Box>
             <Box paddingBottom={'20px'}>
-              <NavigationLink to="/roadmap">
+              <NavigationLink dark to="/roadmap">
                 {translations?.navigation?.roadmap[language]}
               </NavigationLink>
             </Box>

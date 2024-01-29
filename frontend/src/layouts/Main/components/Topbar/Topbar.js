@@ -88,7 +88,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
               console.log("inde", index)
               return (
               <Box marginleft={4} key={index} onClick={() => setSelectedMenu(index)}>
-                <NavigationLink dark to={item.link} index={index} selected={index === selectedMenu}>
+                <NavigationLink to={item.link} index={index} selected={index === selectedMenu}>
                   {item.name}
                 </NavigationLink>
               </Box>

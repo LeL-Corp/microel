@@ -20,7 +20,8 @@ const StyledLink = styled(Link)(({ theme, primary, dark, selected }) => ({
   fontSize: '18px',
   fontWeight: '400',
   textDecoration: 'none',
-  color:  selected ? "#fff" : theme.palette.text.dark,
+ 
+  color: dark ? "#fff" : selected ? "#fff" : theme.palette.text.dark,
   position: 'relative',
   transition: 'box-shadow 0.3s ease',
   backgroundColor: selected  ? theme.palette.tertiary.main : "transparent",
