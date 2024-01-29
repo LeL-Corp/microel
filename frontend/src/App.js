@@ -11,6 +11,7 @@ import axios from 'axios';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'aos/dist/aos.css';
+import { MenuProvider } from 'context/MenuContext';
 
 
 const App = () => {
@@ -18,12 +19,14 @@ const App = () => {
   return (
    
     <LanguageProvider>
+      <MenuProvider>
       <HelmetTags />
       <Page>
         <BrowserRouter>
           <Routes />
         </BrowserRouter>
       </Page>
+      </MenuProvider>
     </LanguageProvider>
    
   );

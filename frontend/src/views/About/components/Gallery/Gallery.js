@@ -167,8 +167,8 @@ const Gallery = () => {
                 zIndex: 99,
                 '&:hover': {
                   '& img': {
-                    // transform: 'scale(1.2)',
-                    zIndex: 100,
+                    transform: 'scale(1.2)',
+                   
                   },
                   '& .portfolio-main-item': {
                     bottom: 0,
