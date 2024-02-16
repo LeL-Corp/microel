@@ -1,5 +1,6 @@
 # Presentational corporate website
 This project is a website built using React.js and Material-UI and it will be soon online, stay tuned.
+Latest changes uploaded on develop branch.
 
 
 ## Features
